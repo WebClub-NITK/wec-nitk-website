@@ -1,20 +1,14 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+"use client";
+import React, { useState, useEffect } from "react";
+import Spline from '@splinetool/react-spline';
 
 const SpiderComponent = () => {
-    const handleGridHover = (event) => {
-        event.target.classList.add('glow');
-      };
-    
-      const handleGridLeave = (event) => {
-        event.target.classList.remove('glow');
-      };
-    
-      return (
-        <div class="relative h-full w-full bg-slate-950">
-            <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div></div>
-      );
+  return (
+    <div style={{ width: "100%", height: "100%" }}>
+      <Spline scene="https://prod.spline.design/l2T2D39Y0IEA4xax/scene.splinecode" />
+    </div>
+  );
 };
 
 export default SpiderComponent;
+
