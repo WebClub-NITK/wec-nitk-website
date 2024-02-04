@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function TestAnimation() {
   return (
     <motion.div
-      className="w-20 h-20 bg-slate-900 rounded-full"
+      className="w-20 h-20 bg-secondary-blue rounded-full"
       animate={{
         scale: [1, 2, 2, 1, 1],
         rotate: [0, 0, 180, 180, 0],
