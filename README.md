@@ -35,7 +35,6 @@
 ### Using Git and Github
 
 - [Clone](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#cloning-a-fork) the repository
-- Enter the new `portfolio` directory with `cd portfolio`
 - Set the upstream remote to the original repository url so that git knows where to fetch updates from in future: `git remote add upstream https://github.com/WebClub-NITK/wec-nitk-website.git`
 
 ### Commit Discipline
