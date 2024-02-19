@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center"> Web Club website (Frontend) </h1>
 
-## Getting Started
+## Tech Stack 🧰
 
-First, run the development server:
+<li>Frameworks</li>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [NextJS](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br/>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Pages ☑️
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Home
+- Hero Section
+- What do we do
+- Events
+- FAQ 
+- Footer
 
-## Learn More
+#### Blogs
+- Blogs
+- Reading list
 
-To learn more about Next.js, take a look at the following resources:
+#### Teams
+#### GDSC
+#### Algorithms
+#### Systems
+#### Intelligence
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Installation and Contribution 🧑‍💻
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Using Git and Github
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Clone](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#cloning-a-fork) the repository
+- Enter the new `portfolio` directory with `cd portfolio`
+- Set the upstream remote to the original repository url so that git knows where to fetch updates from in future: `git remote add upstream https://github.com/WebClub-NITK/wec-nitk-website.git`
+
+### Commit Discipline
+
+- Make sure to write clear and descriptive commit messages
+- The commit message:
+    - is written in the imperative (e.g., "Fix …", "Add …")
+    - is kept short (max 76 characters, ideally less), while concisely explaining what the commit does
+    - is clear about what part of the code is affected – often by prefixing with the name of the section and a colon, like `events: …` or `footer: …`
+
+- Examples:
+    - `footer: Add contact links`
+    - `events: Fix scrolling issues`
+
+### Install required packages
+
+- `npm install`
+
+### Run server
+
+- `npm run dev`
+
+<br/>
+
+## Sample Git Workflow
+
+- Follow the [installation guide](https://github.com/WebClub-NITK/wec-nitk-website/blob/main/readme.md#installation-guide) to install the software
+- Create a new feature branch with `git checkout -b <name-of-your-feature-branch>`
+- Make changes and commit them in the feature branch.
+- Once done developing, switch back to the main branch with `git checkout main` ; pull the latest version of the repo with `git pull https://github.com/WebClub-NITK/wec-nitk-website.git main`
+- Switch back to the feature branch with `git checkout <name-of-your-feature-branch>`. Apply the new changes on top of the latest version of the repo with `git rebase main`
+- [Resolve merge conflicts](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) (if any)
+- Push your feature branch upto your remote repo with `git push origin <name-of-your-feature-branch>`
+- [Submit a Pull Request](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#making-a-pull-request) to the main branch.
+- After any questions or changes have been resolved, your contribution would be merged in!
+
