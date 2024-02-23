@@ -92,6 +92,10 @@ module.exports = {
       },
     },
     extend: {
+      width: {
+        xl: "30rem",
+        "2xl": "34rem",
+      },
       keyframes: {
         scroll: {
           to: {
