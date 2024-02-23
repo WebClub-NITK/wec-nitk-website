@@ -22,7 +22,7 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput}) => {
     }));
 
   return (
-    <section className="max-w-lg mx-auto my-10">
+    <section className="flex flex-col items-center sm:max-w-lg mx-auto my-10">
         <div className='grid grid-cols-1 gap-2 px-2 py-2 sm:grid-cols-2 sm:w-full justify-center items-center bg-light-blue'>
             <div>
                 <input type='search' 

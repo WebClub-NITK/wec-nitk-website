@@ -27,8 +27,10 @@ module.exports = {
     },
     extend: {
       width: {
-        xl: "30rem",
-        "2xl": "34rem",
+        xl: "28rem",
+        "2xl": "32rem",
+        "3xl": "40rem",
+        "4xl": "60rem",
       },
       keyframes: {
         "accordion-down": {

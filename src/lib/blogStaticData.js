@@ -16,7 +16,7 @@ export const Blogs = [
     title: "Web Development Trends in 2023",
     author: "Jessica Miller",
     sig: "GDSC",
-    tags: "Machine Learning",
+    tags: "Web Development",
     subheading:
       "Explore the latest trends shaping the future of web development. From responsive design to serverless architecture, stay ahead in the dynamic web landscape.",
     body: "As technology evolves, web development undergoes continuous transformations. In 2023, key trends are shaping the industry. Responsive and inclusive design, powered by advanced CSS frameworks, ensures optimal user experiences across devices. Serverless architecture gains prominence, simplifying deployment and reducing infrastructure costs. Progressive Web Apps (PWAs) enhance user engagement, offering app-like experiences on the web. Keeping abreast of these trends is vital for web developers navigating the dynamic landscape. This article delves into the emerging trends that will define the state of web development in 2023.",
@@ -40,7 +40,7 @@ export const Blogs = [
     title: "The Evolution of Programming Languages",
     author: "Jordan Carter",
     sig: "Algorithms",
-    tags: "Machine Learning",
+    tags: "Programming Languages",
     subheading:
       "Trace the evolution of programming languages from assembly code to modern languages like Python and JavaScript. Explore their impact on software development.",
     body: "The history of programming languages is a fascinating journey, reflecting the evolution of computing. From early assembly code to high-level languages like Python and JavaScript, each era brought innovations in software development. This article traces the timeline of programming languages, highlighting key milestones and their impact on the way developers write code. Understanding this evolution provides insights into the foundations of modern programming and helps developers appreciate the rich diversity of languages available for solving different computational challenges.",
@@ -49,7 +49,7 @@ export const Blogs = [
   },
   {
     id: 5,
-    title: "Artificial Intelligence in Best Healthcare",
+    title: "Artificial Intelligence in Healthcare",
     author: "Emily Johnson",
     sig: "intelligence",
     tags: "Medical Imaging",
