@@ -8,7 +8,7 @@ const Card = ({blog}) => {
 }
 
   return (
-      <div className="h-80 mb-4 w-2xl max-xl:w-xl max-lg:w-96 max-md:w-2xl max-sm:w-96 grid grid-cols-5 mx-8">
+      <div className="h-80 mb-4 w-xl max-xl:w-xl max-lg:w-96 max-md:w-2xl max-sm:w-96 grid grid-cols-5 mx-8">
        <div className="col-span-2">
         <img src={blog.cover_image} className="object-cover w-96 h-80 rounded-tl-2xl rounded-bl-2xl"/>
        </div>
