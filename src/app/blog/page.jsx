@@ -9,7 +9,7 @@ const page = () => {
     const [modal,setModal]=useState(false)
     const [blog,setBlog]=useState('')
 
-  const [selectedCategory,setSelectedCategory] = useState('')
+  const [selectedCategory,setSelectedCategory] = useState(null)
   const [typedInput,setTypedInput]=useState('')
 
   const [allBlogs,setAllBlogs] = useState([])
@@ -33,11 +33,11 @@ const page = () => {
     else{
       let currBlogs=[]
       if(selectedCategory===null && typedInput!==''){
+        console.log("inside")
         const matchedTitle = allBlogs.filter((blog)=>blog.title.toLowerCase().includes(typedInput.toLowerCase()))
         currBlogs=matchedTitle
       }
       else{
-        console.log(selectedCategory)
         if(selectedCategory.label==="All Posts"){
           currBlogs=allBlogs
         }
