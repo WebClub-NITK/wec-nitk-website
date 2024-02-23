@@ -45,11 +45,11 @@ const page = () => {
     else{
       let currBlogs=[]
       if(selectedCategory===null && typedInput!==''){
+        console.log("inside")
         const matchedTitle = allBlogs.filter((blog)=>blog.title.toLowerCase().includes(typedInput.toLowerCase()))
         currBlogs=matchedTitle
       }
       else{
-        console.log(selectedCategory)
         if(selectedCategory.label==="All Posts"){
           currBlogs=allBlogs
         }
