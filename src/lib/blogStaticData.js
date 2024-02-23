@@ -1,4 +1,4 @@
-export const blogs = [
+export const Blogs = [
   {
     id: 1,
     title: "Introduction to Machine Learning",
@@ -16,7 +16,7 @@ export const blogs = [
     title: "Web Development Trends in 2023",
     author: "Jessica Miller",
     sig: "GDSC",
-    tags: "Web Development",
+    tags: "Machine Learning",
     subheading:
       "Explore the latest trends shaping the future of web development. From responsive design to serverless architecture, stay ahead in the dynamic web landscape.",
     body: "As technology evolves, web development undergoes continuous transformations. In 2023, key trends are shaping the industry. Responsive and inclusive design, powered by advanced CSS frameworks, ensures optimal user experiences across devices. Serverless architecture gains prominence, simplifying deployment and reducing infrastructure costs. Progressive Web Apps (PWAs) enhance user engagement, offering app-like experiences on the web. Keeping abreast of these trends is vital for web developers navigating the dynamic landscape. This article delves into the emerging trends that will define the state of web development in 2023.",
@@ -28,7 +28,7 @@ export const blogs = [
     title: "Cybersecurity Best Practices for Businesses",
     author: "Ryan Mitchell",
     sig: "Systems",
-    tags: "Cybersecurity",
+    tags: "Cyber Security",
     subheading:
       "Protect your business from cyber threats with effective cybersecurity strategies. Learn about encryption, multi-factor authentication, and incident response.",
     body: "In an era of increasing cyber threats, safeguarding business data is paramount. Implementing robust cybersecurity measures is essential for preventing data breaches and protecting sensitive information. This article explores best practices for businesses, covering topics such as encryption to secure data in transit and at rest, multi-factor authentication to enhance user access controls, and incident response planning to mitigate the impact of security incidents. By adopting these practices, businesses can fortify their defenses against cyber threats and build a resilient security posture.",
@@ -40,7 +40,7 @@ export const blogs = [
     title: "The Evolution of Programming Languages",
     author: "Jordan Carter",
     sig: "Algorithms",
-    tags: "Programming Languages",
+    tags: "Machine Learning",
     subheading:
       "Trace the evolution of programming languages from assembly code to modern languages like Python and JavaScript. Explore their impact on software development.",
     body: "The history of programming languages is a fascinating journey, reflecting the evolution of computing. From early assembly code to high-level languages like Python and JavaScript, each era brought innovations in software development. This article traces the timeline of programming languages, highlighting key milestones and their impact on the way developers write code. Understanding this evolution provides insights into the foundations of modern programming and helps developers appreciate the rich diversity of languages available for solving different computational challenges.",
@@ -49,7 +49,7 @@ export const blogs = [
   },
   {
     id: 5,
-    title: "Artificial Intelligence in Healthcare",
+    title: "Artificial Intelligence in Best Healthcare",
     author: "Emily Johnson",
     sig: "intelligence",
     tags: "Medical Imaging",
