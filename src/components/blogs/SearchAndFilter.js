@@ -4,7 +4,7 @@ import Select from 'react-select';
 
 import React, { useEffect, useState } from 'react'
 
-const SearchAndFilter = ({selectedCategory,setSelectedCategory,typedInput,setTypedInput}) => {
+const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput}) => {
 
     const [categories,setCategories] = useState([])
     
