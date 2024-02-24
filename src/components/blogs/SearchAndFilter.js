@@ -4,7 +4,7 @@ import Select from 'react-select';
 
 import React, { useEffect, useState } from 'react'
 
-const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput}) => {
+const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput,hidden,message}) => {
 
     const [categories,setCategories] = useState([])
     
@@ -22,8 +22,13 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput}) => {
     }));
 
   return (
+<<<<<<< HEAD
     <section className="max-w-lg mx-auto my-10">
         <div className='grid grid-cols-1 gap-2 px-2 py-2 sm:grid-cols-2 sm:w-full justify-center items-center bg-light-blue'>
+=======
+    <section className="flex flex-col items-center w-2/3 sm:max-w-lg mx-auto my-10 bg-light-blue">
+        <div className='grid grid-cols-1 gap-2 px-2 py-2 sm:grid-cols-2 sm:w-full justify-center items-center'>
+>>>>>>> 6d7eb83 (Blogs: Add Search Results Text)
             <div>
                 <input type='search' 
                 placeholder='Search 🔍' 
@@ -41,6 +46,11 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput}) => {
                     classNamePrefix="react-select"
                 />
             </div>
+        </div>
+        <div className='text-center'>
+            {hidden?"":<p className='text-md my-2 mx-2 font-semibold'>
+                {message}
+            </p>}
         </div>
     </section>
   )

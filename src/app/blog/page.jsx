@@ -26,6 +26,7 @@ const page = () => {
 
   const [allBlogs,setAllBlogs] = useState([])
   const [blogs,setBlogs] = useState([])
+  const [message,setMessage]=useState('')
 
   //Fetch All Blogs
   const fetchAllBlogs = ()=>{
@@ -37,15 +38,18 @@ const page = () => {
     fetchAllBlogs()
   },[])
 
+  const hidden = selectedCategory===null && typedInput===''
+
   //Fetching Blogs Based on Filter
   const fetchBlogByFilter=()=>{
+    let resultsText="";
     if(selectedCategory===null && typedInput===''){
       setBlogs(allBlogs)
     }
     else{
       let currBlogs=[]
       if(selectedCategory===null && typedInput!==''){
-        console.log("inside")
+        resultsText=`Showing Results for : "${typedInput}"`
         const matchedTitle = allBlogs.filter((blog)=>blog.title.toLowerCase().includes(typedInput.toLowerCase()))
         currBlogs=matchedTitle
       }
@@ -59,12 +63,17 @@ const page = () => {
         }
 
         if(typedInput!==''){
+          resultsText=`Showing Results for : "${typedInput}" (${selectedCategory.label})`
           const matchedTitle = currBlogs.filter((blog)=>blog.title.toLowerCase().includes(typedInput.toLowerCase()))
           currBlogs=matchedTitle
+        }
+        else{
+          resultsText=`Showing Results for the category: (${selectedCategory.label})`
         }
       }
       setBlogs(currBlogs)
     }
+    setMessage(resultsText)
   }
 
   useEffect(()=>{
@@ -85,6 +94,8 @@ const page = () => {
           setSelectedCategory={setSelectedCategory} 
           typedInput={typedInput} 
           setTypedInput={setTypedInput}
+          hidden={hidden}
+          message={message}
         />
 <<<<<<< HEAD
         <div className='px-16 max-xl:px-16 max-xl:py-4 max-lg:px-4 max-sm:px-4'>
