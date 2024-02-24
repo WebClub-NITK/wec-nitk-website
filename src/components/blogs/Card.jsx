@@ -26,8 +26,6 @@ const Card = ({blog,setModal,setBlog}) => {
   useEffect(()=>{
     adjustCardWidth()
     window.addEventListener('resize', adjustCardWidth);
-
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('resize', adjustCardWidth);
     };
