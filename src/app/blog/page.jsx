@@ -1,5 +1,4 @@
 "use client";
-import dynamic from 'next/dynamic';
 import Card from '@/components/blogs/Card'
 import SearchAndFilter from '@/components/blogs/SearchAndFilter';
 import Blog_Modal from '@/components/blogs/Blog_Modal'
