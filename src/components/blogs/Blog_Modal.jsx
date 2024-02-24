@@ -3,7 +3,7 @@ import React, { useEffect,useState } from 'react';
 import Modal from 'react-modal'
 import {FaTimes} from 'react-icons/fa'
 
-const Blog_Modal = ({ modal,closeModal,blog}) => {
+const Blog_Modal = ({ modal,closeModal,blog,darkMode}) => {
     const [blogWidth,setBlogWidth]=useState(2000)
     const [blogHeight,setBlogHeight]=useState(2000)
     const [imgHeight,setImgHeight]=useState(1000)
@@ -22,6 +22,15 @@ const Blog_Modal = ({ modal,closeModal,blog}) => {
     transform: 'translate(-50%, -50%)',
   },
 };
+  const darkModeStyles = {
+    content: {
+      ...customStyles.content,
+      backgroundColor: 'rgb(24, 26, 27)',
+      color:'white'
+    },
+  };
+
+  const styles = darkMode ? darkModeStyles : customStyles
 
   const handleResize=()=>{
       const windowWidth=window.innerWidth
@@ -51,9 +60,9 @@ const Blog_Modal = ({ modal,closeModal,blog}) => {
   return (
       <Modal isOpen={modal}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={styles}
       >
-        <FaTimes className='absolute right-4 top-4 h-10'/>
+        <FaTimes className='absolute right-4 top-4 h-10 cursor-pointer' onClick={closeModal}/>
         <h1 className='font-bold mb-5 text-center mt-6' style={{'font-size':`${1.5*fontSize}px`}}>{blog.title}</h1>
         <img src={blog.cover_image} className="w-2xl m-auto"
          style={{"width":`${imgWidth}px`,height:`${imgHeight}px`}}/>

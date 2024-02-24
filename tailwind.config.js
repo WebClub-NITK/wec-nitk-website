@@ -23,7 +23,11 @@ module.exports = {
       "light-blue": "#f0f3fd",
       white: "#fbfef9",
       gray: "#aaaaaa",
+      grayDark: "#CCD3CA",
       accent: "#144c7b",
+      "darkBlack":"rgb(24, 26, 27)",
+      "darkCard":"#0d0d0d",
+      "darkBlogText":"#3559E0"
     },
     extend: {
       width: {

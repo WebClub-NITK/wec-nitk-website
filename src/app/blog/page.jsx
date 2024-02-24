@@ -16,6 +16,12 @@ const page = () => {
   const [blogs,setBlogs] = useState([])
   const [message,setMessage]=useState('')
 
+  const [darkMode,setDarkMode] = useState(false)
+
+  const toggleTheme = ()=>{
+    setDarkMode(!darkMode)
+  }
+
   //Fetch All Blogs
   const fetchAllBlogs = ()=>{
     setAllBlogs(Blogs)
@@ -72,32 +78,72 @@ const page = () => {
     setModal(false)
   }
 
+  // const [isDarkMode, setIsDarkMode] = useState(
+  //   window.matchMedia('(prefers-color-scheme: dark)').matches
+  // );
+
+  // useEffect(() => {
+  //   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  //   console.log(darkModeMediaQuery)
+  //   const handleThemeChange = (e) => {
+  //     setIsDarkMode(e.matches);
+  //   };
+
+  //   // Check initial theme
+  //   setIsDarkMode(darkModeMediaQuery.matches);
+
+  //   // listener added to react to changes in the theme
+  //   darkModeMediaQuery.addEventListener('change', handleThemeChange);
+
+  //   // CleaningUp the listener 
+  //   return () => {
+  //     darkModeMediaQuery.removeEventListener('change', handleThemeChange);
+  //   };
+  // }, []);
+
+
   return (
-    <div className={`py-8 m-auto`}>
-      <div>
-          {modal && 
-            <Blog_Modal modal={modal} closeModal={closeModal} blog={blog}/>
-            }
-      </div>
-      
-        <h1 className="text-center text-4xl font-bold">Blog</h1>
-        <SearchAndFilter 
-          setSelectedCategory={setSelectedCategory} 
-          typedInput={typedInput} 
-          setTypedInput={setTypedInput}
-          hidden={hidden}
-          message={message}
-        />
-        <div className='px-16 max-xl:px-16 max-xl:py-4 max-lg:px-4 max-sm:px-4'>
-          <div className="grid grid-cols-2 max-md:grid-cols-1">
-            {blogs.map((blog)=>(
-                <React.Fragment key={blog.id}>
-                    <Card blog={blog} setModal={setModal} setBlog={setBlog}/>
-                </React.Fragment>
-            ))}
+    <section className={darkMode?"dark":""}>
+        <div className={`py-8 max-xl:px-8 max-xl:py-4 max-lg:px-8 max-md:px-8 max-sm:px-8 m-auto dark:bg-darkBlack min-h-screen`}>
+          <div>
+              {modal && 
+                <Blog_Modal modal={modal} closeModal={closeModal} blog={blog} darkMode={darkMode}/>
+              }
           </div>
-        </div>
-    </div>
+          
+          <div className='flex items-center justify-center gap-2'>
+            <h1 className="text-center text-4xl font-bold dark:text-white">Blogs</h1>
+            <div>
+                <button type="button" onClick={toggleTheme} className='dark:text-white text-3xl'>
+                    {darkMode?"💡":"🌚"}
+                </button>
+            </div>
+          </div>
+          <SearchAndFilter 
+            setSelectedCategory={setSelectedCategory} 
+            typedInput={typedInput} 
+            setTypedInput={setTypedInput}
+            hidden={hidden}
+            message={message}
+            darkMode={darkMode}
+          />
+          {blogs.length>0?<div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+              {blogs.map((blog)=>(
+                  <React.Fragment key={blog.id}>
+                      <Card 
+                        blog={blog} 
+                        setModal={setModal} 
+                        setBlog={setBlog} 
+                      />
+                  </React.Fragment>
+              ))}
+          </div>:<div className='text-center text-xl dark:text-white'>
+            <p>No Posts Found 😔</p>
+          </div>
+          
+          }
+      </div>
+    </section>
   );
 }
 
