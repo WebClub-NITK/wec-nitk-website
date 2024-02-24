@@ -15,7 +15,7 @@ const page = () => {
     setModal(false)
   }
   return (
-    <div className={`px-32 py-8 max-xl:px-8 max-xl:py-4 max-lg:px-20 max-md:px-16 max-sm:px-8 m-auto`}>
+    <div className={`py-8 m-auto`}>
       <div>
           {modal && 
             <Blog_Modal modal={modal} closeModal={closeModal} blog={blog}/>
@@ -29,12 +29,14 @@ const page = () => {
           typedInput={typedInput} 
           setTypedInput={setTypedInput}
         />
-        <div className="grid grid-cols-2 gap-4 max-lg:grid-cols-1">
+        <div className='px-16 max-xl:px-16 max-xl:py-4 max-lg:px-4 max-sm:px-4'>
+          <div className="grid grid-cols-2 max-md:grid-cols-1">
             {blogs.map((blog)=>(
                 <React.Fragment key={blog.id}>
                     <Card blog={blog} setModal={setModal} setBlog={setBlog}/>
                 </React.Fragment>
             ))}
+          </div>
         </div>
     </div>
   );

@@ -32,6 +32,9 @@ module.exports = {
         "3xl": "40rem",
         "4xl": "60rem",
       },
+      screens: {
+        xs: "500px",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
