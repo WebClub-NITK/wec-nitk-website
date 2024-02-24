@@ -1,4 +1,4 @@
-export const blogs = [
+export const Blogs = [
   {
     id: 1,
     title: "Introduction to Machine Learning",
@@ -28,7 +28,7 @@ export const blogs = [
     title: "Cybersecurity Best Practices for Businesses",
     author: "Ryan Mitchell",
     sig: "Systems",
-    tags: "Cybersecurity",
+    tags: "Cyber Security",
     subheading:
       "Protect your business from cyber threats with effective cybersecurity strategies. Learn about encryption, multi-factor authentication, and incident response.",
     body: "In an era of increasing cyber threats, safeguarding business data is paramount. Implementing robust cybersecurity measures is essential for preventing data breaches and protecting sensitive information. This article explores best practices for businesses, covering topics such as encryption to secure data in transit and at rest, multi-factor authentication to enhance user access controls, and incident response planning to mitigate the impact of security incidents. By adopting these practices, businesses can fortify their defenses against cyber threats and build a resilient security posture.",
