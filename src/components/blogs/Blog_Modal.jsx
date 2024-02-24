@@ -3,6 +3,7 @@ import React, { useEffect,useState } from 'react';
 import Modal from 'react-modal'
 import {FaTimes} from 'react-icons/fa'
 
+<<<<<<< HEAD
 const Blog_Modal = ({ modal,closeModal,blog}) => {
     const [blogWidth,setBlogWidth]=useState(2000)
     const [blogHeight,setBlogHeight]=useState(2000)
@@ -22,6 +23,31 @@ const Blog_Modal = ({ modal,closeModal,blog}) => {
     transform: 'translate(-50%, -50%)',
   },
 };
+=======
+const Blog_Modal = ({ modal,closeModal,blog,darkMode}) => {
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      width:'60rem',
+      height:'40rem',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const darkModeStyles = {
+    content: {
+      ...customStyles.content,
+      backgroundColor: 'rgb(24, 26, 27)',
+      color:'white'
+    },
+  };
+
+  const styles = darkMode ? darkModeStyles : customStyles
+>>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
 
   const handleResize=()=>{
       const windowWidth=window.innerWidth
@@ -51,7 +77,7 @@ const Blog_Modal = ({ modal,closeModal,blog}) => {
   return (
       <Modal isOpen={modal}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={styles}
       >
         <FaTimes className='absolute right-4 top-4 h-10'/>
         <h1 className='font-bold mb-5 text-center mt-6' style={{'font-size':`${1.5*fontSize}px`}}>{blog.title}</h1>
