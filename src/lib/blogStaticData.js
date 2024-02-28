@@ -7,7 +7,48 @@ export const Blogs = [
     tags: "Machine Learning",
     subheading:
       "Machine Learning is revolutionizing the way computers learn patterns and make predictions. Explore the fundamental concepts and applications of this dynamic field.",
-    body: "Machine Learning (ML) is a subset of artificial intelligence that focuses on developing algorithms and statistical models allowing computers to perform a task without explicit programming. It encompasses various techniques like supervised learning, unsupervised learning, and reinforcement learning. ML finds applications in image recognition, natural language processing, and recommendation systems. Understanding its principles is crucial for modern technology professionals. This article provides an overview of key ML concepts and their real-world applications.",
+    body: `Machine Learning (ML) is a subset of artificial intelligence that focuses on developing algorithms and statistical models allowing computers to perform a task without explicit programming. It encompasses various techniques like supervised learning, unsupervised learning, and reinforcement learning. ML finds applications in image recognition, natural language processing, and recommendation systems. Understanding its principles is crucial for modern technology professionals. This article provides an overview of key ML concepts and their real-world applications. A paragraph with *emphasis* and **strong importance**.Here is some JavaScript code
+*Sample Markdown Document*
+
+**Subheading**
+
+This is a sample markdown document that demonstrates various formatting elements.
+
+***Image***
+
+![Alt text](https://www.shutterstock.com/image-photo/word-give-hands-cupped-shape-260nw-769507753.jpg)
+
+**Blockquote**
+> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+
+*Lists*
+
+* [ ] Item 1\n
+* [ ] Item 2\n
+* [x] Item 3\n
+
+***Emphasis***
+
+*Italic Text*  
+**Bold Text**
+
+***Code***
+
+~~~js
+const x=y
+var c=y
+console.log(Hello, World!)
+~~~
+
+Block code:
+
+~~~python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("John")
+~~~
+`,
     cover_image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjyPfEJdq3Z1EFgX4fSN1mPKi4RiOZFMeE0I1V1Fh7Sg&s",
   },

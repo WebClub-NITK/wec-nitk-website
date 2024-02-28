@@ -55,7 +55,7 @@ const Card = ({blog,setModal,setBlog}) => {
               max-xs:text-sm dark:text-white">{blog.title}</h1>
            </div>
            <div className="pb-3 text-xl max-xl:pb-0 text-pretty max-xl:text-lg max-lg:text-sm max-md:text-lg max-sm:text-md max-xs:text-sm dark:text-grayDark">
-              <p>{blog.body.slice(0,130)}...</p>
+              <p>{blog.subheading.slice(0,130)}...</p>
            </div>
            <div className="mt-2">
               <div className="cursor-pointer text-primary-blue font-semibold">
