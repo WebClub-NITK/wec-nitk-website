@@ -2,6 +2,17 @@
 import React, { useEffect,useState } from 'react';
 import Modal from 'react-modal'
 import {FaTimes} from 'react-icons/fa'
+import Markdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import remarkGfm from "remark-gfm";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import rehypeRaw from "rehype-raw";
+import "katex/dist/katex.min.css"; // `rehype-katex` does not import the CSS for you
+import { vsDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 
 <<<<<<< HEAD
 const Blog_Modal = ({ modal,closeModal,blog}) => {
@@ -83,7 +94,33 @@ const Blog_Modal = ({ modal,closeModal,blog,darkMode}) => {
         <h1 className='font-bold mb-5 text-center mt-6' style={{'font-size':`${1.5*fontSize}px`}}>{blog.title}</h1>
         <img src={blog.cover_image} className="w-2xl m-auto"
          style={{"width":`${imgWidth}px`,height:`${imgHeight}px`}}/>
-        <p className='mt-5 px-4' style={{'font-size':`${fontSize}px`}}>{blog.body}</p>
+        {/* <p className='mt-5 px-4' style={{'font-size':`${fontSize}px`}}>{blog.body}</p> */}
+
+        <Markdown
+      children={blog.body}
+      className='mt-5 px-4'
+      remarkPlugins={[remarkMath, remarkGfm]}
+      rehypePlugins={[rehypeKatex, rehypeRaw]}
+      components={{
+        code(props) {
+          const { children, className, node, ...rest } = props;
+          const match = /language-(\w+)/.exec(className || "");
+          return match ? (
+            <SyntaxHighlighter
+              {...rest}
+              PreTag="div"
+              children={String(children).replace(/\n$/, "")}
+              language={match[1]}
+              style={dark}
+            />
+          ) : (
+            <code {...rest} className={className}>
+              {children}
+            </code>
+          );
+        },
+      }}
+    />
       </Modal>
   );
 };

@@ -65,6 +65,7 @@ const Card = ({blog,setModal,setBlog}) => {
               <h1 className="text-xl font-bold mt-4 mb-4 max-xl:text-lg max-sm:text-md max-sm:mt-1 max-sm:mb-1
               max-xs:text-sm">{blog.title}</h1>
            </div>
+<<<<<<< HEAD
            <div className="pb-3 text-xl max-xl:pb-0 text-pretty max-xl:text-lg max-lg:text-sm max-md:text-lg max-sm:text-md max-xs:text-sm">
               <p>{blog.body.slice(0,130)}...</p>
 =======
@@ -73,6 +74,10 @@ const Card = ({blog,setModal,setBlog}) => {
            <div className="pb-3 max-xl:pb-0 text-pretty max-xl:text-lg max-lg:text-sm max-md:text-sm dark:text-grayDark">
               <p>{truncateText(blog.subheading, 25)}...</p>
 >>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
+=======
+           <div className="pb-3 text-xl max-xl:pb-0 text-pretty max-xl:text-lg max-lg:text-sm max-md:text-lg max-sm:text-md max-xs:text-sm dark:text-grayDark">
+              <p>{blog.subheading.slice(0,130)}...</p>
+>>>>>>> c563634 (added-react-markdown-to-first-post-sample-data)
            </div>
            <div className="mt-2">
               <div className="cursor-pointer text-primary-blue font-semibold">
