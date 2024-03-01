@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { CalendarClock } from "lucide-react";
 
 export default function EventCard({ event }) {
   const {
@@ -16,8 +17,19 @@ export default function EventCard({ event }) {
     resources,
   } = event;
 
+  const date = new Date(date_time).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+  const time = new Date(date_time).toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
-    <article className="rounded-lg h-full overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300-2 m-4 bg-white dark:bg-gray-800">
+    <article className=" rounded-lg h-full overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300-2 m-4 bg-white dark:bg-darkCard">
       <div className="h-56 w-full relative overflow-hidden">
         {/* IMAGE */}
         <Image
@@ -29,27 +41,24 @@ export default function EventCard({ event }) {
         />
       </div>
 
-      <div className="bg-white dark:bg-gray-800 p-4 h-full flex flex-col ">
+      <div className="bg-white p-4 h-full flex flex-col ">
         {/* DATE */}
-        <time
-          dateTime="2022-10-10"
-          className="block text-s text-gray dark:text-gray-400"
-        >
-            {new Date(date_time).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-            })}
+        <time className=" py-2 text-s text-primary-blue flex justify-between">
+          <div className="flex items-center">
+            <CalendarClock className="inline mr-2" />
+            <span>{date}</span>
+          </div>
+          <span>{time}</span>
         </time>
 
         {/* TITLE */}
-        <h3 className="mt-0.5 text-lg text-gray-900 dark:text-white">
-        {title}
+        <h3 className="mt-0.5 text-lg text-gray-900 ">
+          {title}
         </h3>
 
         {/* TAGS */}
-        <div className=" mt-4 flex flex-wrap gap-2 ">
-        </div>
+        {/* <div className=" mt-4 flex flex-wrap gap-2 ">
+        </div> */}
       </div>
     </article>
   );
