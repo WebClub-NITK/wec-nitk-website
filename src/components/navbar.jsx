@@ -63,21 +63,10 @@ const Navbar = () => {
                     Blog
                   </a>
                 </li>
-                <li>
-                  <a href="#pricing" class="hover:text-white shrink-0">
-                    {" "}
-                    Plans
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" class="hover:text-white shrink-0">
-                    {" "}
-                    Faq
-                  </a>
-                </li>
+
                 <li class="shrink-0">
                   <a
-                    href="https://github.com/michael-andreuzza/minimalstudio"
+                    href="https://github.com/Shubham-Rasal/wec-nitk-website"
                     class="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-slate-400 bg-white/5 hover:bg-transparent text-slate-200 duration-200 focus:ring-offset-2 hover:text-white inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
                   >
                     GitHub
@@ -93,3 +82,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
