@@ -16,14 +16,14 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    colors: {
-      "primary-blue": "#0177bd",
-      "secondary-blue": "#272838",
-      "secondary-text": "#0c3d5e",
-      "white": "#fbfef9",
-      "gray": "#aaaaaa",
-      "accent": "#144c7b",
-    },
+    // colors: {
+    //   "primary-blue": "#0177bd",
+    //   "secondary-blue": "#272838",
+    //   "secondary-text": "#0c3d5e",
+    //   "white": "#fbfef9",
+    //   "gray": "#aaaaaa",
+    //   "accent": "#144c7b",
+    // },
     extend: {
       keyframes: {
         "accordion-down": {
