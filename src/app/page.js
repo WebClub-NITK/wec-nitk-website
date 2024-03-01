@@ -1,4 +1,4 @@
-import { BackgroundBeams } from "@/components/baground-beams";
+import { BackgroundBeams } from "@/components/background-beams";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
       <BackgroundBeams />
       <div className="relative w-full flex items-center justify-center">
         <Image
-          className="z-0 opacity-65 object-contain"
+          className="z-0 opacity-85 object-contain"
           src="/logo.svg"
           alt="illustration"
           width={500}
