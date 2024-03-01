@@ -1,8 +1,5 @@
 import { BackgroundBeams } from "@/components/baground-beams";
-import { LampDemo } from "@/components/lamp-effect";
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
-import TestAnimation from "@/components/framer/test";
 
 export default function Home() {
   return (
