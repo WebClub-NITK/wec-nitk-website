@@ -29,7 +29,7 @@ export default function EventCard({ event }) {
   });
 
   return (
-    <article className=" rounded-lg h-full overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300-2 m-4 bg-white dark:bg-darkCard">
+    <article className="rounded-lg overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300-2 m-4 bg-white dark:bg-darkCard">
       <div className="h-56 w-full relative overflow-hidden">
         {/* IMAGE */}
         <Image
@@ -41,18 +41,18 @@ export default function EventCard({ event }) {
         />
       </div>
 
-      <div className="bg-white p-4 h-full flex flex-col ">
+      <div className="bg-white p-4 flex flex-col">
         {/* DATE */}
-        <time className=" py-2 text-s text-primary-blue flex justify-between">
+        <time className="py-2 text-xs font-bold text-primary-blue flex justify-between">
           <div className="flex items-center">
-            <CalendarClock className="inline mr-2" />
+            <CalendarClock size={22} className="inline mr-2" />
             <span>{date}</span>
           </div>
           <span>{time}</span>
         </time>
 
         {/* TITLE */}
-        <h3 className="mt-0.5 text-lg text-gray-900 ">
+        <h3 className="mt-1 text-lg text-gray-900 ">
           {title}
         </h3>
 
