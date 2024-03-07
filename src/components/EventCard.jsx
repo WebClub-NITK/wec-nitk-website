@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { CalendarClock } from "lucide-react";
+import { useRef } from "react"
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, clickHandler = () => null }) {
   const {
     id,
     sig,
@@ -28,8 +28,14 @@ export default function EventCard({ event }) {
     minute: "2-digit",
   });
 
+  let cardRef = useRef()
+
   return (
-    <article className="rounded-lg overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300-2 m-4 bg-white dark:bg-darkCard">
+    <article 
+      className="rounded-lg overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300 m-4 bg-white dark:bg-darkCard cursor-pointer"
+      onClick={() => clickHandler(cardRef.current.getBoundingClientRect())}
+      ref={cardRef} 
+    >
       <div className="h-56 w-full relative overflow-hidden">
         {/* IMAGE */}
         <Image

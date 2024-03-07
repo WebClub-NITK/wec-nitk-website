@@ -1,5 +1,6 @@
 import { demoEvents } from "@/lib/eventsDemoData";
 import EventCard from "@/components/EventCard";
+import ExpandableEventCard from "@/components/ExpandableEventCard"
 
 export default function EventsPage() {
     return (
@@ -11,7 +12,7 @@ export default function EventsPage() {
 
                         {/* Event cards here */}
                         {demoEvents.map((event) => (
-                            <EventCard key={event.id} event={event} />
+                            <ExpandableEventCard key={event.id} event={event} />
                         ))}
 
                     </div>
