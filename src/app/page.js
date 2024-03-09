@@ -1,21 +1,22 @@
 import { BackgroundBeams } from "@/components/background-beams";
+import Footer from "@/components/footer";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex w-screen min-h-screen flex-col items-start justify-center  bg-secondary-blue p-2">
+    <main className="flex w-screen h-screen flex-col items-start justify-center  bg-secondary-800">
       <BackgroundBeams />
       <div className="relative w-full flex items-center justify-center">
         <Image
-          className="z-0 opacity-85 object-contain"
+          className="absolute z-0 opacity-85 object-contain  "
           src="/logo.svg"
           alt="illustration"
-          width={500}
-          height={500}
+          width={400}
+          height={400}
         />
         <div
           className=" absolute h-24 w-full border-y 
-         bg-black z-10 opacity-80
+         bg-secondary-800 z-10 opacity-80
         border-cyan-900 text-white lg:text-6xl font-bold text-center flex  justify-center items-center"
         >
           We Are Web Enthusiasts` Club NITK

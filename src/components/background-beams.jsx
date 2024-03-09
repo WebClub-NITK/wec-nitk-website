@@ -19,7 +19,7 @@ export const BackgroundBeams = React.memo(({ className }) => {
       )}
     >
       <svg
-        className=" z-0 h-full w-full pointer-events-none absolute "
+        className=" z-0 h-full w-full pointer-events-none absolute"
         width="1280"
         height="832"
         viewBox="0 0 1280 832"

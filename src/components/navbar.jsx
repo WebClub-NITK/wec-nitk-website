@@ -7,7 +7,7 @@ const Navbar = () => {
         <div class="w-full mx-auto">
           <div
             x-data="{ open: false }"
-            class="relative flex flex-col w-full p-1 lg:p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-white backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+            class="relative flex flex-col w-full p-2 lg:p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-gray-600 backdrop-blur-xl backdrop-filter rounded-full md:rounded-full md:items-center md:justify-between md:flex-row"
           >
             <div class="flex flex-row items-center justify-between md:justify-start">
               <a
@@ -42,7 +42,7 @@ const Navbar = () => {
               </button>
             </div>
             <nav class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row">
-              <ul class="space-y-2 list-none text-xs text-zinc-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
+              <ul class="space-y-2 list-none text-xs text-gray-200 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
                 <li>
                   <a
                     href="https://lexingtonthemes.com/"
