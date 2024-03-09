@@ -1,79 +1,100 @@
-import React from "react";
-import Link from "next/link";
+"use client";
+import { useState } from "react";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div class="fixed top-4 inset-x-0 z-50">
-      <div class="max-w-2xl mx-auto lg:px-8 px-4">
-        <div class="w-full mx-auto">
-          <div
-            x-data="{ open: false }"
-            class="relative flex flex-col w-full p-2 lg:p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-gray-600 backdrop-blur-xl backdrop-filter rounded-full md:rounded-full md:items-center md:justify-between md:flex-row"
-          >
-            <div class="flex flex-row items-center justify-between md:justify-start">
+    <div className="fixed top-4 inset-x-0 z-50">
+      <div className="max-w-2xl mx-auto px-8">
+        <div className="w-full mx-auto">
+          <div className="relative flex flex-col w-full lg:p-3 p-1 mx-auto ring-1 uppercase ring-gray-600 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row">
+            <div className="flex flex-row items-center justify-between md:justify-start">
               <a
-                class="text-white hover:text-white/50 gap-4 items-center tracking-tighter inline-flex font-bold ml-2 text-xl"
+                className="text-white hover:text-white/50 gap-4 items-center tracking-tighter inline-flex font-bold ml-2 text-xl"
                 href="/"
-                title="linke to main page"
+                title="link to main page"
               >
                 WEC
               </a>
-              <button class="inline-flex items-center justify-center p-2 text-zinc-200 hover:text-primary-blue focus:outline-none focus:text-black md:hidden">
+              <button
+                onClick={toggleNavbar}
+                className="inline-flex items-center justify-center p-2 text-white hover:text-primary-200 focus:outline-none focus:text-white md:hidden"
+                aria-controls="navbar-default"
+                aria-expanded={isOpen ? "true" : "false"}
+              >
                 <svg
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                   stroke="currentColor"
                   fill="none"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  <path
-                    class="inline-flex"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                  <path
-                    class="hidden"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
+                  {isOpen ? (
+                    <>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      ></path>
+                    </>
+                  ) : (
+                    <>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                      ></path>
+                    </>
+                  )}
                 </svg>
               </button>
             </div>
-            <nav class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row">
-              <ul class="space-y-2 list-none text-xs text-gray-200 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
+            <nav
+              id="navbar-default"
+              className={`${
+                isOpen ? "block" : "hidden"
+              } md:flex md:flex-row md:items-end md:justify-center md:flex-row`}
+            >
+              <ul className="space-y-2 list-none text-xs text-gray-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
                 <li>
                   <a
                     href="https://lexingtonthemes.com/"
-                    class="hover:text-white shrink-0"
+                    className="text-white shrink-0"
                   >
-                    Events
+                    Astro Themes
                   </a>
                 </li>
                 <li>
-                  <a href="#work" class="hover:text-white shrink-0">
-                    {" "}
-                    Team
+                  <a href="#work" className="hover:text-white shrink-0">
+                    Work
                   </a>
                 </li>
                 <li>
-                  <a href="#how" class="hover:text-white shrink-0">
-                    {" "}
-                    Blog
+                  <a href="#how" className="hover:text-white shrink-0">
+                    How it works
                   </a>
                 </li>
                 <li>
-                  <Link href="/alumni" class="hover:text-white shrink-0">
-                    {" "}
-                    alumni
-                  </Link>
+                  <a href="#pricing" className="hover:text-white shrink-0">
+                    Plans
+                  </a>
                 </li>
-
-                <li class="shrink-0">
+                <li>
+                  <a href="#faq" className="hover:text-black shrink-0">
+                    Faq
+                  </a>
+                </li>
+                <li className="shrink-0">
                   <a
-                    href="https://github.com/Shubham-Rasal/wec-nitk-website"
-                    class="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-slate-400 bg-white/5 hover:bg-transparent text-slate-200 duration-200 focus:ring-offset-2 hover:text-white inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
+                    href="https://github.com/michael-andreuzza/minimalstudio"
+                    className="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-black bg-black/5 hover:bg-transparent text-white duration-200 focus:ring-offset-2 hover:text-black inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
                   >
                     GitHub
                   </a>
@@ -88,5 +109,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
