@@ -7,7 +7,7 @@ const Navbar = () => {
         <div class="w-full mx-auto">
           <div
             x-data="{ open: false }"
-            class="relative flex flex-col w-full p-1 lg:p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-zinc-500 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+            class="relative flex flex-col w-full p-1 lg:p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-white backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
           >
             <div class="flex flex-row items-center justify-between md:justify-start">
               <a
@@ -17,7 +17,7 @@ const Navbar = () => {
               >
                 WEC
               </a>
-              <button class="inline-flex items-center justify-center p-2 text-zinc-200 hover:text-cyan-300 focus:outline-none focus:text-black md:hidden">
+              <button class="inline-flex items-center justify-center p-2 text-zinc-200 hover:text-primary-blue focus:outline-none focus:text-black md:hidden">
                 <svg
                   class="w-6 h-6"
                   stroke="currentColor"
