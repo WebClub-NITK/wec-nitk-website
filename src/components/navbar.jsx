@@ -1,13 +1,13 @@
 import React from "react";
-
+import Link from "next/link";
 const Navbar = () => {
   return (
     <div class="fixed top-4 inset-x-0 z-50">
-      <div class="max-w-2xl mx-auto px-8">
+      <div class="max-w-2xl mx-auto lg:px-8 px-4">
         <div class="w-full mx-auto">
           <div
             x-data="{ open: false }"
-            class="relative flex flex-col w-full p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-zinc-500 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+            class="relative flex flex-col w-full p-1 lg:p-3 mx-auto bg-transparent opacity-90 ring-1 uppercase ring-zinc-500 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
           >
             <div class="flex flex-row items-center justify-between md:justify-start">
               <a
@@ -62,6 +62,12 @@ const Navbar = () => {
                     {" "}
                     Blog
                   </a>
+                </li>
+                <li>
+                  <Link href="/alumni" class="hover:text-white shrink-0">
+                    {" "}
+                    alumni
+                  </Link>
                 </li>
 
                 <li class="shrink-0">
