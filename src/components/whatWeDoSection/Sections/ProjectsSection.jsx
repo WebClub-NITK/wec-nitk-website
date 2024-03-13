@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function ProjectsSection() {
     return (
       <>
-        <div className="sm:flex items-center justify-around w-screen lg:px-24">
+        <div className="relative sm:flex items-center justify-around w-screen lg:px-24">
           <div className="sm:w-1/2 p-10">
             <div className="image object-center text-center">
-              <Image src="/whatwedoIllustrations/projects-min.png" className="ml-auto" width="1080" height="1080" />
+              <Image src="/whatwedoIllustrations/projects-min.png" alt="projects" className=" ml-auto transition-transform" width="1080" height="1080" />
             </div>
           </div>
           <div className="sm:w-1/2 p-5">
