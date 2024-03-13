@@ -13,7 +13,7 @@ export default function HorizontalScrollCarousel({ children }) {
 
   return (
     <section ref={targetRef} className="relative w-screen h-[600vh] bg-opacity-0">
-      <div className="sticky top-0 flex h-screen items-center  ">
+      <div className="sticky top-0 flex h-screen items-center  overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4 ">
             {children}
         </motion.div>
