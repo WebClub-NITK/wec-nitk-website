@@ -6,7 +6,7 @@ export default function MentorShipSection() {
         <div className="sm:flex items-center justify-around w-screen lg:px-24 ">
           <div className="sm:w-1/2 p-10">
             <div className="image object-center text-center">
-            <Image src="/whatwedoIllustrations/mentorship.svg" className="ml-auto" width="1280" height="1280" />
+            <Image src="/whatwedoIllustrations/mentorship-min.png" className="ml-auto" width="1080" height="1080" />
             </div>
           </div>
           <div className="sm:w-1/2 p-5">
