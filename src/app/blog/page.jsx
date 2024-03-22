@@ -3,6 +3,7 @@ import Card from '@/components/blogs/Card'
 import SearchAndFilter from '@/components/blogs/SearchAndFilter';
 import Blog_Modal from '@/components/blogs/Blog_Modal'
 import {Blogs} from '@/lib/blogStaticData'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 
 const page = () => {
@@ -37,6 +38,7 @@ const page = () => {
   //Fetching Blogs Based on Filter
   const fetchBlogByFilter=()=>{
     let resultsText="";
+    
     if(selectedCategory===null && typedInput===''){
       setBlogs(allBlogs)
     }
@@ -130,11 +132,15 @@ const page = () => {
           {blogs.length>0?<div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               {blogs.map((blog)=>(
                   <React.Fragment key={blog.id}>
+                    <Link href={`/blog/${blog.id}`}>
+                      <>
                       <Card 
                         blog={blog} 
-                        setModal={setModal} 
+                        // setModal={setModal}
                         setBlog={setBlog} 
                       />
+                      </>
+                    </Link>
                   </React.Fragment>
               ))}
           </div>:<div className='text-center text-xl dark:text-white'>
