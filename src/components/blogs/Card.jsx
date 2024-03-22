@@ -1,6 +1,8 @@
 "use client"
 import {useState,useEffect} from 'react'
-const Card = ({blog,setModal,setBlog}) => {
+const Card = ({blog,
+  // setModal,
+  setBlog}) => {
   const [cardWidth,setCardWidth]=useState('1000')
   const [fontSize,setFontSize]=useState('8')
   function truncateText(text, maxWords) {
@@ -36,7 +38,13 @@ const Card = ({blog,setModal,setBlog}) => {
   return (
 <<<<<<< HEAD
       <div className="h-96 mb-4 grid grid-cols-5 mx-8 max-xs:grid-cols-1 max-xs:h-96
+<<<<<<< HEAD
       cursor-pointer" style={{'width':`${cardWidth}px`}} onClick={()=>{setModal(true);setBlog(blog)}}>
+=======
+      cursor-pointer dark:bg-darkCard" style={{'width':`${cardWidth}px`}} 
+      // onClick={()=>{setModal(true);setBlog(blog)}}
+      >
+>>>>>>> c3c9c94 (add-separate-blog-page-and-changed-code-block-plugin)
        <div className="col-span-2 max-xs:col-span-1">
         <img src={blog.cover_image} className="object-cover w-96 h-96 max-xs:h-36 rounded-tl-2xl
          rounded-bl-2xl max-xs:rounded-tl-2xl max-xs:rounded-tr-2xl max-xs:rounded-bl-none"/>

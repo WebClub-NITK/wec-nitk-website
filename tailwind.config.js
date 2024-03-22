@@ -64,7 +64,6 @@ module.exports = {
         950: "#040406",
       },
       white: "#fbfef9",
-<<<<<<< HEAD
       gray: {
         50: "#FAFAFA",
         100: "#F2F2F2",
@@ -91,14 +90,6 @@ module.exports = {
         900: "#04101A",
         950: "#02080D",
       },
-=======
-      gray: "#aaaaaa",
-      grayDark: "#CCD3CA",
-      accent: "#144c7b",
-      "darkBlack":"rgb(24, 26, 27)",
-      "darkCard":"#0d0d0d",
-      "darkBlogText":"#3559E0"
->>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
     },
     extend: {
       width: {

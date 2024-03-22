@@ -1,26 +1,14 @@
 "use client";
-import dynamic from 'next/dynamic';
 import Card from '@/components/blogs/Card'
 import SearchAndFilter from '@/components/blogs/SearchAndFilter';
-<<<<<<< HEAD
-import {blogs} from '@/lib/blogStaticData'
 import Blog_Modal from '@/components/blogs/Blog_Modal'
-import React,{useState} from 'react'
-
-const page = () => {
-  const [modal,setModal]=useState(false)
-  const [blog,setBlog]=useState('')
-  const [selectedCategory,setSelectedCategory] = useState('')
-  const [typedInput,setTypedInput]=useState('')
-  
-  const closeModal=()=>{
-    setModal(false)
-  }
-=======
 import {Blogs} from '@/lib/blogStaticData'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 
 const page = () => {
+    const [modal,setModal]=useState(false)
+    const [blog,setBlog]=useState('')
 
   const [selectedCategory,setSelectedCategory] = useState(null)
   const [typedInput,setTypedInput]=useState('')
@@ -30,6 +18,7 @@ const page = () => {
   const [message,setMessage]=useState('')
 
   const [darkMode,setDarkMode] = useState(false)
+  const [blogsLoaded,setBlogsLoaded] = useState(false)
 
   const toggleTheme = ()=>{
     setDarkMode(!darkMode)
@@ -39,6 +28,7 @@ const page = () => {
   const fetchAllBlogs = ()=>{
     setAllBlogs(Blogs)
     setBlogs(Blogs)
+    setBlogsLoaded(true)
   }
 
   useEffect(()=>{
@@ -50,6 +40,7 @@ const page = () => {
   //Fetching Blogs Based on Filter
   const fetchBlogByFilter=()=>{
     let resultsText="";
+    
     if(selectedCategory===null && typedInput===''){
       setBlogs(allBlogs)
     }
@@ -79,6 +70,7 @@ const page = () => {
         }
       }
       setBlogs(currBlogs)
+      setBlogsLoaded(true)
     }
     setMessage(resultsText)
   }
@@ -87,43 +79,6 @@ const page = () => {
     if(allBlogs.length>0)fetchBlogByFilter()
   },[selectedCategory,typedInput])
 
-<<<<<<< HEAD
->>>>>>> d4087ff (Blogs: Add Search and Filter Logic)
-  return (
-    <div className={`py-8 m-auto`}>
-      <div>
-          {modal && 
-            <Blog_Modal modal={modal} closeModal={closeModal} blog={blog}/>
-            }
-      </div>
-      
-        <h1 className="text-center text-4xl font-bold">Blog</h1>
-        <SearchAndFilter 
-          setSelectedCategory={setSelectedCategory} 
-          typedInput={typedInput} 
-          setTypedInput={setTypedInput}
-          hidden={hidden}
-          message={message}
-        />
-<<<<<<< HEAD
-        <div className='px-16 max-xl:px-16 max-xl:py-4 max-lg:px-4 max-sm:px-4'>
-          <div className="grid grid-cols-2 max-md:grid-cols-1">
-            {blogs.map((blog)=>(
-                <React.Fragment key={blog.id}>
-                    <Card blog={blog} setModal={setModal} setBlog={setBlog}/>
-                </React.Fragment>
-=======
-        <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-            {blogs?.map((blog) => (
-              <React.Fragment key={blog.id}>
-                <Card blog={blog} />
-              </React.Fragment>
->>>>>>> d4087ff (Blogs: Add Search and Filter Logic)
-            ))}
-          </div>
-        </div>
-    </div>
-=======
   const closeModal=()=>{
     setModal(false)
   }
@@ -151,21 +106,32 @@ const page = () => {
   //   };
   // }, []);
 
+  if(!blogsLoaded){
+        return (
+           <div className="mx-auto text-center my-10">
+                <h1 className='text-xl font-semibold'>Loading...</h1>
+            </div>
+        )
+    }
+
+  const light = <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="#e6970f"  class="icon icon-tabler icons-tabler-filled icon-tabler-bulb"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /><path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" /><path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /><path d="M4.893 4.893a1 1 0 0 1 1.32 -.083l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 0 -1.414z" /><path d="M17.693 4.893a1 1 0 0 1 1.497 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7z" /><path d="M14 18a1 1 0 0 1 1 1a3 3 0 0 1 -6 0a1 1 0 0 1 .883 -.993l.117 -.007h4z" /><path d="M12 6a6 6 0 0 1 3.6 10.8a1 1 0 0 1 -.471 .192l-.129 .008h-6a1 1 0 0 1 -.6 -.2a6 6 0 0 1 3.6 -10.8z" /></svg>
+
+  const dark = <svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="#700fe6"  class="icon icon-tabler icons-tabler-filled icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" /></svg>
 
   return (
     <section className={darkMode?"dark":""}>
-        <div className={`px-32 py-8 max-xl:px-8 max-xl:py-4 max-lg:px-20 max-md:px-16 max-sm:px-8 m-auto dark:bg-darkBlack min-h-screen`}>
+        <div className={`py-8 max-xl:px-8 max-xl:py-4 max-lg:px-8 max-md:px-8 max-sm:px-8 m-auto dark:bg-gray-950 min-h-screen`}>
           <div>
               {modal && 
                 <Blog_Modal modal={modal} closeModal={closeModal} blog={blog} darkMode={darkMode}/>
               }
           </div>
           
-          <div className='flex items-center justify-center gap-2'>
-            <h1 className="text-center text-4xl font-bold dark:text-white">Blogs</h1>
+          <div className='mt-10 flex items-end justify-center gap-2'>
+            <h1 className="mt-5 text-center text-4xl font-bold dark:text-white">Blogs</h1>
             <div>
-                <button type="button" onClick={toggleTheme} className='dark:text-white text-3xl'>
-                    {darkMode?"💡":"🌚"}
+                <button type="button" onClick={toggleTheme} className='dark:text-white'>
+                    {darkMode?light:dark}
                 </button>
             </div>
           </div>
@@ -177,14 +143,18 @@ const page = () => {
             message={message}
             darkMode={darkMode}
           />
-          {blogs.length>0?<div className="grid grid-cols-2 gap-4 max-lg:grid-cols-1">
+          {blogs.length>0?<div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               {blogs.map((blog)=>(
                   <React.Fragment key={blog.id}>
+                    <Link href={{pathname:`/blog/${blog.id}`,query:{darkMode}}}>
+                      <>
                       <Card 
                         blog={blog} 
-                        setModal={setModal} 
+                        // setModal={setModal}
                         setBlog={setBlog} 
                       />
+                      </>
+                    </Link>
                   </React.Fragment>
               ))}
           </div>:<div className='text-center text-xl dark:text-white'>
@@ -194,7 +164,6 @@ const page = () => {
           }
       </div>
     </section>
->>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
   );
 }
 

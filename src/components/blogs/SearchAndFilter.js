@@ -43,21 +43,13 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput,hidden,me
 
 
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <section className="max-w-lg mx-auto my-10">
-        <div className='grid grid-cols-1 gap-2 px-2 py-2 sm:grid-cols-2 sm:w-full justify-center items-center bg-light-blue'>
-=======
-    <section className="flex flex-col items-center w-2/3 sm:max-w-lg mx-auto my-10 bg-light-blue">
-=======
     <section className="flex flex-col items-center w-2/3 sm:max-w-lg mx-auto my-10 bg-light-blue dark:bg-darkCard rounded-xl">
->>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
         <div className='grid grid-cols-1 gap-2 px-2 py-2 sm:grid-cols-2 sm:w-full justify-center items-center'>
->>>>>>> 6d7eb83 (Blogs: Add Search Results Text)
             <div>
                 <input type='search' 
                 placeholder='Search 🔍' 
-                className="text-lg rounded-md p-2 focus:outline-none w-full dark:bg-darkBlack dark:text-white"
+                className="text-lg rounded-md p-2 focus:outline-none w-full border-2
+                border-white dark:bg-gray-950 dark:text-white"
                 value={typedInput}
                 onChange={(e)=>{setTypedInput(e.target.value)}} />
             </div>
@@ -68,7 +60,9 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput,hidden,me
                     isSearchable
                     placeholder="Select Category"
                     // styles={customStyles}
-                    className="react-select-container text-lg bg-gray-100 p-2 rounded-md focus:outline-none focus:border-blue-500 fixed-width text-black"
+                    className="react-select-container text-lg bg-gray-100 p-2 
+                    rounded-md focus:outline-none focus:border-primary-500 fixed-width dark:text-black
+                    dark:bg-gray-950"
                     classNamePrefix="react-select"
                     styles={(darkMode)?customStyles:{}}
                 />
