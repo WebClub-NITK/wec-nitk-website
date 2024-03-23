@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -20,11 +20,25 @@ module.exports = {
       "primary-blue": "#0177bd",
       "secondary-blue": "#272838",
       "secondary-text": "#0c3d5e",
-      "white": "#fbfef9",
-      "gray": "#aaaaaa",
-      "accent": "#144c7b",
+      "light-blue": "#f0f3fd",
+      white: "#fbfef9",
+      gray: "#aaaaaa",
+      grayDark: "#CCD3CA",
+      accent: "#144c7b",
+      "darkBlack":"rgb(24, 26, 27)",
+      "darkCard":"#0d0d0d",
+      "darkBlogText":"#3559E0"
     },
     extend: {
+      width: {
+        xl: "28rem",
+        "2xl": "32rem",
+        "3xl": "40rem",
+        "4xl": "60rem",
+      },
+      screens: {
+        xs: "500px",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -42,4 +56,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
