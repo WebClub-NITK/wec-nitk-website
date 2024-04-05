@@ -68,7 +68,7 @@ const Navbar = () => {
                     href="https://lexingtonthemes.com/"
                     className="text-white shrink-0"
                   >
-                    Astro Themes
+                    Blogs
                   </a>
                 </li>
                 <li>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a href="#how" className="hover:text-white shrink-0">
-                    How it works
+                   Teams
                   </a>
                 </li>
                 <li>

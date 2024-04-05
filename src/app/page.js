@@ -7,19 +7,16 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="w-full h-full">
-      <section className="flex h-screen flex-col items-start justify-center  bg-secondary-800">
-        <BackgroundBeams />
-        <div className="relative w-full flex flex-col h-full justify-center items-center">
+      <section className="flex h-screen flex-col items-start justify-start md:justify-center  bg-secondary-800">
+        <BackgroundBeams className="hidden md:block" />
+        <div className="relative w-full flex flex-col h-1/2 md:h-full justify-start md:justify-center items-center">
           <Image
-            className="absolute z-0  object-contain bg-transparent animate-pulse"
+            className="absolute z-0 object-contain bg-transparent animate-pulse"
             src="/logo.svg"
             alt="illustration"
-            width={1000}
-            height={1000}
+            width={10000}
+            height={10000}
           />
-          {/* <Logo 
-          className="absolute z-0 opacity-95 object-contain grow"
-          /> */}
           <div
             className=" absolute h-24 w-full 
           bg-secondary-800 z-10 opacity-85 text-xl
