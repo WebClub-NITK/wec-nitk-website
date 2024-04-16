@@ -42,10 +42,11 @@ export const EvervaultCard = ({ text, className }) => {
           randomString={randomString}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative h-44 w-44  rounded-full flex items-center justify-center text-white font-bold text-4xl">
+          <div className="relative h-40 w-40  rounded-full flex items-center justify-center text-white font-bold text-4xl">
             <div className="absolute w-full h-full  blur-sm rounded-full" />
               <Image
-                src="/logo.svg"
+                src="/test_profile.jpg"
+                className="rounded-full"
                 alt="illustration"
                 width={10000}
                 height={10000}
