@@ -72,7 +72,7 @@ export default function EventModal ({ event, initial, handleClose }) {
                 transition = {{ ease: "easeInOut" }}
                 onClick = {e => e.stopPropagation()}
             >
-                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-screen sm:p-9 pb-7 shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
+                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-screen sm:p-9 pb-[calc(28px_+_100vh_-_100svh)] shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
                     {/* close button */}
                     <IoIosCloseCircle onClick={handleClose} size={40} className="fixed top-3 right-3 sm:hidden bg-white rounded-full"/>
 
@@ -91,11 +91,11 @@ export default function EventModal ({ event, initial, handleClose }) {
                             </time>
                             {location ? <p className="flex gap-2 items-center mb-3 text-sm"><FaLocationDot className="ml-[2px]" size={16} />{location}</p> : null}
                             <div className="flex">
-                                <div className={link || cems_link ? "border-r-[1px] border-r-gray border-dotted pr-6 py-2" : ""}>
+                                <div className={link || cems_link ? "border-r-[1px] border-r-gray-950 border-dotted pr-5 py-2" : ""}>
                                     <EventType type={event_type} />
                                     <p className="flex gap-2 mb-1 items-center text-sm"><FaSpider size={20}/>{sig}</p>
                                 </div>
-                                <div className="py-3 pl-2">
+                                <div className="py-3 pl-4">
                                     {link ? <p className="flex gap-2 items-center mb-3 text-sm"><MdVideoChat size={19}/><Link className="text-primary-blue underline" href={link}>Attend here</Link></p> : null}
                                     {cems_link ? <p className="flex gap-2 items-center text-sm"><RiCalendarEventFill size={19} /><Link className="text-primary-blue underline" href={cems_link}>View on CEMS</Link></p> : null}
                                 </div>
