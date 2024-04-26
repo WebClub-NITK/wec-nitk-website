@@ -1,11 +1,19 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import EventCard from "./EventCard"
 import EventModal from "./EventModal"
 import { AnimatePresence, motion } from "framer-motion"
 
 export default function ExpandableEventCard ({ event }) {
     let [ modalInitial, setModalInitial ] = useState(false)
+
+    useEffect(() => {
+        if (modalInitial) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "auto"
+        }
+    }, [modalInitial])
 
     /**
      * @type {(rect: DOMRect) => void} clickHandler 

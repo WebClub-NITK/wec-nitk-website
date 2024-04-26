@@ -59,7 +59,7 @@ export default function EventModal ({ event, initial, handleClose }) {
 
     return (
         <motion.div 
-            className="fixed left-0 top-0 h-screen w-screen z-10 flex justify-center items-center"
+            className="fixed left-0 top-0 h-screen w-screen z-50 flex justify-center items-center"
             animate = {{ backgroundColor: "#000000aa" }}
             exit = {{ backgroundColor: "#00000000" }}
             onClick = {handleClose}
@@ -72,9 +72,9 @@ export default function EventModal ({ event, initial, handleClose }) {
                 transition = {{ ease: "easeInOut" }}
                 onClick = {e => e.stopPropagation()}
             >
-                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-screen sm:p-9 pb-7 shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
+                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-svh sm:p-9 pb-7 shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
                     {/* close button */}
-                    <IoIosCloseCircle onClick={handleClose} size={40} className="absolute top-3 right-3 sm:hidden bg-white rounded-full"/>
+                    <IoIosCloseCircle onClick={handleClose} size={40} className="fixed top-3 right-3 sm:hidden bg-white rounded-full"/>
 
 
                     <div className="flex flex-col sm:flex-row gap-7">
