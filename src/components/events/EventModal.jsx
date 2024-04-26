@@ -72,7 +72,7 @@ export default function EventModal ({ event, initial, handleClose }) {
                 transition = {{ ease: "easeInOut" }}
                 onClick = {e => e.stopPropagation()}
             >
-                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-svh sm:p-9 pb-7 shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
+                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-screen sm:p-9 pb-7 shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
                     {/* close button */}
                     <IoIosCloseCircle onClick={handleClose} size={40} className="fixed top-3 right-3 sm:hidden bg-white rounded-full"/>
 
