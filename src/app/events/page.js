@@ -1,6 +1,5 @@
 import { demoEvents } from "@/lib/eventsDemoData";
-import EventCard from "@/components/EventCard";
-import ExpandableEventCard from "@/components/ExpandableEventCard"
+import ExpandableEventCard from "@/components/events/ExpandableEventCard"
 
 export default function EventsPage() {
     return (

@@ -1,10 +1,13 @@
 "use client"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { HiOutlineStatusOnline } from "react-icons/hi";
 import { FaLocationDot, FaSpider } from "react-icons/fa6";
-import { useEffect } from "react"
+import { RiCalendarEventFill } from "react-icons/ri";
+import { MdVideoChat } from "react-icons/md";
 import { CalendarClock } from "lucide-react"
+import { useEffect } from "react"
+import EventType from "./EventType"
+import Link from "next/link"
 
 export default function EventModal ({ event, initial, handleClose }) {
 
@@ -55,22 +58,22 @@ export default function EventModal ({ event, initial, handleClose }) {
 
     return (
         <motion.div 
-            className="fixed left-0 top-0 h-screen w-screen z-10"
+            className="fixed left-0 top-0 h-screen w-screen z-10 flex justify-center items-center"
             animate = {{ backgroundColor: "#000000aa" }}
             exit = {{ backgroundColor: "#00000000" }}
             onClick = {handleClose}
         >
             <motion.div 
-                className="bg-white rounded-lg shadow-lg max-w-[90vw] fixed overflow-hidden flex justify-center items-top"
+                className="bg-white rounded-lg shadow-lg max-w-[90vw] overflow-hidden flex justify-center items-top"
                 initial = {{ ...initial }}
-                animate = {{ width: "max(800px, 70vw)", height: "70vh", top: "50%", left: "50%", x: "-50%", y: "-50%" }}
+                animate = {{ width: "max(800px, 70vw)", height: "70vh", x: 0, y: 0}}
                 exit = {{ opacity: 0, scale: 0.6 }}
                 transition = {{ ease: "easeInOut" }}
                 onClick = {e => e.stopPropagation()}
             >
                 <div className="w-[max(800px,70vw)] h-[70vh] p-7 shrink-0 max-w-[90vw]">
                     <div className="flex flex-col sm:flex-row gap-7">
-                        <Image src={event.cover_image} height={200} width={200} alt="" className="w-40 h-40 sm:w-48 sm:h-48 rounded-lg" />
+                        <Image src={cover_image} height={200} width={200} alt="" className="w-40 h-40 sm:w-48 sm:h-48 rounded-lg" />
                         <div>
                             <h1 className="font-bold text-xl mb-2 md:text-2xl">{title}</h1>
                         
@@ -81,13 +84,29 @@ export default function EventModal ({ event, initial, handleClose }) {
                                 </div>
                                 <span>{time}</span>
                             </time>
-                            <p className="flex items-center mb-1 sm:mb-2 text-sm sm:text-base"><FaLocationDot />&nbsp;{location}</p>
-                            <p className="flex items-center mb-1 sm:mb-2 text-sm sm:text-base"><HiOutlineStatusOnline size={25}/>&nbsp;{event_type}</p>
-                            <p className="flex items-center mb-1 sm:mb-2 text-sm sm:text-base"><FaSpider size={20}/>&nbsp;{sig}</p>
+                            {location ? <p className="flex gap-2 items-center mb-3 text-sm"><FaLocationDot className="ml-[2px]" size={16} />{location}</p> : null}
+                            <div className="flex">
+                                <div className={link || cems_link ? "border-r-[1px] border-r-gray border-dotted pr-6 py-2" : ""}>
+                                    <EventType type={event_type} />
+                                    <p className="flex gap-2 mb-1 items-center text-sm"><FaSpider size={20}/>{sig}</p>
+                                </div>
+                                <div className="py-3 pl-2">
+                                    {link ? <p className="flex gap-2 items-center mb-3 text-sm"><MdVideoChat size={19}/><Link className="text-primary-blue underline" href={link}>Attend here</Link></p> : null}
+                                    {cems_link ? <p className="flex gap-2 items-center text-sm"><RiCalendarEventFill size={19} /><Link className="text-primary-blue underline" href={cems_link}>View on CEMS</Link></p> : null}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <br />
-                    <p className="text-lg text-justify">{body}</p>
+                    <p className="text-base text-justify">{body}</p>
+                    {resources ? 
+                        <div>
+                            <h2 className="font-bold text-lg mt-4 md:text-xl">Resources</h2>
+                            <ul className="list-disc ml-6 mt-2">
+                                {resources.map(r => <li>{r}</li>)}
+                            </ul>
+                        </div>
+                    : null}
                 </div>
             </motion.div>
         </motion.div>

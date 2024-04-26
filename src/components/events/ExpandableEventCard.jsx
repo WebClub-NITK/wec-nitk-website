@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react"
 import EventCard from "./EventCard"
-import { AnimatePresence, motion } from "framer-motion"
 import EventModal from "./EventModal"
+import { AnimatePresence, motion } from "framer-motion"
 
 export default function ExpandableEventCard ({ event }) {
     let [ modalInitial, setModalInitial ] = useState(false)
@@ -12,8 +12,8 @@ export default function ExpandableEventCard ({ event }) {
     */
     function clickHandler (rect) {
         setModalInitial({
-            left: rect.x,
-            top: rect.y,
+            x: `calc(50% - 50vw + ${rect.x}px)`,
+            y: `calc(50% - 50vh + ${rect.y}px)`,
             width: rect.width,
             height: rect.height
         })
