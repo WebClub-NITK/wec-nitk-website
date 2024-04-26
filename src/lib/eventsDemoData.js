@@ -19,9 +19,8 @@ export const demoEvents = [
         location: 'Nitk LHC-A',
         link: 'https://www.google.com',
         cems_link: 'https://www.google.com',
-        body: 'Dive deep into the world of algorithms at the Algorithm Workshop 2024. This hands-on workshop will cover a range of algorithms, from fundamentals to advanced techniques.',
+        body: 'Dive deep into the world of algorithms at the Algorithm Workshop 2024. This hands-on workshop will cover a range of algorithms, from fundamentals to advanced techniques. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet vel eos eaque facilis, soluta natus adipisci exercitationem nisi nesciunt ullam molestias. Deleniti unde quasi a illo repellendus debitis libero porro.',
         cover_image: 'https://source.unsplash.com/400x400/?algorithms',
-        resources: ['Interactive Coding Sessions', 'Q&A with Experts', 'Algorithm Challenges'],
     },
     {
         id: 3,
@@ -70,9 +69,9 @@ export const demoEvents = [
         location: 'Nitk CDS, National Institute of Technology, Karnataka, Surathkal',
         link: 'https://www.google.com',
         cems_link: 'https://www.google.com',
-        body: 'Explore the forefront of quantum computing at the Quantum Algorithms Symposium 2024. Dive into discussions on quantum algorithms, participate in live experiments, and gain insights into the future of computation.',
+        body: 'Explore the forefront of quantum computing at the Quantum Algorithms Symposium 2024. Dive into discussions on quantum algorithms, participate in live experiments, and gain insights into the future of computation.  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet vel eos eaque facilis, soluta natus adipisci exercitationem nisi nesciunt ullam molestias. Deleniti unde quasi a illo repellendus debitis libero porro.',
         cover_image: 'https://source.unsplash.com/400x400/?quantum-computing',
-        resources: ['Quantum Coding Challenges', 'Expert Panels', 'Hands-on Quantum Experiments'],
+        resources: ['Quantum Coding Challenges', 'Expert Panels', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments', 'Hands-on Quantum Experiments'],
     },
     {
         id: 7,

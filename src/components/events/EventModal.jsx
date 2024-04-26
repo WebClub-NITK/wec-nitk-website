@@ -5,6 +5,7 @@ import { FaLocationDot, FaSpider } from "react-icons/fa6";
 import { RiCalendarEventFill } from "react-icons/ri";
 import { MdVideoChat } from "react-icons/md";
 import { CalendarClock } from "lucide-react"
+import { IoIosCloseCircle } from "react-icons/io";
 import { useEffect } from "react"
 import EventType from "./EventType"
 import Link from "next/link"
@@ -64,17 +65,21 @@ export default function EventModal ({ event, initial, handleClose }) {
             onClick = {handleClose}
         >
             <motion.div 
-                className="bg-white rounded-lg shadow-lg max-w-[90vw] overflow-hidden flex justify-center items-top"
+                className="bg-white sm:rounded-lg shadow-lg overflow-hidden flex justify-center items-top"
                 initial = {{ ...initial }}
-                animate = {{ width: "max(800px, 70vw)", height: "70vh", x: 0, y: 0}}
+                animate = {{ width: "initial", height: "initial", x: 0, y: 0}}
                 exit = {{ opacity: 0, scale: 0.6 }}
                 transition = {{ ease: "easeInOut" }}
                 onClick = {e => e.stopPropagation()}
             >
-                <div className="w-[max(800px,70vw)] h-[70vh] p-7 shrink-0 max-w-[90vw]">
+                <div className="w-[max(800px,70vw)] sm:max-h-[80vh] sm:h-fit min-h-[55vh] h-screen sm:p-9 pb-7 shrink-0 sm:max-w-[90vw] max-w-full overflow-scroll relative">
+                    {/* close button */}
+                    <IoIosCloseCircle onClick={handleClose} size={40} className="absolute top-3 right-3 sm:hidden bg-white rounded-full"/>
+
+
                     <div className="flex flex-col sm:flex-row gap-7">
-                        <Image src={cover_image} height={200} width={200} alt="" className="w-40 h-40 sm:w-48 sm:h-48 rounded-lg" />
-                        <div>
+                        <Image src={cover_image} height={200} width={200} alt="" className="w-full h-56 object-cover sm:w-48 sm:h-48 sm:rounded-lg" />
+                        <div className="sm:p-0 px-7">
                             <h1 className="font-bold text-xl mb-2 md:text-2xl">{title}</h1>
                         
                             <time className="text-xs sm:text-sm font-bold text-primary-blue flex items-center mb-4">
@@ -98,9 +103,9 @@ export default function EventModal ({ event, initial, handleClose }) {
                         </div>
                     </div>
                     <br />
-                    <p className="text-base text-justify">{body}</p>
+                    <p className="text-base text-justify sm:p-0 px-7">{body}</p>
                     {resources ? 
-                        <div>
+                        <div className="sm:p-0 px-7">
                             <h2 className="font-bold text-lg mt-4 md:text-xl">Resources</h2>
                             <ul className="list-disc ml-6 mt-2">
                                 {resources.map(r => <li>{r}</li>)}
