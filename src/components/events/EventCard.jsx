@@ -32,7 +32,7 @@ export default function EventCard({ event, clickHandler = () => null }) {
 
   return (
     <article 
-      className="rounded-lg overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300 m-4 bg-white dark:bg-darkCard cursor-pointer"
+      className="rounded-lg overflow-hidden shadow transition hover:shadow-lg hover:-translate-y-2 duration-300 m-4 bg-secondary-600 cursor-pointer"
       onClick={() => clickHandler(cardRef.current.getBoundingClientRect())}
       ref={cardRef} 
     >
@@ -47,9 +47,9 @@ export default function EventCard({ event, clickHandler = () => null }) {
         />
       </div>
 
-      <div className="bg-white p-4 flex flex-col">
+      <div className=" p-4 flex flex-col">
         {/* DATE */}
-        <time className="py-2 text-xs font-bold text-primary-blue flex justify-between">
+        <time className="py-2 text-xs font-bold text-primary-200 flex justify-between">
           <div className="flex items-center">
             <CalendarClock size={22} className="inline mr-2" />
             <span>{date}</span>
@@ -58,7 +58,7 @@ export default function EventCard({ event, clickHandler = () => null }) {
         </time>
 
         {/* TITLE */}
-        <h3 className="mt-1 text-lg text-gray-900 ">
+        <h3 className="mt-1 text-lg text-white ">
           {title}
         </h3>
 
