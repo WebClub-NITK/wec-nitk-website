@@ -60,12 +60,12 @@ export default function EventModal ({ event, initial, handleClose }) {
     return (
         <motion.div 
             className="fixed left-0 top-0 h-screen w-screen z-50 flex justify-center items-center"
-            animate = {{ backgroundColor: "#000000aa" }}
-            exit = {{ backgroundColor: "#00000000" }}
+            animate = {{ backgroundColor: "#111111dd" }}
+            exit = {{ backgroundColor: "#11111100" }}
             onClick = {handleClose}
         >
             <motion.div 
-                className="bg-secondary-600 sm:rounded-lg shadow-lg overflow-hidden flex justify-center items-top"
+                className="bg-secondary-600 sm:rounded-lg sm:border-[1px] border-accent-200 overflow-hidden flex justify-center items-top"
                 initial = {{ ...initial }}
                 animate = {{ width: "initial", height: "initial", x: 0, y: 0}}
                 exit = {{ opacity: 0, scale: 0.6 }}
