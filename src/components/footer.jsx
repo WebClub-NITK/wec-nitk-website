@@ -1,142 +1,36 @@
 import React from "react";
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 const Footer = () => {
   return (
-    <footer className="w-full  bg-secondary-800 dark:bg-zinc-100">
+    <footer className="w-full  dark:bg-secondary-800 backdrop-blur-xl backdrop-filter">
       <div class="mx-auto w-full max-w-screen-xl">
-        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
-              Company
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class=" hover:underline">
-                  About
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Careers
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Brand Center
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
-              Help center
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Discord Server
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Twitter
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Facebook
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-white uppercase ">
-              Legal
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Privacy Policy
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Licensing
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Terms &amp; Conditions
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
-              Download
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  iOS
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Android
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  Windows
-                </a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">
-                  MacOS
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="px-4 py-6 bg-secondary-800 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-          <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+        <div class="px-4 py-6 bg-secondary-800 dark:bg-secondary-700 md:flex md:items-center md:justify-between">
+          <span class="text-sm  dark:text-primary-100 sm:text-center">
             Made with ❤️ by Web Enthusiasts' Club, NITK
           </span>
           <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
             {/* <div className="flex justify-center space-x-4 mt-2"> */}
-            <Link aria-label="Facebook page" className="text-white" href="#">
+            <Link aria-label="Facebook page" className="text-primary-100" href="#">
               <FacebookIcon className="h-6 w-6" />
             </Link>
-            <Link aria-label="Twitter profile" className="text-white" href="#">
+            <Link aria-label="Twitter profile" className="text-primary-100" href="#">
               <TwitterIcon className="h-6 w-6" />
             </Link>
             <Link
               aria-label="Instagram profile"
-              className="text-white"
+              className="text-primary-100"
               href="#"
             >
               <InstagramIcon className="h-6 w-6" />
             </Link>
-            <Link aria-label="LinkedIn profile" className="text-white" href="#">
+            <Link aria-label="LinkedIn profile" className="text-primary-100" href="#">
               <LinkedinIcon className="h-6 w-6" />
             </Link>
           </div>
           {/* </div> */}
         </div>
       </div>
+      {/* Alternate footer */}
       {/* <div className="flex flex-col items-center text-center">
         <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-white">
           Keep in touch

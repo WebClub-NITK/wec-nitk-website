@@ -60,9 +60,9 @@ const Navbar = () => {
               id="navbar-default"
               className={`${
                 isOpen ? "block" : "hidden"
-              } md:flex md:flex-row md:items-end md:justify-center md:flex-row`}
+              } md:flex md:items-end md:justify-center md:flex-row`}
             >
-              <ul className="space-y-2 list-none text-xs text-gray-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
+              <ul className="space-y-4 py-1 list-none text-xs text-gray-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
                 <li>
                   <a
                     href="https://lexingtonthemes.com/"
@@ -81,16 +81,7 @@ const Navbar = () => {
                    Teams
                   </a>
                 </li>
-                <li>
-                  <a href="#pricing" className="hover:text-white shrink-0">
-                    Plans
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" className="hover:text-black shrink-0">
-                    Faq
-                  </a>
-                </li>
+                
                 <li className="shrink-0">
                   <a
                     href="https://github.com/michael-andreuzza/minimalstudio"
