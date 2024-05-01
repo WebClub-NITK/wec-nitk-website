@@ -14,12 +14,12 @@ export function AboutUsSection() {
 
     
 <div className="flex flex-col p-2 m-2 ">
-
-    <h1 className="text-2xl font-thin text-secondary-800 p-9 mb-10 mx-auto">WE ARE A BUNCH OF</h1>
-
-    
-
+    <h1 className="text-2xl font-thin text-primary-50 p-9 mb-10 mx-auto">STATS SECTION</h1>
 </div>
 
   )
 }
+
+
+
+

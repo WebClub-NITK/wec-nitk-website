@@ -10,7 +10,6 @@ import { WhatWeDoSection } from "@/components/what-we-do";
 export default function Home() {
   return (
     <main className="w-full h-full bg-secondary-800">
-
       <section className=" flex h-screen flex-col items-start justify-start md:justify-center bg-secondary-800">
         <BackgroundBeams className="hidden md:block" />
         <div className="mt-16 md:mt-20 w-full flex flex-col md:h-full justify-center md:justify-center items-center bg-transparent">
@@ -30,19 +29,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="bg-primary-50 text-white h-fit w-full border-1 border-secondary-700 rounded-t-3xl rounded-b-3xl">
+      <section className="bg-white text-white h-fit w-full border-1 border-secondary-700 rounded-t-3xl rounded-b-3xl">
         <WhatWeDoSection/>
       </section>
-
-
-      <section className="bg-secondary-800 text-white h-fit p-12 w-full border-1 border-secondary-700">
+      <section className="bg-secondary-800 text-white h-fit p-5 w-full border-1 border-secondary-700">
         <AboutUsSection />
       </section>
-
-      
-
-
     </main>
   );
 }
