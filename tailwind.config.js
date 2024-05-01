@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const svgToDataUri = require("mini-svg-data-uri");
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
@@ -13,7 +14,19 @@ module.exports = {
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
   ],
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors,
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "bg-dot-thick": (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+            )}")`,
+          }),
+        },
+        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },],
   prefix: "",
   theme: {
     container: {
@@ -26,7 +39,7 @@ module.exports = {
     colors: {
       primary: {
         50: "#E1F4FF",
-        100: "#BDE7FF",
+        100: "#B3D3F6",
         200: "#80D0FE",
         300: "#3EB8FE",
         400: "#01A1FE",

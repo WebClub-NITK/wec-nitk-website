@@ -7,19 +7,19 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-
+  // text-[#b3d3f6]
   return (
     <div className="fixed top-4 inset-x-0 z-50">
       <div className="max-w-2xl mx-auto px-8">
         <div className="w-full mx-auto">
-          <div className="relative flex flex-col w-full lg:p-3 p-1 mx-auto ring-1 uppercase ring-gray-600 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row">
+          <div className="relative flex flex-col w-full lg:p-3 p-1 mx-auto ring-1 uppercase ring-gray-700 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row bg-secondary-900/50">
             <div className="flex flex-row items-center justify-between md:justify-start">
               <a
-                className="text-white hover:text-white/50 gap-4 items-center tracking-tighter inline-flex font-bold ml-2 text-xl"
+                className="text-primary-100  hover:text-primary-50 gap-4 items-center inline-flex font-bold ml-2 text-xl transition-all ease-in-out duration-300"
                 href="/"
-                title="link to main page"
+                style={{ textTransform: 'none' }}
               >
-                WEC
+                WebClub
               </a>
               <button
                 onClick={toggleNavbar}
