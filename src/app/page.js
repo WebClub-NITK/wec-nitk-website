@@ -6,6 +6,8 @@ import {
   AboutUsSection,
 } from "@/components/about-us";
 import { WhatWeDoSection } from "@/components/what-we-do";
+import Section from "@/components/section-framer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -21,12 +23,19 @@ export default function Home() {
                 src="/logo.svg"
                 alt="illustration"
             />
-          
-          <div
+          <Section>
+
+          <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+
             className=" h-12 w-full bg-secondary-800 z-10 opacity-85 text-2xl text-primary-50 lg:text-7xl font-bold text-center flex justify-center items-center mb-10"
           >
             Web Enthusiasts`Club NITK
-          </div>
+          </motion.div>
+
+          </Section>
         </div>
       </section>
       <section className="bg-white text-white h-fit w-full border-1 border-secondary-700 rounded-t-3xl rounded-b-3xl">
