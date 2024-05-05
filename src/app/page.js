@@ -7,7 +7,6 @@ import {
 } from "@/components/about-us";
 import { WhatWeDoSection } from "@/components/what-we-do";
 import Section from "@/components/section-framer";
-import { motion } from "framer-motion";
 
 export default function Home() {
   return (
