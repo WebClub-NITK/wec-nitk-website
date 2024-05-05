@@ -25,27 +25,25 @@ export function WhatWeDoSection() {
     >
       <Section>
         <div className="flex flex-col p-2 m-2 pb-10">
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className={`text-lg font-light text-secondary-800/50 p-9 mx-auto ${scrollYProgress}`}>OUR ALUMNI'S ARE CURRENTLY AT</motion.h1>
+            className={`md:text-lg text-center text-xs font-medium md:font-light text-secondary-800/50 p-9 mx-auto ${scrollYProgress}`}>OUR ALUMNI'S ARE CURRENTLY AT</motion.h1>
 
-          <div className="h-fit flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden ring-1 ring-secondary-400/50 rounded-full p-5 w-10/12 mx-auto">
+          <div className="h-fit flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden ring-1 ring-secondary-400/50 rounded-full md:p-5 md:w-10/12 w-11/12 mx-auto">
             <SideScroll
               items={press}
               direction="left"
               speed="normal"
             />
           </div>
-
-
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className=" text-secondary-800 font-semibold text-4xl p-9 mt-[90px] mb-10 mx-auto">
+            className=" text-secondary-800 font-semibold text-center text-2xl md:text-4xl p-9 mt-[90px] mb-10 mx-auto">
             Things we do in <span className="text-primary-400">WebClub🕸️</span>
           </motion.h1>
 
