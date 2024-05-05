@@ -13,7 +13,7 @@ export default function Home() {
     <main className="w-full h-full bg-secondary-800">
       <section className="flex h-screen flex-col items-start justify-start md:justify-center bg-secondary-800">
         <BackgroundBeams className="hidden md:block" />
-        <div className="mt-[200px] md:mt-20 w-full flex flex-col md:h-full justify-center items-center bg-transparent ">
+        <div className="mt-[170px] md:mt-20 w-full flex flex-col md:h-full justify-center items-center bg-transparent ">
           
           {/* <WebClubOrbitingCircles/> */}
 

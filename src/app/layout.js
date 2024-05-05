@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer, { MinimalSocialsFooter } from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "WEC | NITK",
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={inter.className + "bg-white dark no-scrollbar"}>
+      <body className={"bg-white dark no-scrollbar"}>
         <Navbar />
         {children}
         <Footer />
