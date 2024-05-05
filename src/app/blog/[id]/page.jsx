@@ -38,17 +38,17 @@ const page = ({params}) => {
 
   return (
     <section className={darkMode==="true"?"dark":""}>
-        <div className='flex flex-col items-center justify-center dark:bg-darkBlack'>
+        <div className='flex flex-col pt-20 items-center justify-center dark:bg-gray-950'>
             <h1 className='py-4 text-align text-4xl max-sm:text-xl font-bold dark:text-white'>
                 {blog.title}
             </h1>
 
             <div className='mt-8 px-96 max-xl:px-60 max-lg:px-48 max-md:px-40 max-sm:px-20'>
                 <div className='w-full p-4 border-solid border-l-2 border-secondary-blue'>
-                    <p className='text-xl max-lg:text-lg max-md:text-md  dark:text-gray'>{blog.subheading}</p>
+                    <p className='text-xl max-lg:text-lg max-md:text-md  dark:text-white'>{blog.subheading}</p>
                     <div className='flex align-items mt-4'>
                         <span className='mr-4  dark:text-white'>{blog.author}</span>
-                        <span className='text-primary-blue font-bold'>#{blog.sig}</span>
+                        <span className='dark:text-primary-500 font-bold'>#{blog.sig}</span>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const page = ({params}) => {
 
             <div className='mt-8 px-48 max-xl:px-8 max-lg:px-8 max-md:px-8 max-sm:px-4 dark:text-white'>
                 <img src={blog.cover_image} className='m-auto h-96 w-2/3 rounded-xl'></img>
-                <div className='mt-8 p-4 bg-light-blue w-full rounded-xl dark:bg-darkCard'>
+                <div className='mt-8 p-4 bg-light-blue w-full rounded-xl border-2 border-white dark:bg-darkCard'>
                     <Markdown
                     children={blog.body}
                     className='mt-5 px-4 text-xl max-xl:text-lg max-sm:text-md'

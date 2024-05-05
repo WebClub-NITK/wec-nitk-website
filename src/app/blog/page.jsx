@@ -120,7 +120,7 @@ const page = () => {
 
   return (
     <section className={darkMode?"dark":""}>
-        <div className={`py-8 max-xl:px-8 max-xl:py-4 max-lg:px-8 max-md:px-8 max-sm:px-8 m-auto dark:bg-darkBlack min-h-screen`}>
+        <div className={`py-8 max-xl:px-8 max-xl:py-4 max-lg:px-8 max-md:px-8 max-sm:px-8 m-auto dark:bg-gray-950 min-h-screen`}>
           <div>
               {modal && 
                 <Blog_Modal modal={modal} closeModal={closeModal} blog={blog} darkMode={darkMode}/>

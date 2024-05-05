@@ -48,7 +48,8 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput,hidden,me
             <div>
                 <input type='search' 
                 placeholder='Search 🔍' 
-                className="text-lg rounded-md p-2 focus:outline-none w-full dark:bg-darkBlack dark:text-white"
+                className="text-lg rounded-md p-2 focus:outline-none w-full border-2
+                border-white dark:bg-gray-950 dark:text-white"
                 value={typedInput}
                 onChange={(e)=>{setTypedInput(e.target.value)}} />
             </div>
@@ -59,7 +60,9 @@ const SearchAndFilter = ({setSelectedCategory,typedInput,setTypedInput,hidden,me
                     isSearchable
                     placeholder="Select Category"
                     // styles={customStyles}
-                    className="react-select-container text-lg bg-gray-100 p-2 rounded-md focus:outline-none focus:border-blue-500 fixed-width text-black"
+                    className="react-select-container text-lg bg-gray-100 p-2 
+                    rounded-md focus:outline-none focus:border-primary-500 fixed-width dark:text-black
+                    dark:bg-gray-950"
                     classNamePrefix="react-select"
                     styles={(darkMode)?customStyles:{}}
                 />
