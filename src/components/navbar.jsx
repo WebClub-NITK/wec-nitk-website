@@ -7,7 +7,6 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-  // text-[#b3d3f6]
   return (
     <div className="fixed top-4 inset-x-0 z-50">
       <div className="max-w-2xl mx-auto px-8">

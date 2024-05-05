@@ -1,6 +1,5 @@
 'use client'
 import * as React from "react"
-import { useRef } from "react";
 import { SideScroll } from "@/components/ui/side-scroll";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento";
 import {
@@ -25,7 +24,6 @@ export function WhatWeDoSection() {
     >
       <Section>
         <div className="flex flex-col p-2 m-2 pb-10">
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,16 +44,7 @@ export function WhatWeDoSection() {
             className=" text-secondary-800 font-semibold text-center text-2xl md:text-4xl p-9 mt-[90px] mb-10 mx-auto">
             Things we do in <span className="text-primary-400">WebClub🕸️</span>
           </motion.h1>
-
-
           <BentoGrids />
-
-
-
-
-
-
-
         </div>
 
       </Section>
@@ -77,8 +66,6 @@ const press = [
   "Wired",
 ];
 
-
-
 export function BentoGrids() {
   return (
     <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
@@ -95,6 +82,8 @@ export function BentoGrids() {
     </BentoGrid>
   );
 }
+
+
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
 );
