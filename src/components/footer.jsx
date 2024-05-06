@@ -121,7 +121,7 @@ const Footer = () => {
          <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
               <div className="mb-10 w-full">
                 <h4 className=" mb-9 text-lg font-semibold text-dark dark:text-white">
-                  SUBSCRIBE TO OUR NEWSLETTER
+                  SUBSCRIBE TO NEWSLETTER
                 </h4>
                 <div className="flex items-center">
                   <div className="flex w-full max-w-sm items-center space-x-2">

@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer, { MinimalSocialsFooter } from "@/components/footer";
 
+
 export const metadata = {
   title: "WebClub NITK",
   description: "A group of passionate computer science students helping the community of NITK",

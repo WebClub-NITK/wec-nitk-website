@@ -25,7 +25,7 @@ export default function Home() {
 
               className=" h-12 w-full bg-secondary-800 z-10 opacity-85 text-2xl text-primary-50 lg:text-7xl font-bold text-center flex justify-center items-center mb-10"
             >
-              Web Enthusiasts`Club NITK
+              Web Enthusiasts' Club NITK
             </motion.div>
 
           </Section>
