@@ -3,8 +3,8 @@ import Navbar from "@/components/navbar";
 import Footer, { MinimalSocialsFooter } from "@/components/footer";
 
 export const metadata = {
-  title: "WEC | NITK",
-  description: "WebClub - NITK",
+  title: "WebClub NITK",
+  description: "A group of passionate computer science students helping the community of NITK",
 };
 
 export default function RootLayout({ children }) {

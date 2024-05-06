@@ -166,7 +166,7 @@ const NavLink = ({ link, label }) => {
     <li>
       <a
         href={link}
-        className="inline-block  leading-loose text-white hover:text-primary"
+        className="inline-block leading-loose text-white opacity-70 hover:text-primary-50"
       >
         {label}
       </a>
