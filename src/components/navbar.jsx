@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,17 +64,17 @@ const Navbar = () => {
             >
               <ul className="space-y-4 py-1 list-none text-xs text-gray-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
                 <li>
-                  <a
-                    href="https://lexingtonthemes.com/"
+                  <Link
+                    href="/events"
                     className="text-white shrink-0"
                   >
-                    Blogs
-                  </a>
+                    Events
+                  </Link>
                 </li>
                 <li>
-                  <a href="#work" className="hover:text-white shrink-0">
-                    Work
-                  </a>
+                  <Link href="/blog" className="hover:text-white shrink-0">
+                    Blogs
+                  </Link>
                 </li>
                 <li>
                   <a href="#how" className="hover:text-white shrink-0">
@@ -89,6 +90,7 @@ const Navbar = () => {
                     GitHub
                   </a>
                 </li>
+                
               </ul>
             </nav>
           </div>
