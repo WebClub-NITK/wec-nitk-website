@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AboutUsSection } from "@/components/about-us";
 import { WhatWeDoSection } from "@/components/what-we-do";
 import Section from "@/components/section-framer";
+import { OurSIGS } from "@/components/our-sigs";
 
 export default function Home() {
   return (
@@ -36,6 +37,9 @@ export default function Home() {
       </section>
       <section className="bg-secondary-800 text-white h-fit p-5 w-full border-1 border-secondary-700">
         <AboutUsSection />
+      </section>
+      <section className="bg-white text-white h-fit w-full border-1 border-secondary-700 rounded-t-3xl">
+        <OurSIGS />
       </section>
     </main>
   );

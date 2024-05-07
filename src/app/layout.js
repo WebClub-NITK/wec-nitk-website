@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={"bg-white dark no-scrollbar"}>
+      <body className={"bg-white dark no-scrollbar "}>
         <Navbar />
         {children}
         <Footer />
