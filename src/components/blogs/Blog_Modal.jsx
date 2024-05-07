@@ -19,7 +19,7 @@ const Blog_Modal = ({ modal,closeModal,blog}) => {
     const [blogHeight,setBlogHeight]=useState(2000)
     const [imgHeight,setImgHeight]=useState(1000)
     const [imgWidth,setImgWidth]=useState(1000)
-    const [fontSize,setFontSize]=useState(20)
+    const [fontSize,setFontSize]=useState(20);
   const customStyles = {
   content: {
     top: '50%',
