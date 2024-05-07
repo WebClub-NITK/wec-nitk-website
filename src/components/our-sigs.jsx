@@ -2,8 +2,6 @@
 import * as React from "react"
 import { motion, useScroll, useInView } from "framer-motion"
 import Section from "@/components/section-framer";
-import { SigCard } from "./ui/sig-cards";
-
 
 
 export function OurSIGS() {
