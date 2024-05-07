@@ -102,6 +102,22 @@ module.exports = {
               "rotatex(20deg) rotateZ(-20deg) skewX(20deg) translateZ(0) translateY(-100%)",
           },
         },
+        "crop-card": {
+          from: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" }
+        },
+        "uncrop-card": {
+          from: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" }
+        },
+        "crop-card-bigger": {
+          from: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" }
+        },
+        "uncrop-card-bigger": {
+          from: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" }
+        },
       },
      
       animation: {
