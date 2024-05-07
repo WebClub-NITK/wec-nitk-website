@@ -14,7 +14,6 @@ import { vsDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 
-<<<<<<< HEAD
 const Blog_Modal = ({ modal,closeModal,blog}) => {
     const [blogWidth,setBlogWidth]=useState(2000)
     const [blogHeight,setBlogHeight]=useState(2000)
@@ -34,20 +33,6 @@ const Blog_Modal = ({ modal,closeModal,blog}) => {
     transform: 'translate(-50%, -50%)',
   },
 };
-=======
-const Blog_Modal = ({ modal,closeModal,blog,darkMode}) => {
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      width:'60rem',
-      height:'40rem',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
 
   const darkModeStyles = {
     content: {
@@ -58,7 +43,6 @@ const Blog_Modal = ({ modal,closeModal,blog,darkMode}) => {
   };
 
   const styles = darkMode ? darkModeStyles : customStyles
->>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
 
   const handleResize=()=>{
       const windowWidth=window.innerWidth

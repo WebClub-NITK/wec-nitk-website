@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -27,8 +26,3 @@
           scrollbar-width: none;  /* Firefox */
     }
 }
-=======
-*{
-    @apply transition-colors duration-300
-}
->>>>>>> 9b6bb01 (Blogs: Add Dark Theme)
