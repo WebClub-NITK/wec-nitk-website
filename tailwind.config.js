@@ -79,6 +79,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        "xs": "400px"
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -103,21 +106,14 @@ module.exports = {
           },
         },
         "crop-card": {
-          from: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" },
-          to: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" }
+          from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" }
         },
         "uncrop-card": {
-          from: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" },
-          to: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" }
+          from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" }
         },
-        "crop-card-bigger": {
-          from: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" },
-          to: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" }
-        },
-        "uncrop-card-bigger": {
-          from: { "clip-path": "polygon(0 0, calc(100% - 182px) 0, calc(100% - 182px) 42px, 102% 42px, 102% 100%, 0 100%)" },
-          to: { "clip-path": "polygon(0 0, calc(100% - 42px) 0, calc(100% - 42px) 42px, 102% 42px, 102% 100%, 0 100%)" }
-        },
+        // },
       },
      
       animation: {
