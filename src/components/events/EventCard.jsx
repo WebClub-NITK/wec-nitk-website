@@ -27,6 +27,7 @@ export default function EventCard({ event, clickHandler = () => null }) {
     hour: "2-digit",
     minute: "2-digit",
   });
+  // const cover_image = `${process.env.BACKEND_URL}${event.cover_images.data[0].attributes.formats.small.url}`
 
   let cardRef = useRef()
 

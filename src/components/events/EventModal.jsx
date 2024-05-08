@@ -38,6 +38,7 @@ export default function EventModal ({ event, initial, handleClose }) {
         minute: "2-digit",
     });
 
+    // const cover_image = process.env.BACKEND_URL + event.cover_images.data[0].attributes.formats.large.url
 
 
     // enable closing modal on clicking esc key
