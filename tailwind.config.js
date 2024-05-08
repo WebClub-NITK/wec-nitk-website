@@ -90,6 +90,22 @@ module.exports = {
         900: "#04101A",
         950: "#02080D",
       },
+      hackclub: {
+        primary: "#fb3e3c",
+        "primary-content": "#ffffff",
+        "primary-dark": "#fa0d0a",
+        "primary-light": "#fc6f6e",
+        "side": "#FFF7ED",
+
+        secondary: "#99fb3c",
+        "secondary-content": "#1b3701",
+        "secondary-dark": "#7ffa0a",
+        "secondary-light": "#b3fc6e",
+
+        background: "#f1efef",
+        foreground: "#fbfbfb",
+        border: "#e2dddd",
+      }
     },
     extend: {
       keyframes: {
