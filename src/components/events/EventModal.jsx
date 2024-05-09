@@ -38,7 +38,7 @@ export default function EventModal ({ event, initial, handleClose }) {
     });
 
     // format options : large (1000x1000), medium (750x750), small(500x500) , thumbnail(150x150)
-    const cover_image = `${process.env.NEXT_PUBLIC_STRAPI_URL}${event.cover_images.data[0].attributes.formats.small.url}`
+    const cover_image = `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'}${event.cover_images.data[0].attributes.formats.small.url}`
 
 
     // enable closing modal on clicking esc key

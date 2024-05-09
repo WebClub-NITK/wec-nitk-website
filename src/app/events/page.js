@@ -3,7 +3,7 @@ import ExpandableEventCard from "@/components/events/ExpandableEventCard"
 
 export default async function EventsPage() {
 
-    const backendUrl = process.env.NEXT_PUBLIC_STRAPI_URL
+    const backendUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'
     const params = new URLSearchParams({
         populate: "*",
         sort: "date_time:desc",
