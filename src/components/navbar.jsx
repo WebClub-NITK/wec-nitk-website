@@ -72,7 +72,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="hover:text-white shrink-0">
+                  <Link href="/blogs" className="hover:text-white shrink-0">
                     Blogs
                   </Link>
                 </li>

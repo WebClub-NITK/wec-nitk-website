@@ -104,7 +104,7 @@ const Footer = () => {
           </div>
           <LinkGroup header="QUICK LINKS">
             <NavLink link="/" label="Home" />
-            <NavLink link="/blog" label="Blogs" />
+            <NavLink link="/blogs" label="Blogs" />
             <NavLink link="/events" label="Events" />
             <NavLink link="/#" label="Team" />
           </LinkGroup>
