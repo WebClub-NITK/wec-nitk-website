@@ -28,7 +28,7 @@ export default function EventCard({ event, clickHandler = () => null }) {
   });
 
   // format options : large (1000x1000), medium (750x750), small(500x500) , thumbnail(150x150)
-  const cover_image = `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'}${event.cover_images.data[0].attributes.formats.large.url}`
+  const cover_image = `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL || 'http://localhost:1337'}${event.cover_images.data[0].attributes.formats.large.url}`
 
   let cardRef = useRef()
 
