@@ -3,17 +3,19 @@
 import Link from "next/link"
 import { useState } from "react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-import { FaXTwitter, FaLink } from "react-icons/fa6";
+import { FaLink } from "react-icons/fa6";
+import { IoMdPerson } from "react-icons/io";
 import { IoMail } from "react-icons/io5"
 
 export default function MemberCard ({ member }) {
-    let { name, sig, posts, github_id, linkedin_id, mail_id, image } = member
-
-
+    let { name, posts, github_id, linkedin_id, mail_id, image, alumni } = member
     
-    let imageURL = "/strapi" + image.data.attributes.formats.thumbnail.url
-    // console.log(imageURL)
+    let imagePath = image.data?.attributes.formats.thumbnail.url
+    let imageURL = (process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL || "/strapi") + imagePath
+
+
     let postsArray = posts.data.length ? posts.data.map(post => post.attributes.title) : ["Member"]
+    if (alumni) postsArray = ["Alumnus"]
 
     let [ showSocials, setShowSocials ] = useState(null)
     
@@ -34,11 +36,18 @@ export default function MemberCard ({ member }) {
                 <div
                     className={`rounded-lg bg-gray-950 overflow-hidden transition flex flex-col items-center p-6 pb-14 ${animation} fill-mode-forwards h-full`}
                 >
-                    <img src={imageURL} alt="" className="rounded-lg w-full" />
+                    {
+                        imagePath ?
+                        <img src={imageURL} alt="" className="rounded-lg w-full" />
+                        :
+                        <div className="py-4">
+                            <IoMdPerson size={150}/>
+                        </div>
+                    }
                     <h1 className="text-lg font-bold leading-5 mt-4 mb-3 text-center">{name}</h1>
                     <div>
                         {postsArray.map(post =>
-                            <h2 className="text-sm font-extrabold text-center mt text-primary-300">{post}</h2>
+                            <h2 className="text-sm font-extrabold text-center mt text-primary-300" key={post}>{post}</h2>
                         )}
                     </div>
                 </div>

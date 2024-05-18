@@ -113,7 +113,14 @@ module.exports = {
           from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" },
           to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" }
         },
-        // },
+        shimmer: {
+          from: {
+            "backgroundPosition": "0 0"
+          },
+          to: {
+            "backgroundPosition": "-200% 0"
+          }
+        }
       },
      
       animation: {
@@ -121,7 +128,12 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         border: "border 4s ease infinite",
         "skew-scroll": "skew-scroll 20s linear infinite",
+        shimmer: "shimmer 2s linear infinite",
       },
+
+      backgroundImage: {
+        "alumni-tab": "url(/gradient_bg.jpg)"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
