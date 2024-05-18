@@ -10,7 +10,9 @@ export default function MemberCard ({ member }) {
     let { name, sig, posts, github_id, linkedin_id, mail_id, image } = member
 
 
-    let imageURL = process.env.STRAPI_BASE_URL + image.data.attributes.formats.thumbnail.url
+    
+    let imageURL = "/strapi" + image.data.attributes.formats.thumbnail.url
+    // console.log(imageURL)
     let postsArray = posts.data.length ? posts.data.map(post => post.attributes.title) : ["Member"]
 
     let [ showSocials, setShowSocials ] = useState(null)
