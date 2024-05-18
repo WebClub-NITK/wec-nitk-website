@@ -1,7 +1,7 @@
 import Members from "./Members"
 
 export default async function MembersPage () {
-    let members = await fetch(process.env.NEXT_PUBLIC_STRAPI_BASE_URL+"/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=false", {
+    let members = await fetch(process.env.NEXT_PUBLIC_STRAPI_URL+"/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=false", {
         headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
         next: { revalidate: 0 }
     })
@@ -23,7 +23,7 @@ export default async function MembersPage () {
 async function getAlumni () {
     "use server"
 
-    let alumni = await fetch(process.env.NEXT_PUBLIC_STRAPI_BASE_URL+"/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=true", {
+    let alumni = await fetch(process.env.NEXT_PUBLIC_STRAPI_URL+"/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=true", {
         headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
         next: { revalidate: 0 }
     })
