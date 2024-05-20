@@ -1,5 +1,5 @@
-export function getStrapiURL(path = '') {
-    return `${process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'}${path}`;
+export function getStrapiImageURL(path = '') {
+    return `${process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL || '/strapi'}${path}`;
 }
 
 export function getStrapiMedia(url) {
@@ -13,5 +13,5 @@ export function getStrapiMedia(url) {
     }
 
     // Otherwise prepend the URL path with the Strapi URL
-    return `${getStrapiURL()}${url}`;
+    return `${getStrapiImageURL()}${url}`;
 }

@@ -6,7 +6,7 @@ export async function getFilters() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + process.env.STRAPI_API_TOKEN,
+          "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
         },
         cache:'no-store'
       })
