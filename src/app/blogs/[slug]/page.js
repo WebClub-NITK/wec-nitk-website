@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { getBlog } from "@/helpers/getBlog"
 import MoreBlogsSection from "@/components/blogs/MoreBlogsSection"
 import ShareSection from "@/components/blogs/ShareSection"
@@ -11,14 +11,16 @@ export default async function Page({ params }) {
 
     // fetch cover_image url
     let cover_image = blog.attributes.cover_image.data.attributes.formats
-    cover_image = cover_image.large.url || cover_image.medium.url || cover_image.small.url || cover_image.thumbnail.url
+    cover_image = cover_image.large?.url || cover_image.medium?.url || cover_image.small?.url || cover_image.thumbnail?.url
     cover_image = `${process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL}${cover_image}`
     if(cover_image === null) cover_image = '/placeholder.svg'
 
-    // generate sig cards
+    // generate categories
     sigs = sigs.data
     sigs = sigs.map((sig) => {
-        return <Badge key={sig.id} variant="secondary">{sig.attributes.name}</Badge>
+        return <Button key={sig.id} className="text-xs py-1 px-2 rounded-3xl bg-primary-200/20" variant="ghost">
+                {sig.attributes.name}
+            </Button>
     })
     const date = new Date(date_time).toLocaleDateString('en-IN', {
         year: 'numeric', month: 'long', day: 'numeric'
@@ -26,11 +28,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-            {/* WEC Blogs banner */}
-            <section className="w-full h-[40vh] flex items-center justify-center bg-accent-900 bg-cover bg-center">
-                <div className="container px-4 md:px-6 text-center space-y-6">
-                    <h1 className="text-6xl md:text-7xl font-bold text-white tracking-tight"><span className=" text-primary-100">WebClub</span> Blogs</h1>
-                </div>
+            <section className="w-full h-24 flex items-center justify-center bg-accent-900 bg-cover bg-center">
             </section>
             {/* Blog content */}
             <div key="1" className="px-4 sm:px-6 lg:px-40 py-12">
@@ -39,7 +37,7 @@ export default async function Page({ params }) {
                         <div className="md:col-span-2">
 
                             {/* BLOG TITLE */}
-                            <h1 className="text-4xl font-bold leading-tight mb-4">
+                            <h1 className="text-5xl font-bold leading-tight mb-4">
                                 {title}
                             </h1>
                             <div className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
@@ -80,7 +78,7 @@ export default async function Page({ params }) {
                         </div>
 
                         {/* Sidebar section */}
-                        <div className="md:order-last md:row-span-3">
+                        <div className="lg:max-w-80 md:order-last md:row-span-3">
 
                             {/* Share section */}
                             <div className="mb-6">
@@ -89,7 +87,7 @@ export default async function Page({ params }) {
 
                             {/* Categories section */}
                             <div className="mb-6">
-                                <h2 className="text-lg font-semibold">Sigs</h2>
+                                <h2 className="text-lg font-semibold">Categories</h2>
                                 <div className="mt-2">
                                     {sigs}
                                 </div>
