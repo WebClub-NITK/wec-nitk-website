@@ -12,6 +12,7 @@ export default function LatestBlogCard({latest_blog}) {
   const date = new Date(latest_blog[0].attributes.date_time).toLocaleDateString('en-US', {
     year: 'numeric', month: 'long', day: 'numeric'
   })
+  const subheading = latest_blog[0].attributes.subheading
   const tags = latest_blog[0].attributes.tags.data
   const slug = latest_blog[0].id
   
@@ -45,7 +46,7 @@ export default function LatestBlogCard({latest_blog}) {
 
                     <div>
                       <h2 className="text-2xl font-bold">{title}</h2>
-                      <p className="text-gray-500 line-clamp-3 mt-2">{body}</p>
+                      <p className="text-gray-500 line-clamp-3 mt-2">{subheading}</p>
                     </div>
                   </CardContent>
 

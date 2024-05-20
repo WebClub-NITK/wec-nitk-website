@@ -6,13 +6,16 @@ export async function getBlog(blogID) {
     populate: "*",
   })
 
+  // revalite once in an hour
   let blog = await fetch(`${backendUrl}/api/blogs/${blogID}?${params}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
     },
-    cache: 'no-store'
+    next: {
+      revalidate: 3600,
+    },
   })
 
   blog = await blog.json()

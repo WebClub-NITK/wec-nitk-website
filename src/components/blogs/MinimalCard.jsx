@@ -24,12 +24,6 @@ export default function MinimalCard({attributes , blogID}) {
               }}
               width="300"
               />
-
-              <div className="absolute top-4 left-4 flex items-center space-x-2">
-              <PodcastIcon className="h-6 w-6 text-primary-700" />
-              <span className="text-sm font-semibold text-primary-700">WebClub Blogs</span>
-              </div>
-
           </div>
 
           <div className="flex-grow flex flex-col justify-between">
