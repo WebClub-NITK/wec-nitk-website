@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { getBlog } from "@/helpers/getBlog"
 import MoreBlogsSection from "@/components/blogs/MoreBlogsSection"
+import { getStrapiMedia } from "@/helpers/strapi_api"
 import ShareSection from "@/components/blogs/ShareSection"
 import Image from "next/image"
 
@@ -10,9 +11,7 @@ export default async function Page({ params }) {
     let {title , body , date_time , written_by , sigs} = blog.attributes
 
     // fetch cover_image url
-    let cover_image = blog.attributes.cover_image.data.attributes.formats
-    cover_image = cover_image.large?.url || cover_image.medium?.url || cover_image.small?.url || cover_image.thumbnail?.url
-    cover_image = `${process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL}${cover_image}`
+    let cover_image = getStrapiMedia(blog.attributes.cover_image.data.attributes.url)
     if(cover_image === null) cover_image = '/placeholder.svg'
 
     // generate categories
