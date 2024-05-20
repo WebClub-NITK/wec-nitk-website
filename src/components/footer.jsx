@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { WebClubText } from "./icons/webclub_text";
 import { Email } from "./icons/email";
+import Image from "next/image";
 
 const Footer = () => {
 
@@ -22,9 +23,11 @@ const Footer = () => {
           <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
             <div className="mb-10 w-full">
               <a href="/#" className="mb-6 flex max-w-[100px]">
-                <img
-                  src="./wec_logo.png"
+                <Image
+                  src="/wec_logo.png"
                   alt="wec_logo"
+                  width={500}
+                  height={500}
                   className=""
                 />
               </a>
