@@ -1,10 +1,12 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { getBlog } from "@/helpers/getBlog"
 import MoreBlogsSection from "@/components/blogs/MoreBlogsSection"
 import { getStrapiMedia } from "@/helpers/strapi_api"
 import Markdown from "react-markdown"
 import ShareSection from "@/components/blogs/ShareSection"
-import Image from "next/image"
+import 'highlight.js/styles/atom-one-dark.css';
+import rehypeHighlight from "rehype-highlight"
 
 export default async function Page({ params }) {
   
@@ -73,7 +75,7 @@ export default async function Page({ params }) {
                             </div>
                             {/* Blog content */}
                             <article className="prose">
-                                <Markdown>{body}</Markdown>
+                                <Markdown rehypePlugins={[rehypeHighlight]}>{body}</Markdown>
                             </article>
                         </div>
 
