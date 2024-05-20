@@ -11,8 +11,8 @@ export default async function Page({ params }) {
 
     // fetch cover_image url
     let cover_image = blog.attributes.cover_image.data.attributes.formats
-    cover_image = cover_image.large?.url || cover_image.medium?.url || cover_image.small?.url || cover_image.thumbnail?.url
-    cover_image = `${process.env.NEXT_PUBLIC_STRAPI_URL}${cover_image}`
+    cover_image = cover_image.large.url || cover_image.medium.url || cover_image.small.url || cover_image.thumbnail.url
+    cover_image = `${process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL}${cover_image}`
     if(cover_image === null) cover_image = '/placeholder.svg'
 
     // generate sig cards
