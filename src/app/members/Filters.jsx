@@ -12,7 +12,7 @@ export default function Filters ({ selected, select }) {
     else if (selected > 0) selectedText = filters[selected-1]
 
     return (
-        <div className="flex justify-end -mt-16">
+        <div className="flex justify-end mt-4">
             <DropdownMenu className="p-2">
                 <DropdownMenuTrigger asChild>
                     <Button className="flex items-center gap-2 m-2 hover:bg-primary-50 text-secondary-700" variant="outline">

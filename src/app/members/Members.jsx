@@ -36,7 +36,7 @@ export default function Members ({ members, getAlumni }) {
     return (
         <>
             <Filters selected={selected} select={setSelected} />
-            <div className="py-10 grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-center gap-6">
+            <div className="py-5 grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-center gap-6">
                 {membersShown.map(member => <MemberCard member={member.attributes} key={member.id} />)}
             </div>
         </>

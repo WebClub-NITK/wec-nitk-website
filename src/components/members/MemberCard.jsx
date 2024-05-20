@@ -31,30 +31,30 @@ export default function MemberCard ({ member }) {
     }
 
     return (
-        <div className="relative h-full w-full max-w-60 mx-auto">
-            <div className={`rounded-lg bg-primary-100 ${animation} fill-mode-forwards p-[1px] h-full`}>
+        <div className="relative h-full w-full max-w-60 mx-auto drop-shadow-md">
+            <div className={`rounded-lg bg-white ${animation} fill-mode-forwards p-[1px] h-full`}>
                 <div
-                    className={`rounded-lg bg-gray-950 overflow-hidden transition flex flex-col items-center p-6 pb-14 ${animation} fill-mode-forwards h-full`}
+                    className={`rounded-lg bg-white text-primary-800 overflow-hidden transition flex flex-col items-center p-6 pb-14 ${animation} fill-mode-forwards h-full`}
                 >
                     {
                         imagePath ?
                         <img src={imageURL} alt="" className="rounded-lg w-full" />
                         :
-                        <div className="py-4">
+                        <div className="py-4 text-gray-950">
                             <IoMdPerson size={150}/>
                         </div>
                     }
                     <h1 className="text-lg font-bold leading-5 mt-4 mb-3 text-center">{name}</h1>
                     <div>
                         {postsArray.map(post =>
-                            <h2 className="text-sm font-extrabold text-center mt text-primary-300" key={post}>{post}</h2>
+                            <h2 className="text-sm font-extrabold text-center mt text-primary-500" key={post}>{post}</h2>
                         )}
                     </div>
                 </div>
             </div>
 
             <div 
-                className={`h-10 text-primary-100 absolute bottom-0 right-0 p-2 flex gap-3 items-center justify-end overflow-hidden ${showSocials ? "w-[148px]" : "w-10"} duration-500 border-[1px] border-primary-100 rounded-br-lg`}
+                className={`h-10 bg-gray-50 text-primary-800 absolute bottom-0 right-0 p-2 flex gap-3 items-center justify-end overflow-hidden ${showSocials ? "w-[148px]" : "w-10"} duration-500 border-[1px] border-gray-200 rounded-br-lg`}
                 onMouseOver={() => setShowSocials(true)}
                 onMouseOut={() => setShowSocials(false)}
             >
