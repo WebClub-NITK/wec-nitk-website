@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const svgToDataUri = require("mini-svg-data-uri");
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
@@ -13,7 +14,19 @@ module.exports = {
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
   ],
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors,
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "bg-dot-thick": (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+            )}")`,
+          }),
+        },
+        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },],
   prefix: "",
   theme: {
     container: {
@@ -26,7 +39,7 @@ module.exports = {
     colors: {
       primary: {
         50: "#E1F4FF",
-        100: "#BDE7FF",
+        100: "#B3D3F6",
         200: "#80D0FE",
         300: "#3EB8FE",
         400: "#01A1FE",
@@ -77,12 +90,41 @@ module.exports = {
         900: "#04101A",
         950: "#02080D",
       },
+      hackclub: {
+        primary: "#fb3e3c",
+        "primary-content": "#ffffff",
+        "primary-dark": "#fa0d0a",
+        "primary-light": "#fc6f6e",
+        "side": "#FFF7ED",
+
+        secondary: "#99fb3c",
+        "secondary-content": "#1b3701",
+        "secondary-dark": "#7ffa0a",
+        "secondary-light": "#b3fc6e",
+
+        background: "#f1efef",
+        foreground: "#fbfbfb",
+        border: "#e2dddd",
+      }
     },
     extend: {
       screens: {
         "xs": "400px"
       },
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        orbit: {
+          "0%": {
+              transform: "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+          },
+          "100%": {
+              transform: "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+          },
+      },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -129,6 +171,8 @@ module.exports = {
         border: "border 4s ease infinite",
         "skew-scroll": "skew-scroll 20s linear infinite",
         shimmer: "shimmer 2s linear infinite",
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
 
       backgroundImage: {
