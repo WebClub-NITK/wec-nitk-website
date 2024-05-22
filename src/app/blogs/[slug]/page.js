@@ -18,10 +18,10 @@ export default async function Page({ params }) {
     if(cover_image === null) cover_image = '/placeholder.svg'
 
     // generate categories
-    sigs = sigs.data
-    sigs = sigs.map((sig) => {
-        return <Button key={sig.id} className="text-xs py-1 px-2 rounded-3xl bg-primary-200/20" variant="ghost">
-                {sig.attributes.name}
+    let categories = sigs.data
+    categories = categories.map((category) => {
+        return <Button key={category.id} className="text-xs py-1 px-2 rounded-3xl bg-primary-200/20" variant="ghost">
+                {category.attributes.name}
             </Button>
     })
     const date = new Date(date_time).toLocaleDateString('en-IN', {
@@ -30,7 +30,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-            <section className="w-full h-24 flex items-center justify-center bg-accent-900 bg-cover bg-center">
+            <section className="w-full lg:h-24 h-20 flex items-center justify-center bg-accent-900 bg-cover bg-center">
             </section>
             {/* Blog content */}
             <div key="1" className="px-4 sm:px-6 lg:px-40 py-12">
@@ -91,11 +91,11 @@ export default async function Page({ params }) {
                             <div className="mb-6">
                                 <h2 className="text-lg font-semibold">Categories</h2>
                                 <div className="mt-2">
-                                    {sigs}
+                                    {categories}
                                 </div>
                             </div>
 
-                            {/* Related articles section */}
+                            {/* More Blogs section */}
                             <div>
                                 <MoreBlogsSection currBlogID={params.slug}/>
                             </div>

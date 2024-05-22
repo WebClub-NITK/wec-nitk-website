@@ -7,7 +7,7 @@ export default async function({currBlogID}) {
 
     return(
         <>
-            <h2 className="text-lg font-semibold mb-4">Related Blogs</h2>
+            <h2 className="text-lg font-semibold mb-4">More Blogs</h2>
             <div className=" flex flex-col gap-4 flex-grow">
                 {blogs.map((blog) => (
                     <MinimalCard key={blog.id} attributes={blog.attributes} blogID={blog.id}/>

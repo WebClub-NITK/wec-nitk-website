@@ -1,12 +1,13 @@
 "use client"
-import { useRouter } from "next/navigation";
+import { usePathname} from "next/navigation";
 import { TwitterIcon } from "../icons/twitter";
 import { FacebookIcon } from "../icons/facebook";
 import { Linkedin } from "lucide-react";
 
 export default function ShareSection() {
-    const router = useRouter();
-    const currentUrl = router.asPath;
+
+    // Get the current URL
+    const currentUrl = usePathname()
 
     return (
         <>
