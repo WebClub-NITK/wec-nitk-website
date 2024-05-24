@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { CalendarClock } from "lucide-react";
+import { getStrapiMedia } from "@/helpers/strapi_api";
 import { useRef } from "react"
 
 export default function EventCard({ event, clickHandler = () => null }) {
@@ -14,6 +15,7 @@ export default function EventCard({ event, clickHandler = () => null }) {
     cems_link,
     body,
     resources,
+    cover_images
   } = event;
 
   const date = new Date(date_time).toLocaleDateString("en-IN", {
@@ -28,7 +30,8 @@ export default function EventCard({ event, clickHandler = () => null }) {
   });
 
   // format options : large (1000x1000), medium (750x750), small(500x500) , thumbnail(150x150)
-  const cover_image = `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL || 'http://localhost:1337'}${event.cover_images.data[0].attributes.formats.large.url}`
+  // const cover_image = `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL || 'http://localhost:1337'}${event.cover_images.data[0].attributes.formats.large.url}`
+  const cover_image = getStrapiMedia(cover_images.data[0].attributes.url)
 
   let cardRef = useRef()
 
