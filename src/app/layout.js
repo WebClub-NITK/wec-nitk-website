@@ -11,7 +11,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
       <head>
         <meta
           name="viewport"
@@ -21,7 +20,9 @@ export default function RootLayout({ children }) {
 
       <body className={"bg-white dark no-scrollbar "}>
         <Navbar />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

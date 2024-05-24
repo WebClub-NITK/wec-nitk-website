@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { WebClubText } from "./icons/webclub_text";
 import { Email } from "./icons/email";
+import Image from "next/image";
 
 const Footer = () => {
 
@@ -22,9 +23,11 @@ const Footer = () => {
           <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
             <div className="mb-10 w-full">
               <a href="/#" className="mb-6 flex max-w-[100px]">
-                <img
-                  src="./wec_logo.png"
+                <Image
+                  src="/wec_logo.png"
                   alt="wec_logo"
+                  width={500}
+                  height={500}
                   className=""
                 />
               </a>
@@ -104,7 +107,7 @@ const Footer = () => {
           </div>
           <LinkGroup header="QUICK LINKS">
             <NavLink link="/" label="Home" />
-            <NavLink link="/blog" label="Blogs" />
+            <NavLink link="/blogs" label="Blogs" />
             <NavLink link="/events" label="Events" />
             <NavLink link="/#" label="Team" />
           </LinkGroup>
@@ -116,7 +119,7 @@ const Footer = () => {
           </LinkGroup>
           <LinkGroup header="OUR INITIATIVES">
             <NavLink link="/" label="UniDAO" />
-            <NavLink link="/" label="HackClub" />
+            <NavLink link="/hackclub_nitk" label="HackClub" />
           </LinkGroup>
          <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
               <div className="mb-10 w-full">
