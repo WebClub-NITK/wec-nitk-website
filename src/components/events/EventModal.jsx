@@ -107,7 +107,7 @@ export default function EventModal ({ event, initial, handleClose }) {
                         </div>
                     </div>
                     <br />
-                    <p className="text-base text-justify sm:p-0 px-7 text-white whitespace-pre">{body}</p>
+                    <p className="text-base text-justify sm:p-0 px-7 text-white whitespace-pre-line">{body}</p>
                     {resources ? 
                         <div className="sm:p-0 px-7">
                             <h2 className="font-bold text-lg mt-4 md:text-xl text-white">Resources</h2>
