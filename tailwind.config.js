@@ -109,6 +109,9 @@ module.exports = {
       }
     },
     extend: {
+      screens: {
+        "xs": "400px"
+      },
       keyframes: {
         scroll: {
           to: {
@@ -145,6 +148,22 @@ module.exports = {
               "rotatex(20deg) rotateZ(-20deg) skewX(20deg) translateZ(0) translateY(-100%)",
           },
         },
+        "crop-card": {
+          from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" }
+        },
+        "uncrop-card": {
+          from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" },
+          to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" }
+        },
+        shimmer: {
+          from: {
+            "backgroundPosition": "0 0"
+          },
+          to: {
+            "backgroundPosition": "-200% 0"
+          }
+        }
       },
      
       animation: {
@@ -152,9 +171,14 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         border: "border 4s ease infinite",
         "skew-scroll": "skew-scroll 20s linear infinite",
+        shimmer: "shimmer 2s linear infinite",
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
         scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
+
+      backgroundImage: {
+        "alumni-tab": "url(/gradient_bg.jpg)"
+      }
     },
   },
   plugins: [
