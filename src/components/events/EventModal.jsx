@@ -9,12 +9,13 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { useEffect } from "react"
 import EventType from "./EventType"
 import Link from "next/link"
+import { getStrapiMedia } from "@/helpers/strapi_api";
 
 export default function EventModal ({ event, initial, handleClose }) {
 
   const {
     id,
-    sig,
+    sigs,
     title,
     date_time,
     event_type,
@@ -22,8 +23,8 @@ export default function EventModal ({ event, initial, handleClose }) {
     link,
     cems_link,
     body,
-    cover_image,
     resources,
+    cover_images
   } = event;
 
     // format the time of the event
@@ -38,7 +39,7 @@ export default function EventModal ({ event, initial, handleClose }) {
         minute: "2-digit",
     });
 
-
+    const cover_image = getStrapiMedia(cover_images.data[0].attributes.url)
 
     // enable closing modal on clicking esc key
     useEffect(() => {
@@ -93,7 +94,10 @@ export default function EventModal ({ event, initial, handleClose }) {
                             <div className="flex text-primary-200">
                                 <div className={link || cems_link ? "border-r-[1px] border-r-gray-500 border-dotted pr-5 py-2" : ""}>
                                     <EventType type={event_type} />
-                                    <p className="flex gap-2 mb-1 items-center text-sm"><FaSpider size={20}/>{sig}</p>
+                                    <p className="flex gap-2 mb-1 items-center text-sm text-primary-200">
+                                        <FaSpider size={20}/>
+                                        {(sigs.data).map(sig => sig.attributes.name).join(", ")}
+                                    </p>
                                 </div>
                                 <div className="py-3 pl-4">
                                     {link ? <p className="flex gap-2 items-center mb-3 text-sm"><MdVideoChat size={19}/><Link className="text-primary-blue underline" href={link}>Attend here</Link></p> : null}
@@ -103,7 +107,7 @@ export default function EventModal ({ event, initial, handleClose }) {
                         </div>
                     </div>
                     <br />
-                    <p className="text-base text-justify sm:p-0 px-7 text-white">{body}</p>
+                    <p className="text-base text-justify sm:p-0 px-7 text-white whitespace-pre-line">{body}</p>
                     {resources ? 
                         <div className="sm:p-0 px-7">
                             <h2 className="font-bold text-lg mt-4 md:text-xl text-white">Resources</h2>
