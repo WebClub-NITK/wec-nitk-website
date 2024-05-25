@@ -1,10 +1,17 @@
-'use client'
-import * as React from "react"
-import { motion, useScroll, useInView } from "framer-motion"
+"use client";
+import * as React from "react";
+import { motion, useScroll, useInView, useTransform } from "framer-motion";
 import Section from "@/components/section-framer";
-
+import { ourSigsData } from "../lib/ourSigsData";
+import Image from "next/image";
 
 export function OurSIGS() {
+  const targetRef = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -12,37 +19,40 @@ export function OurSIGS() {
       transition={{ delay: 1 }}
     >
       <Section>
-        <div className="flex flex-col p-2 m-2 pb-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            className=" text-secondary-800 font-semibold text-center text-2xl md:text-4xl p-9 mt-[90px] mb-10 mx-auto">
-            Our SIG's
-          </motion.h1>
-          <div className="flex flex-col justify-center items-center">
-
-                  {/* <h1 className="text-[#DB6541] text-[250px] font-bold">algorithms</h1>
-                  <h1 className="text-[#BDCC1C] text-[250px] font-bold">intel</h1>
-                  <h1 className=" text-[250px] font-bold"><span className="text-[#EA4234]">g</span><span className="text-[#4385F8]">d</span><span className="text-[#139C59]">s</span><span className="text-[#FABD06]">c</span></h1>
-                  <h1 className="text-[#F59453] text-[250px] font-bold">systems</h1> */}
-
+        <section
+          ref={targetRef}
+          className="relative h-[300vh] bg-neutral-900 ml-4"
+        >
+          <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+            <motion.div
+              style={{ x }}
+              className="flex gap-10 items-center h-[95%]"
+            >
+              <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl">
+                Our SIG's
+              </h2>
+              {ourSigsData.map((sig) => (
+                <div
+                  className="flex h-full w-full shrink-0 flex-col items-center justify-evenly gap-4 rounded-3xl bg-secondary-400 p-4 px-4 py-6 lg:w-[525px] lg:flex-col-reverse lg:p-16 lg:px-14 lg:py-14"
+                  key={sig.id}
+                >
+                  <p className="max-w-md leading-6 font-light">
+                    {sig.description}
+                  </p>
+                  {sig.title}
+                  <Image
+                    src={`/${sig.imageName}`}
+                    width={225}
+                    height={225}
+                    alt="Picture of sig"
+                    className="rounded-full"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
-
-          
-
-          
-          
-        </div>
-
+        </section>
       </Section>
-
     </motion.div>
-
-  )
+  );
 }
-
-
-
-
-
