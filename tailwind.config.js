@@ -27,7 +27,8 @@ module.exports = {
         },
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
-    },],
+    },
+  ],
   prefix: "",
   theme: {
     container: {
@@ -96,7 +97,7 @@ module.exports = {
         "primary-content": "#ffffff",
         "primary-dark": "#fa0d0a",
         "primary-light": "#fc6f6e",
-        "side": "#FFF7ED",
+        side: "#FFF7ED",
 
         secondary: "#99fb3c",
         "secondary-content": "#1b3701",
@@ -106,11 +107,14 @@ module.exports = {
         background: "#f1efef",
         foreground: "#fbfbfb",
         border: "#e2dddd",
-      }
+      },
+      nebula: "#5b2c6f",
+      comet: "#0b3d91",
+      "soft-blue": "#3a506b",
     },
     extend: {
       screens: {
-        "xs": "400px"
+        xs: "400px",
       },
       keyframes: {
         scroll: {
@@ -120,12 +124,14 @@ module.exports = {
         },
         orbit: {
           "0%": {
-              transform: "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+            transform:
+              "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
           },
           "100%": {
-              transform: "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+            transform:
+              "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
           },
-      },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -149,23 +155,35 @@ module.exports = {
           },
         },
         "crop-card": {
-          from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" },
-          to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" }
+          from: {
+            "clip-path":
+              "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)",
+          },
+          to: {
+            "clip-path":
+              "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)",
+          },
         },
         "uncrop-card": {
-          from: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)" },
-          to: { "clip-path": "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)" }
+          from: {
+            "clip-path":
+              "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 150px) calc(100% - 42px), calc(100% - 150px) 100%, 0 100%)",
+          },
+          to: {
+            "clip-path":
+              "polygon(0 0, 102% 0, 102% calc(100% - 42px), calc(100% - 42px) calc(100% - 42px), calc(100% - 42px) 100%, 0 100%)",
+          },
         },
         shimmer: {
           from: {
-            "backgroundPosition": "0 0"
+            backgroundPosition: "0 0",
           },
           to: {
-            "backgroundPosition": "-200% 0"
-          }
-        }
+            backgroundPosition: "-200% 0",
+          },
+        },
       },
-     
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -173,18 +191,16 @@ module.exports = {
         "skew-scroll": "skew-scroll 20s linear infinite",
         shimmer: "shimmer 2s linear infinite",
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
-        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
 
       backgroundImage: {
-        "alumni-tab": "url(/gradient_bg.jpg)"
-      }
+        "alumni-tab": "url(/gradient_bg.jpg)",
+      },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
