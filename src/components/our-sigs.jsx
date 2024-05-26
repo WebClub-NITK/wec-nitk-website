@@ -33,7 +33,7 @@ export function OurSIGS() {
                 </h2>
                 {ourSigsData.map((sig) => (
                   <div
-                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-600/85 p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center"
+                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center"
                     key={sig.id}
                   >
                     <Image
@@ -54,13 +54,16 @@ export function OurSIGS() {
           </section>
         ) : (
           <section>
+            <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl text-center py-6">
+              Our SIG's
+            </h2>
             <div
-              className="flex flex-col md:w-[70%] w-[95%] mx-auto py-6 gap-6
+              className="flex flex-col md:w-[70%] w-[95%] mx-auto pt-2 pb-8 gap-6
         "
             >
               {ourSigsData.map((sig) => (
                 <div
-                  className="bg-secondary-600/85 rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center"
+                  className="bg-secondary-800 rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center"
                   key={sig.id}
                 >
                   <Image
