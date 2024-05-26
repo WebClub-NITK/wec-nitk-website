@@ -7,7 +7,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We are a group of coding enthusiasts whose aim is to promote Competitive Programming culture at NITK. As part of this mission, we conduct many workshops and contests related to CP. We also conduct sessions like Codebuddy as a bridge between junior-senior. This year we are starting a new mentorship program as part of the SIG to help students in the field of coding skills required to crack interviews for internships and placements",
+      "We are a group of coding enthusiasts whose aim is to promote Competitive Programming culture at NITK. As part of this mission, we conduct many workshops and contests related to CP. We also conduct sessions like Codebuddy as a bridge between junior-senior. This year we are starting a new mentorship program as part of the SIG to help students in the field of coding skills required to crack interviews for internships and placements.",
     imageName: "algo.png",
   },
   {
@@ -21,7 +21,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We focus on helping students bridge the gap between theory and practice in software development. Students grow their knowledge in a peer-to-peer learning environment while building solutions to existing problems and helping the communities around through various projects and events. We have tried our hands on backend, frontend, mobile development and are now venturing into game development as well",
+      "We focus on helping students bridge the gap between theory and practice in software development. Students grow their knowledge in a peer-to-peer learning environment while building solutions to existing problems and helping the communities around through various projects and events. We have tried our hands on backend, frontend, mobile development and are now venturing into game development as well.",
     imageName: "gdsc.png",
   },
   {
@@ -32,7 +32,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We focus on understanding human intelligence and applying it to machines for the benefit of humanity. We explore the domains of Machine Learning (ML) and Artificial Intelligence (AI), focusing on both research and applications. We research topics in ML theory, Deep Learning, Reinforcement Learning, Data Science, etc. and their applications in simulated and real worlds. We are also interested in competitive ML, primarily participating in Kaggle contests and applying ML techniques for software products",
+      "We focus on understanding human intelligence and applying it to machines for the benefit of humanity. We explore the domains of Machine Learning (ML) and Artificial Intelligence (AI), focusing on both research and applications. We research topics in ML theory, Deep Learning, Reinforcement Learning, Data Science, etc. and their applications in simulated and real worlds. We are also interested in competitive ML, primarily participating in Kaggle contests and applying ML techniques for software products.",
     imageName: "intel.png",
   },
   {
@@ -43,7 +43,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We are group of motivated, passionate students who are interested in exploring the various avenues of computer systems . The Systems and Security SIG deals with a broad range of domains including Networks and Distributed Systems, Blockchains, Security, OS, DBMS and Architecture. We are enthusiastic about exploring large open source projects like the Linux kernel. Whether you're interested in Capture the Flag (CTF) security challenges or understanding how large systems like Netflix work, Systems and Security SIG is your go-to group at NITK",
+      "We are group of motivated, passionate students who are interested in exploring the various avenues of computer systems . The Systems and Security SIG deals with a broad range of domains including Networks and Distributed Systems, Blockchains, Security, OS, DBMS and Architecture. We are enthusiastic about exploring large open source projects like the Linux kernel. Whether you're interested in Capture the Flag (CTF) security challenges or understanding how large systems like Netflix work, Systems and Security SIG is your go-to group at NITK.",
     imageName: "systems.png",
   },
 ];

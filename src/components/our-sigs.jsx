@@ -4,13 +4,15 @@ import { motion, useScroll, useInView, useTransform } from "framer-motion";
 import Section from "@/components/section-framer";
 import { ourSigsData } from "../lib/ourSigsData";
 import Image from "next/image";
+import useViewportWidth from "../hooks/useViewportWidth";
 
 export function OurSIGS() {
+  const width = useViewportWidth();
   const targetRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["100%", "-95%"]);
 
   return (
     <motion.div
@@ -19,27 +21,48 @@ export function OurSIGS() {
       transition={{ delay: 1 }}
     >
       <Section>
-        <section
-          ref={targetRef}
-          className="relative h-[300vh] bg-neutral-900 ml-4"
-        >
-          <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-            <motion.div
-              style={{ x }}
-              className="flex gap-10 items-center h-[95%]"
+        {width > 768 ? (
+          <section ref={targetRef} className="relative h-[300vh] ml-4 py-4">
+            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+              <motion.div
+                style={{ x }}
+                className="flex gap-10 items-center h-[95%]"
+              >
+                <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl">
+                  Our SIG's
+                </h2>
+                {ourSigsData.map((sig) => (
+                  <div
+                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-600/85 p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center"
+                    key={sig.id}
+                  >
+                    <Image
+                      src={`/${sig.imageName}`}
+                      width={225}
+                      height={225}
+                      alt="Picture of sig"
+                      className="rounded-full"
+                    />
+                    {sig.title}
+                    <p className="max-w-md leading-6 font-light">
+                      {sig.description}
+                    </p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
+        ) : (
+          <section>
+            <div
+              className="flex flex-col md:w-[70%] w-[95%] mx-auto py-6 gap-6
+        "
             >
-              <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl">
-                Our SIG's
-              </h2>
               {ourSigsData.map((sig) => (
                 <div
-                  className="flex h-full w-full shrink-0 flex-col items-center justify-evenly gap-4 rounded-3xl bg-secondary-400 p-4 px-4 py-6 lg:w-[525px] lg:flex-col-reverse lg:p-16 lg:px-14 lg:py-14"
+                  className="bg-secondary-600/85 rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center"
                   key={sig.id}
                 >
-                  <p className="max-w-md leading-6 font-light">
-                    {sig.description}
-                  </p>
-                  {sig.title}
                   <Image
                     src={`/${sig.imageName}`}
                     width={225}
@@ -47,11 +70,15 @@ export function OurSIGS() {
                     alt="Picture of sig"
                     className="rounded-full"
                   />
+                  {sig.title}
+                  <p className="md:max-w-md leading-6 md:font-light font-thin text-center">
+                    {sig.description}
+                  </p>
                 </div>
               ))}
-            </motion.div>
-          </div>
-        </section>
+            </div>
+          </section>
+        )}
       </Section>
     </motion.div>
   );
