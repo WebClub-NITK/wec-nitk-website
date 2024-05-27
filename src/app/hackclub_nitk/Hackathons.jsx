@@ -1,11 +1,8 @@
 "use client"
-import Hackathons from "./Hackathons"
 import { useState, useEffect } from "react";
 import HackathonCard from "@/components/hackclub/HackathonCard";
 import { TabsTrigger, TabsList, TabsContent, Tabs } from "@/components/ui/tabs";
 import { Loading } from '@/components/Loading/loading';
-
-import HackathonCard from "@/components/hackclub/HackathonCard"
 
 export default function Hackathons({ hackathons }) {
     

@@ -7,6 +7,9 @@ import { CalendarClock } from "lucide-react";
 export default function HackathonCard({ hackathon }) {
     const { title, description, prizes, mode, start_time, end_time, link, image } = hackathon;
 
+    let imagePath = image.data?.attributes.formats.thumbnail.url
+    let imageURL = (process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL || "/strapi") + imagePath
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const options = { month: 'long', day: 'numeric', year: 'numeric' };
@@ -28,10 +31,6 @@ export default function HackathonCard({ hackathon }) {
     };
     
     const timeline = formatTimeline(start_time, end_time);
-    
-
-    let imagePath = image?.data?.attributes?.formats?.thumbnail?.url;
-    let imageURL = (process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL || "/strapi") + imagePath;
 
     return (
         <Card className="relative bg-hackclub-side">
@@ -44,7 +43,7 @@ export default function HackathonCard({ hackathon }) {
                     imagePath ?
                     <img
                         src={imageURL}
-                        alt="Hackathon Image"
+                        alt=""
                         className="rounded-t-lg object-cover w-full"
                         height="200"
                         style={{
@@ -56,7 +55,7 @@ export default function HackathonCard({ hackathon }) {
                     :
                     <img
                         src='/placeholder.svg'
-                        alt="Hackathon Image"
+                        alt=""
                         className="rounded-t-lg object-cover w-full"
                         height="200"
                         style={{
