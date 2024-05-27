@@ -3,12 +3,12 @@ import * as React from "react"
 import { SideScroll } from "@/components/ui/side-scroll";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento";
 import {
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
+  IconPhone,
+  IconFriends,
+  IconGitBranch,
+  IconCode
 } from "@tabler/icons-react";
-import { motion, useScroll, useInView } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 import Section from "@/components/section-framer";
 
 
@@ -89,33 +89,33 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
+    title: "Talks",
+    description: "We host talks by industry experts and alumni.",
     header: <Skeleton />,
     className: "md:col-span-2",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    icon: <IconPhone className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
+    title: "Projects",
+    description: "Build projects that solve real-world problems.",
     header: <Skeleton />,
     className: "md:col-span-1",
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    icon: <IconGitBranch className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
+    title: "Mentorships",
+    description: "Get mentored by industry professionals. And learn from the best.",
     header: <Skeleton />,
     className: "md:col-span-1",
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    icon: <IconFriends className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Power of Communication",
+    title: "Hackathons",
     description:
-      "Understand the impact of effective communication in our lives.",
+      "Participate in hackathons and showcase your skills to the world.",
     header: <Skeleton />,
     className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    icon: <IconCode className="h-4 w-4 text-neutral-500" />,
   },
 ];
 
