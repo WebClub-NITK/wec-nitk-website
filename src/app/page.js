@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     
-    <main className="w-full h-full bg-secondary-800 relative">
+    <main className="w-full h-full bg-secondary-800">
       {firstVisit && loading ? (
         <Preloader onFinish={handlePreloaderFinish}/>
       ) : (
