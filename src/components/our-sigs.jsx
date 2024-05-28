@@ -49,7 +49,7 @@ export function OurSIGS() {
                       className="rounded-full"
                     />
                     {sig.title}
-                    <p className="max-w-md leading-6 font-light text-gray-300 items-center justify-center flex">
+                    <p className="max-w-md leading-6 font-light text-gray-500 items-center justify-center flex text-center">
                       {sig.description}
                     </p>
                   </div>

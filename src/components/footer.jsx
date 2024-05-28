@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { WebClubText } from "./icons/webclub_text";
 import { Email } from "./icons/email";
 import Image from "next/image";
+import {IconBrandGithub} from "@tabler/icons-react";
 
 const Footer = () => {
 
@@ -75,30 +76,34 @@ const Footer = () => {
 
               <div className="mt-6 flex items-center">
                 <a
-                  href="javascript:void(0)"
-                  className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 text-white dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  href="https://www.github.com/WebClub-NITK"
+                  className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white hover:border-primary hover:bg-primary dark:border-dark-3 text-black dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  target="_blank"
                 >
-                  <TwitterIcon />
+                  <IconBrandGithub className="text-black" />
                   
                 </a>
 
                 <a
-                  href="javascript:void(0)"
+                  href="https://www.linkedin.com/school/web-enthusiasts-club-nitk/"
                   className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white text-dark hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-white dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  target="_blank"
                 >
                   <LinkedinIcon />
                 </a>
 
                 <a
-                  href="javascript:void(0)"
+                  href="https://www.instagram.com/wecnitk/"
                   className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white text-dark hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-white dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  target="_blank"
                 >
                   <InstagramIcon />
                 </a>
 
                 <a
-                  href="javascript:void(0)"
+                  href="https://www.facebook.com/web.club.nitk/"
                   className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white text-dark hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-white dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  target="_blank"
                 >
                   <FacebookIcon />
                 </a>

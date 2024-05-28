@@ -2,9 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import {
-  CSSProperties,
-  ReactElement,
-  ReactNode,
   useEffect,
   useRef,
   useState,
@@ -36,18 +33,18 @@ function useMousePosition() {
 
 
 const MagicContainer = ({ children, className }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const mousePosition = useMousePosition();
   const mouse = useRef({ x: 0, y: 0 });
   const containerSize = useRef({ w: 0, h: 0 });
-  const [boxes, setBoxes] = useState<Array<HTMLElement>>([]);
+  const [boxes, setBoxes] = useState([]);
 
   useEffect(() => {
     init();
     containerRef.current &&
       setBoxes(
         Array.from(containerRef.current.children).map(
-          (el) 
+          (el) => el 
         ),
       );
   }, []);
@@ -111,9 +108,9 @@ const MagicContainer = ({ children, className }) => {
 const MagicCard = ({
   className,
   children,
-  size = 600,
+  size = 400,
   spotlight = true,
-  borderColor = "hsl(0 0% 98%)",
+  borderColor = "hsla(202, 99%, 62%, 1)",// hsla(0, 0%, 0%, 1) 
   isolated = true,
   ...props
 }) => {
@@ -127,7 +124,7 @@ const MagicCard = ({
       }
       className={cn(
         "relative z-0 h-full w-full rounded-2xl p-6",
-        "bg-gray-300 dark:bg-gray-700",
+        "bg-gray-900 ",
         "bg-[radial-gradient(var(--mask-size)_circle_at_var(--mouse-x)_var(--mouse-y),var(--border-color),transparent_100%)]",
         className,
       )}
@@ -138,7 +135,7 @@ const MagicCard = ({
       {/* Background */}
       <div
         className={
-          "absolute inset-[1px] -z-20 rounded-2xl bg-white dark:bg-black/95"
+          "absolute inset-[1px] -z-20 rounded-2xl"
         }
       />
     </div>
