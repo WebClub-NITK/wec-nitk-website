@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function RotatingDotsLoader() {
+function RotatingDotsLoader() {
     const rotateVariants = {
       rotate: {
         rotate: 360,
