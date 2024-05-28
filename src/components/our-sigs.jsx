@@ -5,6 +5,8 @@ import Section from "@/components/section-framer";
 import { ourSigsData } from "../lib/ourSigsData";
 import Image from "next/image";
 import useViewportWidth from "../hooks/useViewportWidth";
+import { BorderBeam } from "./ui/border-beam";
+import { MagicCard, MagicContainer } from "./ui/magic-card";
 
 export function OurSIGS() {
   const width = useViewportWidth();
@@ -23,19 +25,22 @@ export function OurSIGS() {
       <Section>
         {width > 768 ? (
           <section ref={targetRef} className="relative h-[300vh] ml-4 py-4">
+            
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
               <motion.div
                 style={{ x }}
-                className="flex gap-10 items-center h-[95%]"
+                className="flex gap-10 items-center h-[74%]"
               >
                 <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl">
                   Our SIG's
                 </h2>
                 {ourSigsData.map((sig) => (
                   <div
-                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center"
+                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 backdrop-blur-lg p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center relative"
                     key={sig.id}
                   >
+                    <BorderBeam />
+
                     <Image
                       src={`/${sig.imageName}`}
                       width={225}
@@ -44,7 +49,7 @@ export function OurSIGS() {
                       className="rounded-full"
                     />
                     {sig.title}
-                    <p className="max-w-md leading-6 font-light">
+                    <p className="max-w-md leading-6 font-light text-gray-300 items-center justify-center flex">
                       {sig.description}
                     </p>
                   </div>
@@ -53,19 +58,21 @@ export function OurSIGS() {
             </div>
           </section>
         ) : (
-          <section>
-            <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl text-center py-6">
+          <section className="">
+            
+            <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl text-center py-6 ">
               Our SIG's
             </h2>
             <div
-              className="flex flex-col md:w-[70%] w-[95%] mx-auto pt-2 pb-8 gap-6
-        "
+              className="flex flex-col md:w-[70%] w-[95%] mx-auto pt-2 pb-8 gap-6"
             >
+
               {ourSigsData.map((sig) => (
                 <div
-                  className="bg-secondary-800 rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center"
-                  key={sig.id}
+                className="bg-secondary-800 backdrop-blur-lg rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center relative"
+                key={sig.id}
                 >
+                <BorderBeam />
                   <Image
                     src={`/${sig.imageName}`}
                     width={225}

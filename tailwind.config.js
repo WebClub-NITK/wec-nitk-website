@@ -117,6 +117,13 @@ module.exports = {
         xs: "400px",
       },
       keyframes: {
+        
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
@@ -193,6 +200,7 @@ module.exports = {
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
       },
 
       backgroundImage: {

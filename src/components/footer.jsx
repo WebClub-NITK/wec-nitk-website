@@ -109,13 +109,13 @@ const Footer = () => {
             <NavLink link="/" label="Home" />
             <NavLink link="/blogs" label="Blogs" />
             <NavLink link="/events" label="Events" />
-            <NavLink link="/#" label="Team" />
+            <NavLink link="/members" label="Team" />
           </LinkGroup>
           <LinkGroup header="OUR SIGS">
             <NavLink link="/" label="Algorithms SIG" />
             <NavLink link="/" label="Intel SIG" />
             <NavLink link="/" label="Dev SIG" />
-            <NavLink link="/#" label="Systems SIG" />
+            <NavLink link="/" label="Systems SIG" />
           </LinkGroup>
           <LinkGroup header="OUR INITIATIVES">
             <NavLink link="/" label="UniDAO" />
@@ -128,8 +128,8 @@ const Footer = () => {
                 </h4>
                 <div className="flex items-center">
                   <div className="flex w-full max-w-sm items-center space-x-2">
-                      <Input className="bg-white" type="email" placeholder="hello@gmail.com" />
-                      <Button className=" border text-white font-bold hover:bg-white hover:text-secondary-950 transition-all duration-300 ease-in-out" type="submit">Subscribe</Button>
+                      <Input className="bg-white" type="email" placeholder="hello@gmail.com" disabled />
+                      <Button className=" border text-white font-bold hover:bg-white hover:text-secondary-950 transition-all duration-300 ease-in-out disabled" type="submit" disabled >Subscribe</Button>
                   </div>
                 </div>
               </div>
