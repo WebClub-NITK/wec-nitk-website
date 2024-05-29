@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { BackgroundBeams, Logo } from "@/components/background-beams";
 import { motion } from "framer-motion";
 import { AboutUsSection } from "@/components/about-us";
@@ -12,8 +12,15 @@ import { Preloader } from "@/components/preloader";
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [firstVisit, setFirstVisit] = useState(true);
+
+ useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+      setFirstVisit(false);
+    }, 2500*9);
+  }, []);
 
 
   const handlePreloaderFinish = () => {

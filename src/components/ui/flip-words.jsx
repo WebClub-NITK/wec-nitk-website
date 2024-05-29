@@ -1,96 +1,140 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+import React, { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const FlipWords = ({
   words,
-  duration = 3000,
+  duration = 2400,
   className,
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
   const [alreadyAnimated, setAlreadyAnimated] = useState([]);
+  const [abbreviation, setAbbreviation] = useState("");
+  const [showFinalString, setShowFinalString] = useState(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const currentIndex = words.indexOf(currentWord);
     const nextIndex = currentIndex + 1;
-    const word = nextIndex < words.length ? words[nextIndex] : words[0];
-    setCurrentWord(word);
-    setAlreadyAnimated([...alreadyAnimated, currentWord]);
+    const word = nextIndex < words.length ? words[nextIndex] : null;
+    
+    if (word) {
+      setCurrentWord(word);
+      setAlreadyAnimated([...alreadyAnimated, currentWord]);
 
-    if (nextIndex < words.length) {
-      setIsAnimating(true);
-    }
+      if (["Systems", "Algorithms", "Intelligence", "Development"].includes(word)) {
+        setAbbreviation((prev) => prev + word[0]);
+      }
 
-    if (currentWord in alreadyAnimated) {
-      setIsAnimating(false);
+      if (nextIndex < words.length) {
+        setIsAnimating(true);
+      }
+
+      if (currentWord in alreadyAnimated) {
+        setIsAnimating(false);
+      }
+      setIsAnimating(nextIndex < words.length);
+    } else {
+      // All words are done, show final string
+      setShowFinalString(true);
     }
-    setIsAnimating(nextIndex < words.length);
-}, [currentWord, words]);
-  
+  }, [currentWord, words, alreadyAnimated]);
+
   useEffect(() => {
-    if (!isAnimating)
+    if (!isAnimating && !showFinalString) {
       setTimeout(() => {
         startAnimation();
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+    }
+  }, [isAnimating, duration, startAnimation, showFinalString]);
 
+  const transitionDuration = ["Systems", "Algorithms", "Intelligence", "Development"].includes(currentWord) ? 0.3 : 1;
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setIsAnimating(false);
-      }}
-    >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
+    <div className="flex flex-col items-center">
+      <AnimatePresence
+        onExitComplete={() => {
+          setIsAnimating(false);
         }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.4,
-          ease: "easeInOut",
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-        }}
-        exit={{
-          opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 2,
-          position: "absolute",
-        }}
-        className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
-          className
-        )}
-        key={currentWord}
       >
-        {currentWord.split("").map((letter, index) => (
-          <motion.span
-            key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{
-              delay: index * 0.08,
-              duration: 0.4,
+        {!showFinalString ? (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 10,
             }}
-            className="inline-block"
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: transitionDuration,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+            }}
+            exit={{
+              opacity: 0,
+              y: -40,
+              x: 40,
+              filter: "blur(8px)",
+              scale: 2,
+              position: "absolute",
+            }}
+            className={cn(
+              "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+              className
+            )}
+            key={currentWord}
           >
-            {letter + (letter === " " ? "\u00A0" : "")}
-          </motion.span>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+            {currentWord.split("").map((letter, index) => (
+              <motion.span
+                key={currentWord + index}
+                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                  delay: index * 0.08,
+                  duration: transitionDuration,
+                }}
+                className="inline-block"
+              >
+                {letter + (letter === " " ? "\u00A0" : "")}
+              </motion.span>
+            ))}
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+            }}
+            className={cn(
+              "z-10 inline-block relative text-left text-secondary-900 px-2",
+              className
+            )}
+          >
+            {abbreviation+ " no one EVER"}
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {!showFinalString && (
+        <div className="mt-4 text-xl font-bold text-neutral-900 dark:text-neutral-100">
+          {abbreviation}
+        </div>
+      )}
+    </div>
   );
 };
-
-
