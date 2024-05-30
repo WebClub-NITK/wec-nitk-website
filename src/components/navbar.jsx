@@ -66,7 +66,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/events"
-                    className="text-white shrink-0"
+                    className="hover:text-white shrink-0"
                   >
                     Events
                   </Link>

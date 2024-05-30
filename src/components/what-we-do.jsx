@@ -81,14 +81,6 @@ const Skeleton = () => (
   </div>
 )
 
-
-
-
-
-
-
-
-
 export const companies = [
   "micro",
   "google",
@@ -307,7 +299,7 @@ const Notification = ({ name, description, icon, color, time }) => {
 };
 
   return (
-    <div className="flex flex-1 w-full h-full items-center justify-center rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent dark:border-white/[0.2] bg-neutral-100 bg-secondary-900 relative max-h-[200px] min-h-[200px] overflow-hidden">
+    <div className="flex flex-1 w-full h-full items-center justify-center rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent dark:border-white/[0.2] bg-neutral-100 bg-secondary-900 relative max-h-[170px] min-h-[170px] overflow-hidden">
         <Mentorship>
           {notifications.map((item, idx) => (
             <Notification {...item} key={idx} />
