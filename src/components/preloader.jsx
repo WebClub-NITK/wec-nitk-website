@@ -30,7 +30,7 @@ export const Preloader = ({ children, onFinish }) => {
 
     return (
         <div className=" w-screen h-screen bg-secondary-800 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-3xl bg-gradient-to-r from-[#93c5fd] via-[#60a5fa] to-[#3b82f6]">
-            <div ref={preloaderRef} className="text-primary-50 text-[100px] font-bold"><FlipWords words={wecHeroWords} /></div>
+            <div ref={preloaderRef} className="text-primary-50 md:text-[100px] text-xl font-bold"><FlipWords words={wecHeroWords} /></div>
         </div>
     );
 };

@@ -12,7 +12,7 @@ import { Preloader } from "@/components/preloader";
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
 
  useEffect(() => {

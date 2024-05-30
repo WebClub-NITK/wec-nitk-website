@@ -98,7 +98,7 @@ export const FlipWords = ({
                   delay: index * 0.08,
                   duration: transitionDuration,
                 }}
-                className="inline-block"
+                className="inline-block "
               >
                 {letter + (letter === " " ? "\u00A0" : "")}
               </motion.span>

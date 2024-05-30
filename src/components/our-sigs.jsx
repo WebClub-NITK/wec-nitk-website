@@ -69,7 +69,7 @@ export function OurSIGS() {
 
               {ourSigsData.map((sig) => (
                 <div
-                className="bg-secondary-800 backdrop-blur-lg rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center relative"
+                className="bg-secondary-800 backdrop-blur-lg rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center relative overflow-hidden"
                 key={sig.id}
                 >
                 <BorderBeam />
