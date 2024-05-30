@@ -2,20 +2,19 @@
 import * as React from "react"
 import { SideScroll } from "@/components/ui/side-scroll";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento";
+import { motion, useScroll } from "framer-motion"
+import Section from "@/components/section-framer";
+import IconCloud from "@/components/ui/icon-cloud";
+import SkewedInfiniteScroll from "@/components/ui/skeewed";
+import { HackathonMarque } from "@/components/ui/hackathon-marque";
+import { Mentorship } from "@/components/ui/mentorship";
+import { cn } from "@/lib/utils";
 import {
   IconPhone,
   IconFriends,
   IconGitBranch,
   IconCode
 } from "@tabler/icons-react";
-import { motion, useScroll } from "framer-motion"
-import Section from "@/components/section-framer";
-import Link from "next/link";
-
-import IconCloud from "./ui/icon-cloud";
-import SkewedInfiniteScroll from "./ui/skeewed";
-import { HackathonMarque } from "./ui/hackathon-marque";
-import { Mentorship } from "./ui/mentorship";
 
 
 export function WhatWeDoSection() {
@@ -60,24 +59,6 @@ export function WhatWeDoSection() {
   )
 }
 
-
-const companies = [
-  "micro",
-  "google",
-  "oracle",
-  "goldman",
-  "morgan_stanley",
-  "wells",
-  "deshaw",
-  "amazon",
-  "salesforce",
-  "servicenow",
-  "intuit",
-  "coinbase",
-  "adobe",
-
-];
-
 export function BentoGrids() {
   return (
     <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
@@ -95,66 +76,65 @@ export function BentoGrids() {
   );
 }
 
-
 const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
-);
-
-const ProjectSkeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black">
-    <IconCloud iconSlugs={slugs} />
   </div>
-);
-
-const TalksSkeleton = () => (
-  <div className="flex flex-1 w-full h-full items-center justify-center min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black">
-    <SkewedInfiniteScroll />
-  </div>
-);
-
-const HackathonSkeleton = () => (
-  <div className="flex flex-1 w-full h-full items-center justify-center  rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 bg-secondary-900">
-    <HackathonMarque items={hackathons}/>
-  </div>
-);
-
-const MentorshipSkeleton = () => (
-  <div className="flex flex-1 w-full h-full items-center justify-center  rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 bg-secondary-900">
-    <Mentorship placeholders={placeholders} className="p-2 m-2"/>
-  </div>
-);
+)
 
 
-const items = [
+
+
+
+
+
+
+
+export const companies = [
+  "micro",
+  "google",
+  "oracle",
+  "goldman",
+  "morgan_stanley",
+  "wells",
+  "deshaw",
+  "amazon",
+  "salesforce",
+  "servicenow",
+  "intuit",
+  "coinbase",
+  "adobe",
+
+];
+
+export let notifications = [
   {
-    title: "Talks",
-    description: "We host talks by industry experts and alumni.",
-    header: <TalksSkeleton />,
-    className: "md:col-span-2",
-    icon: <IconPhone className="h-4 w-4 text-neutral-500" />,
+    name: "Interview Prep",
+    description: "with Abhishek",
+    time: "in 15m",
+
+    icon: "💸",
+    color: "#00C9A7",
   },
   {
-    title: "Projects",
-    description: "Build projects that solve real-world problems.",
-    header: <ProjectSkeleton />,
-    className: "md:col-span-1",
-    icon: <IconGitBranch className="h-4 w-4 text-neutral-500" />,
+    name: "Codebuddy",
+    description: "with Chinmaya",
+    time: "in 10m",
+    icon: "👤",
+    color: "#FFB800",
   },
   {
-    title: "Mentorships",
-    description: "Get mentored by industry professionals. And learn from the best.",
-    header: <MentorshipSkeleton />,
-    className: "md:col-span-1",
-    icon: <IconFriends className="h-4 w-4 text-neutral-500" />,
+    name: "Online Assessments",
+    description: "Microsoft OA",
+    time: "in 5m",
+    icon: "💬",
+    color: "#FF3D71",
   },
   {
-    title: "Hackathons",
-    description:
-      "Participate in hackathons and showcase your skills to the world.",
-    header: 
-      <HackathonSkeleton/>,
-    className: "md:col-span-2",
-    icon: <IconCode className="h-4 w-4 text-neutral-500" />,
+    name: "AMA",
+    description: "GSOC",
+    time: "in 2m",
+    icon: "🗞️",
+    color: "#1E86FF",
   },
 ];
 
@@ -190,7 +170,6 @@ const slugs = [
   "sonarqube",
   "figma",
 ];
-
 
 const hackathons = [
   {
@@ -268,11 +247,106 @@ const hackathons = [
 
 ];
 
+const ProjectSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black">
+    <IconCloud iconSlugs={slugs} />
+  </div>
+);
 
-const placeholders = [
-  "What's the first rule of Fight Club?",
-  "Who is Tyler Durden?",
-  "Where is Andrew Laeddis Hiding?",
-  "Write a Javascript method to reverse a string",
-  "How to assemble your own PC?",
+const TalksSkeleton = () => (
+  <div className="flex flex-1 w-full h-full items-center justify-center min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black">
+    <SkewedInfiniteScroll />
+  </div>
+);
+
+const HackathonSkeleton = () => (
+  <div className="flex flex-1 w-full h-full items-center justify-center  rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 bg-secondary-900">
+    <HackathonMarque items={hackathons}/>
+  </div>
+);
+
+const MentorshipSkeleton = () => {
+
+notifications = Array.from({ length: 10 }, () => notifications).flat();
+
+const Notification = ({ name, description, icon, color, time }) => {
+  return (
+    <figure
+      className={cn(
+        "relative mx-auto w-full max-w-[400px] transform cursor-pointer overflow-hidden rounded-2xl p-4 h-full",
+        // animation styles
+        "transition-all duration-200 ease-in-out hover:scale-[103%]",
+        // light styles
+        "bg-gray-800 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
+        // dark styles
+        "transform-gpu bg-transparent backdrop-blur-md [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+      )}
+    >
+      <div className="flex flex-row items-center gap-3">
+        <div
+          className="flex h-10 w-10 items-center justify-center rounded-2xl"
+          style={{
+            backgroundColor: color,
+          }}
+        >
+          <span className="text-lg">{icon}</span>
+        </div>
+        <div className="flex flex-col overflow-hidden">
+          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
+            <span className="text-sm sm:text-lg">{name}</span>
+            <span className="mx-1">·</span>
+            <span className="text-xs text-gray-500">{time}</span>
+          </figcaption>
+          <p className="text-sm font-normal dark:text-white/60">
+            {description}
+          </p>
+        </div>
+      </div>
+    </figure>
+  );
+};
+
+  return (
+    <div className="flex flex-1 w-full h-full items-center justify-center rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent dark:border-white/[0.2] bg-neutral-100 bg-secondary-900 relative max-h-[200px] min-h-[200px] overflow-hidden">
+        <Mentorship>
+          {notifications.map((item, idx) => (
+            <Notification {...item} key={idx} />
+          ))}
+        </Mentorship>
+    </div>
+
+  )
+};
+
+export const items = [
+  {
+    title: "Talks",
+    description: "We host talks by industry experts and alumni.",
+    header: <TalksSkeleton />,
+    className: "md:col-span-2",
+    icon: <IconPhone className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Projects",
+    description: "Build projects that solve real-world problems.",
+    header: <ProjectSkeleton />,
+    className: "md:col-span-1",
+    icon: <IconGitBranch className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Mentorships",
+    description: "Get mentored by industry professionals.",
+    header: <MentorshipSkeleton />,
+    className: "md:col-span-1",
+    icon: <IconFriends className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Hackathons",
+    description:
+      "Participate in hackathons and showcase your skills to the world.",
+    header: 
+      <HackathonSkeleton/>,
+    className: "md:col-span-2",
+    icon: <IconCode className="h-4 w-4 text-neutral-500" />,
+  },
 ];

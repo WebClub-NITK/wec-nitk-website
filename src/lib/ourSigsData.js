@@ -7,7 +7,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We are a group of coding enthusiasts whose aim is to promote Competitive Programming culture at NITK. As part of this mission, we conduct many workshops and contests related to CP. We also conduct sessions like Codebuddy as a bridge between junior-senior. This year we are starting a new mentorship program as part of the SIG to help students in the field of coding skills required to crack interviews for internships and placements.",
+      "We are coding enthusiasts promoting Competitive Programming at NITK. We conduct workshops, contests, and sessions like Codebuddy to connect juniors and seniors. This year, we're starting a mentorship program to help students develop coding skills for internships and placements.",
     imageName: "algo.png",
   },
   
@@ -19,7 +19,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We focus on understanding human intelligence and applying it to machines for the benefit of humanity. We explore the domains of Machine Learning (ML) and Artificial Intelligence (AI), focusing on both research and applications. We research topics in ML theory, Deep Learning, Reinforcement Learning, Data Science, etc. and their applications in simulated and real worlds. We are also interested in competitive ML, primarily participating in Kaggle contests and applying ML techniques for software products.",
+      "We focus on understanding human intelligence and applying it to machines for humanity's benefit. We explore Machine Learning (ML) and Artificial Intelligence (AI), emphasizing both research and applications. Our research covers ML theory, Deep Learning, Reinforcement Learning, Data Science, and their real-world applications. We also engage in competitive ML, participate in Kaggle contests, and apply ML techniques to software products.",
     imageName: "intel.png",
   },
   {
@@ -33,7 +33,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We focus on helping students bridge the gap between theory and practice in software development. Students grow their knowledge in a peer-to-peer learning environment while building solutions to existing problems and helping the communities around through various projects and events. We have tried our hands on backend, frontend, mobile development and are now venturing into game development as well.",
+      "We help students bridge the gap between theory and practice in software development. In a peer-to-peer learning environment, students expand their knowledge, build solutions to real problems, and assist communities through projects and events. We've worked on backend, frontend, and mobile development, and are now exploring game development.",
     imageName: "gdsc.png",
   },
   {
@@ -44,7 +44,7 @@ export const ourSigsData = [
       </h2>
     ),
     description:
-      "We are group of motivated, passionate students who are interested in exploring the various avenues of computer systems . The Systems and Security SIG deals with a broad range of domains including Networks and Distributed Systems, Blockchains, Security, OS, DBMS and Architecture. We are enthusiastic about exploring large open source projects like the Linux kernel. Whether you're interested in Capture the Flag (CTF) security challenges or understanding how large systems like Netflix work, Systems and Security SIG is your go-to group at NITK.",
+      "We are a group of passionate students exploring various aspects of computer systems. The Systems and Security SIG covers Networks, Distributed Systems, Blockchains, Security, OS, DBMS, and Architecture. We love working on large open-source projects like the Linux kernel. Whether you're into CTF security challenges or understanding large systems like Netflix, join us at NITK.",
     imageName: "systems.png",
   },
 ];

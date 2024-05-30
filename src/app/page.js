@@ -62,7 +62,7 @@ export default function Home() {
           <section className="bg-white text-white h-fit w-full border-1 border-secondary-700 rounded-t-3xl rounded-b-3xl">
             <WhatWeDoSection />
           </section>
-          <section className="bg-secondary-800 text-white md:h-[60vh] h-fit p-5 w-full border-1 border-secondary-700 relative flex flex-col overflow-hidden">
+          <section className="bg-secondary-800 text-white md:h-[60vh] h-full lg:h-fit p-5 w-full border-1 border-secondary-700 relative flex flex-col overflow-hidden mb-10">
             <AboutUsSection />
             <RetroGrid />
           </section>

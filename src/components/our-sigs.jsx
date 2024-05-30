@@ -31,12 +31,12 @@ export function OurSIGS() {
                 style={{ x }}
                 className="flex gap-10 items-center h-[74%]"
               >
-                <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-7xl">
+                <h2 className="text-secondary-800 text-2xl font-semibold lg:text-7xl">
                   Our SIG's
                 </h2>
                 {ourSigsData.map((sig) => (
                   <div
-                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 backdrop-blur-lg p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center relative"
+                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 backdrop-blur-lg p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center relative overflow-hidden"
                     key={sig.id}
                   >
                     <BorderBeam />
@@ -69,7 +69,7 @@ export function OurSIGS() {
 
               {ourSigsData.map((sig) => (
                 <div
-                className="bg-secondary-800 backdrop-blur-lg rounded-3xl justify-items-center md:p-10 p-6 flex flex-col gap-2 items-center relative overflow-hidden"
+                className="bg-secondary-800 backdrop-blur-lg rounded-3xl md:p-10 p-6 flex flex-col gap-2  relative overflow-hidden"
                 key={sig.id}
                 >
                 <BorderBeam />
@@ -81,7 +81,7 @@ export function OurSIGS() {
                     className="rounded-full"
                   />
                   {sig.title}
-                  <p className="md:max-w-md leading-6 md:font-light font-thin text-center">
+                  <p className="md:max-w-md leading-6 md:font-light font-thin text-center ">
                     {sig.description}
                   </p>
                 </div>
