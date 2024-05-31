@@ -2,11 +2,13 @@ export async function getLimitedBlogs(currenBlogID) {
 
     const backendUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'
   
-    // fetch only the first 3 blogs
+    // fetch only the latest 3 blogs
     let params = new URLSearchParams({
-        _limit: 3,
+        'pagintion[page]': 1,
+        'pagination[pageSize]':3,
         'filters[id][$ne]': currenBlogID,
-        populate: '*'
+        populate: '*',
+        sort: 'date_time:desc'
     });
     params = params.toString();
   
