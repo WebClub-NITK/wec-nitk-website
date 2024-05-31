@@ -5,6 +5,7 @@ import MoreBlogsSection from "@/components/blogs/MoreBlogsSection"
 import { getStrapiMedia } from "@/helpers/strapi_api"
 import Markdown from "react-markdown"
 import ShareSection from "@/components/blogs/ShareSection"
+import Head from "next/head"
 import 'highlight.js/styles/atom-one-dark.css';
 import rehypeHighlight from "rehype-highlight"
 
@@ -30,6 +31,13 @@ export default async function Page({ params }) {
 
     return (
         <>
+            {/* Meta */}
+            <Head>
+                <title>{title} - WebClub NITK</title>
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content={cover_image} />
+            </Head>
+
             <section className="w-full lg:h-24 h-20 flex items-center justify-center bg-accent-900 bg-cover bg-center">
             </section>
             {/* Blog content */}
@@ -42,21 +50,29 @@ export default async function Page({ params }) {
                             <h1 className="text-5xl font-bold leading-tight mb-4">
                                 {title}
                             </h1>
-                            <div className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
+                            <div className="flex flex-wrap items-center text-sm text-gray-500 mb-6">
                                 
-                                {/* Published date */}
-                                <time dateTime="2024-05-15">{date}</time>
-                                <span>•</span>
+                                <div className="flex gap-2 mr-2">
+                                    <time>{date}</time>
+                                    <span>•</span>
+                                    <span>By</span>
+                                </div>
                                 
                                 {/* writer names */}
-                                <span>By</span>
-                                <span>{written_by.data.map((writer) => {
-                                    return (
-                                        <a key={writer.id} href={writer.attributes.linkedin_id} target="_blank" rel="noopener noreferrer">
-                                            <span>{writer.attributes.name}</span>
-                                        </a>
-                                    )
-                                })}</span>
+                                <div className="flex gap-x-2 flex-row flex-wrap">
+                                        {written_by.data.map((writer, index) => {
+                                            return (
+                                                <span key={writer.id}>
+                                                    <a href={writer.attributes.linkedin_id} target="_blank" rel="noopener noreferrer">
+                                                        {writer.attributes.name}
+                                                    </a>
+                                                    {/* Add commas after name except the last name */}
+                                                    {index < written_by.data.length - 1 ? ' , ' : ''}
+                                                </span>
+                                            )
+                                        })}
+                                </div>
+
 
                             </div>
                             <div className="mb-6">
