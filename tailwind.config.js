@@ -117,11 +117,35 @@ module.exports = {
         xs: "400px",
       },
       keyframes: {
+        "shine-pulse": {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          to: {
+            "background-position": "0% 0%",
+          },
+        },
+
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        
         orbit: {
           "0%": {
             transform:
@@ -185,6 +209,7 @@ module.exports = {
       },
 
       animation: {
+        grid: "grid 15s linear infinite", 
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         border: "border 4s ease infinite",
@@ -193,6 +218,7 @@ module.exports = {
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
       },
 
       backgroundImage: {

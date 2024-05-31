@@ -66,7 +66,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/events"
-                    className="text-white shrink-0"
+                    className="hover:text-white shrink-0"
                   >
                     Events
                   </Link>
@@ -77,19 +77,19 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#how" className="hover:text-white shrink-0">
+                  <a href="/members" className="hover:text-white shrink-0">
                    Teams
                   </a>
                 </li>
                 
-                <li className="shrink-0">
+                {/* <li className="shrink-0">
                   <a
                     href="https://github.com/michael-andreuzza/minimalstudio"
                     className="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-black bg-black/5 hover:bg-transparent text-white duration-200 focus:ring-offset-2 hover:text-black inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
                   >
                     GitHub
                   </a>
-                </li>
+                </li> */}
                 
               </ul>
             </nav>
