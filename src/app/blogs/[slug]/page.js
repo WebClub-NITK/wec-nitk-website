@@ -39,7 +39,7 @@ export default async function Page({ params }) {
                         <div className="md:col-span-2">
 
                             {/* BLOG TITLE */}
-                            <h1 className="text-5xl font-bold leading-tight mb-4">
+                            <h1 className="lg:text-5xl text-4xl font-bold leading-tight mb-4">
                                 {title}
                             </h1>
                             <div className="flex flex-wrap items-center text-sm text-gray-500 mb-6">
