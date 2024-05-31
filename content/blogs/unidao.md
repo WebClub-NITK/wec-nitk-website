@@ -2,11 +2,17 @@
 
 ## NITK's Partnership with Devfolio
 
-NITK Surathkal was one of the only five colleges in India to partner with UniDAO for this groundbreaking initiative. [Tweet](https://twitter.com/ETHIndiaco/status/1689525104651440129)
+NITK Surathkal was one of the only five colleges in India to partner with UniDAO for this groundbreaking initiative. [(Tweet)](https://twitter.com/ETHIndiaco/status/1689525104651440129)
+
+![image](https://github.com/WebClub-NITK/wec-nitk-website/assets/97223188/5dc3f4b7-16c9-49bd-af3d-631adc77ae5f)
+![image](https://github.com/WebClub-NITK/wec-nitk-website/assets/97223188/ee40472b-d07f-4766-85eb-0faea4480551)
 
 ## Orientation Session
 
 An Orientation Session was conducted to kickstart the program. This session detailed an 8-week Ethereum and Web3 boot camp, where the scope and potential of these technologies were discussed. Additionally, the student selection criteria for the boot camp were outlined.
+
+![image](https://github.com/WebClub-NITK/wec-nitk-website/assets/97223188/7a8b3e9b-4f6c-43bc-b495-347fe884532a)
+
 
 ### Key Highlights:
 
@@ -31,3 +37,6 @@ These sessions were hosted online, utilizing platforms like Discord and Google M
 - **Aniket Raj:** Community Lead at Devfolio, Facilitator from Team Devfolio.
 
 This initiative not only provided students with the opportunity to delve deep into Ethereum and Web3 technologies but also connected them with a broader community of like-minded individuals passionate about blockchain technology.
+
+
+
