@@ -5,7 +5,6 @@ import MoreBlogsSection from "@/components/blogs/MoreBlogsSection"
 import { getStrapiMedia } from "@/helpers/strapi_api"
 import Markdown from "react-markdown"
 import ShareSection from "@/components/blogs/ShareSection"
-import Head from "next/head"
 import 'highlight.js/styles/atom-one-dark.css';
 import rehypeHighlight from "rehype-highlight"
 
@@ -31,13 +30,6 @@ export default async function Page({ params }) {
 
     return (
         <>
-            {/* Meta */}
-            <Head>
-                <title>{title} - WebClub NITK</title>
-                <meta property="og:title" content={title} />
-                <meta property="og:image" content={cover_image} />
-            </Head>
-
             <section className="w-full lg:h-24 h-20 flex items-center justify-center bg-accent-900 bg-cover bg-center">
             </section>
             {/* Blog content */}
@@ -100,7 +92,7 @@ export default async function Page({ params }) {
 
                             {/* Share section */}
                             <div className="mb-6">
-                                <ShareSection/>
+                                <ShareSection title={title}/>
                             </div>
 
                             {/* Categories section */}

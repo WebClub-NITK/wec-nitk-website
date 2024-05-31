@@ -5,7 +5,7 @@ import { TwitterIcon } from "../icons/twitter";
 import { FacebookIcon } from "../icons/facebook";
 import { Linkedin } from "lucide-react";
 
-export default function ShareSection() {
+export default function ShareSection({title}) {
     const pathname = usePathname();
     const [currentUrl, setCurrentUrl] = useState("");
 
@@ -15,7 +15,8 @@ export default function ShareSection() {
         }
     }, [pathname]);
 
-    const shareText = "Check out this blog from WebClub NITK";
+    const shareText = 
+    `Check out this blog from WebClub NITK\n${title}\n`;
 
     return (
         <>
@@ -27,7 +28,7 @@ export default function ShareSection() {
                 <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&quote=${encodeURIComponent(shareText)}`} target="_blank" rel="noopener noreferrer">
                     <FacebookIcon className="bg-blue-700 text-white p-2 rounded-full h-10 w-10" />
                 </a>
-                <a href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(currentUrl)}&summary=${encodeURIComponent(shareText)}`} target="_blank" rel="noopener noreferrer" className="p-2">
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer" className="p-2">
                     <Linkedin className="h-6 w-6"/>
                 </a>
             </div>
