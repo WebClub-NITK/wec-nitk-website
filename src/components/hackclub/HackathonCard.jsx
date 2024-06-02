@@ -48,7 +48,7 @@ export default function HackathonCard({ hackathon }) {
                         height="200"
                         style={{
                             aspectRatio: "300/200",
-                            objectFit: "cover",
+                            objectFit: "contain",
                         }}
                         width="300"
                     />
@@ -60,7 +60,7 @@ export default function HackathonCard({ hackathon }) {
                         height="200"
                         style={{
                             aspectRatio: "300/200",
-                            objectFit: "cover",
+                            objectFit: "contain",
                         }}
                         width="300"
                     />
