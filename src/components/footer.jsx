@@ -98,7 +98,7 @@ const Footer = () => {
             <NavLink link="/" label="Systems SIG" />
           </LinkGroup>
           <LinkGroup header="OUR INITIATIVES">
-            <NavLink link="/" label="UniDAO" />
+            <NavLink link="/blogs/4" label="UniDAO" />
             <NavLink link="/hackclub_nitk" label="HackClub" />
           </LinkGroup>
          <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
