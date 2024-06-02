@@ -1,11 +1,17 @@
 "use client"
 
 import { useRef } from "react"
-import WhatwedoSection from "../WhatwedoSection"
+import WhatwedoCards from "../WhatwedoCards"
 import cards from "./cards"
+import { useScroll } from "framer-motion"
 
 export default function GDSC () {
     let container_ref = useRef(null)
+
+    let { scrollYProgress } = useScroll({
+        target: container_ref,
+        offset: ["start 0.20", "0.75 20vh"]
+    })
 
     return (
         <main>
@@ -17,7 +23,7 @@ export default function GDSC () {
                 </div>
             </div>
             <div className="bg-primary-950" ref={container_ref}>
-                <div className="rounded-t-3xl bg-white px-4">
+                <div className="rounded-3xl bg-white px-4">
                     <div className="flex gap-16 max-w-[1000px] mx-auto">
                         <div className="w-3/5">
                             <div className="h-[400px] flex flex-col justify-center gap-2">
@@ -37,7 +43,7 @@ export default function GDSC () {
                                 <p className="text-lg text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus consectetur doloremque incidunt quidem qui nihil et esse laudantium, rerum dolorum? Nesciunt a perspiciatis magni molestias velit! Possimus quia vitae repellendus!</p>
                             </div>
                         </div>
-                        <WhatwedoSection cards={cards} cutoffs={[0.2, 0.5, 0.85]} container={container_ref} />
+                        <WhatwedoCards cards={cards} cutoffs={[0.2, 0.5, 0.85]} scrollYProgress={scrollYProgress} />
                     </div>
                 </div>
             </div>

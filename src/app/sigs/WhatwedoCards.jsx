@@ -1,6 +1,6 @@
 import { useState } from "react"
 import thresolds from "./helpers/threshold"
-import { useMotionValueEvent, useScroll, motion } from "framer-motion"
+import { useMotionValueEvent, motion } from "framer-motion"
 
 
 const spring = {
@@ -11,17 +11,11 @@ const spring = {
 
 
 
-export default function WhatwedoSection ({ cards, cutoffs, container }) {
+export default function WhatwedoSection ({ cards, cutoffs, scrollYProgress }) {
     let getCurrent = thresolds(cutoffs)
     
     let [ current, setCurrent ] = useState({ active: 0, prev: 0 })
     let [ position, setPosition ] = useState({ top: "0px", bottom: "", position: "absolute" })
-
-    let { scrollYProgress } = useScroll({
-        target: container,
-        offset: ["start 0.20", "0.75 20vh"]
-    })
-
 
     useMotionValueEvent(scrollYProgress, "change", y => {
         if (y==0) setPosition({ top: "0px", bottom: "", position: "absolute" })
@@ -63,7 +57,7 @@ export default function WhatwedoSection ({ cards, cutoffs, container }) {
                                         initial={{ rotateY: direction*-180 }}
                                         animate={{ rotateY: 0 }}
                                         transition={{ ...spring, delay: i*0.1 }}
-                                        key={-(current.active*10 + i)}
+                                        key={current.active*10 + i + 5}
                                     >
                                         {cur}
                                     </motion.div>
