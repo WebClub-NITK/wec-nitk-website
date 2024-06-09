@@ -1,9 +1,10 @@
 "use client"
 
 import { useRef } from "react"
-import WhatwedoCards from "../WhatwedoCards"
+import DomainsCards from "../DomainsCards.jsx"
 import cards from "./cards"
 import { useScroll } from "framer-motion"
+import WhatWeDoSection from "./WhatWeDoSection"
 
 export default function GDSC () {
     let container_ref = useRef(null)
@@ -43,10 +44,11 @@ export default function GDSC () {
                                 <p className="text-lg text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus consectetur doloremque incidunt quidem qui nihil et esse laudantium, rerum dolorum? Nesciunt a perspiciatis magni molestias velit! Possimus quia vitae repellendus!</p>
                             </div>
                         </div>
-                        <WhatwedoCards cards={cards} cutoffs={[0.2, 0.5, 0.85]} scrollYProgress={scrollYProgress} />
+                        <DomainsCards cards={cards} cutoffs={[0.2, 0.5, 0.85]} scrollYProgress={scrollYProgress} />
                     </div>
                 </div>
             </div>
+            <WhatWeDoSection />
         </main>
     )
 }
