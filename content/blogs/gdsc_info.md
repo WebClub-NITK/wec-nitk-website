@@ -126,6 +126,12 @@ Starting April 2023, multiple members of WEC participated in 20+ hackathons, wit
 12. **[AngelHack's HackBangalore](https://angelhack.com/hackglobal/bangalore/):**
     - 1st Runner Up (Financial Inclusion Track): Shubham Rasal
 
+13. **[HackFS 2024](https://ethglobal.com/events/hackfs2024):**
+    - [Project by Shubham Rasal, Ayush Kumar SIngh](https://ethglobal.com/showcase/ciphercraft-3g8kp):
+      - 1st place in Lilypad Track
+      - 3rd place in Starknet Application Innovation Award
+      - Lit Protocol Pool Prize
+
 
 ![HackClub Achievements](https://github.com/WebClub-NITK/wec-nitk-website/assets/97223188/04034370-8ea8-417e-9a5e-25905d41acb5)
 ![HackClub Achievements](https://github.com/WebClub-NITK/wec-nitk-website/assets/97223188/cf1a8890-4488-493b-99ca-5ecd0f4c20c8)
