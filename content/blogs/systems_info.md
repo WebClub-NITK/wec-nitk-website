@@ -37,6 +37,8 @@ A workshop on Kubernetes was conducted to introduce the participants to the worl
 It starts with docker and then moves on to Kubernetes. The workshop covers the basics of Kubernetes, including the architecture, components, and how to deploy applications on a Kubernetes cluster. The participants also get hands-on experience with Kubernetes by deploying a sample application on a local cluster.
 
 
+During the whole journey, various small tasks are given to the participants to ensure that they are following along and understanding the concepts. And obviously, the SIG members are always there to help out with any queries.
+
 
 ---
 
