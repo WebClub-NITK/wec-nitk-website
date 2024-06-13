@@ -60,3 +60,10 @@ The most recent one had the following topics
 - Active Directory (how to exploit it)
 - Helm
 
+
+
+### 6. Security Discussions
+
+These are one the most interesting activities that we conduct. We carry out regular discussion on various recent security incidents, vulnerabilities, and how to prevent them. This is a great way to stay updated with the latest security trends and learn how to secure your systems.
+
+Quite often these discusions are accompanied by a hands-on session where we try to exploit the vulnerabilities on our own systems in a sandboxed environment.
