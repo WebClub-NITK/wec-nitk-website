@@ -1,13 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const path = usePathname()
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [path])
+
+
   return (
     <div className="fixed top-4 inset-x-0 z-50">
       <div className="max-w-2xl mx-auto px-8">
@@ -77,9 +85,14 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="/members" className="hover:text-white shrink-0">
-                   Teams
-                  </a>
+                  <Link href="/members" className="hover:text-white shrink-0">
+                   Members
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/hackclub_nitk" className="hover:text-white shrink-0">
+                   HackClub
+                  </Link>
                 </li>
                 
                 {/* <li className="shrink-0">

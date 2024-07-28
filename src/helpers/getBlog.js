@@ -14,7 +14,7 @@ export async function getBlog(blogID) {
       "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
     },
     next: {
-      revalidate: 3600,
+      revalidate: parseInt(process.env.REVALIDATE) || 0,
     },
   })
 

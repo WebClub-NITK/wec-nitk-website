@@ -13,7 +13,9 @@ export async function getBlogs() {
           "Content-Type": "application/json",
           "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
         },
-        cache:'no-store'
+        next: {
+          revalidate: parseInt(process.env.REVALIDATE) || 0,
+        }
       })
 
       blogs = await blogs.json()

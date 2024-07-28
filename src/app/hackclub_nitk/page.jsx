@@ -4,7 +4,7 @@ export default async function HackClubDashBoard() {
 
     const response = await fetch(process.env.NEXT_PUBLIC_STRAPI_URL + "/api/hackathons?populate=image", {
         headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
-        next: { revalidate: 0 }
+        next: { revalidate: parseInt(process.env.REVALIDATE) || 0 }
     })
     let hackathons = (await response.json()).data;
 

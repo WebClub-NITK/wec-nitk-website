@@ -6,7 +6,7 @@ import { ourSigsData } from "../lib/ourSigsData";
 import Image from "next/image";
 import useViewportWidth from "../hooks/useViewportWidth";
 import { BorderBeam } from "./ui/border-beam";
-import { MagicCard, MagicContainer } from "./ui/magic-card";
+import Link from "next/link"
 
 export function OurSIGS() {
   const width = useViewportWidth();
@@ -29,30 +29,31 @@ export function OurSIGS() {
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
               <motion.div
                 style={{ x }}
-                className="flex gap-10 items-center h-[74%]"
+                className="flex gap-10 items-center h-[84%]"
               >
                 <h2 className="text-secondary-800 text-2xl font-semibold lg:text-7xl">
                   Our SIG's
                 </h2>
                 {ourSigsData.map((sig) => (
-                  <div
-                    className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 backdrop-blur-lg p-4 px-4 py-6 lg:w-[525px] lg:p-16 lg:px-12 lg:py-14 justify-items-center relative overflow-hidden"
-                    key={sig.id}
-                  >
-                    <BorderBeam />
-
-                    <Image
-                      src={`/${sig.imageName}`}
-                      width={225}
-                      height={225}
-                      alt="Picture of sig"
-                      className="rounded-full"
-                    />
-                    {sig.title}
-                    <p className="max-w-md leading-6 font-light text-gray-500 items-center justify-center flex text-center">
-                      {sig.description}
-                    </p>
-                  </div>
+                  <Link href={sig.sigPage} className="h-full w-full lg:w-[525px] shrink-0">
+                    <div
+                      className="grid h-full w-full shrink-0 flex-col gap-4 rounded-3xl bg-secondary-800 backdrop-blur-lg p-4 px-4 py-6 lg:p-16 lg:px-12 lg:py-14 justify-items-center relative overflow-hidden"
+                      key={sig.id}
+                    >
+                      <BorderBeam />
+                      <Image
+                        src={`/${sig.imageName}`}
+                        width={225}
+                        height={225}
+                        alt="Picture of sig"
+                        className="rounded-full"
+                      />
+                      {sig.title}
+                      <p className="max-w-md leading-6 font-light text-gray-500 items-center justify-center flex text-justify">
+                        {sig.description}
+                      </p>
+                    </div>
+                  </Link>
                 ))}
               </motion.div>
             </div>

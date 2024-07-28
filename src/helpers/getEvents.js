@@ -13,7 +13,9 @@ export async function getEvents() {
           "Content-Type": "application/json",
           "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
         },
-        cache:'no-store'
+        next: {
+          revalidate: parseInt(process.env.REVALIDATE) || 0,
+        }
       })
 
       events = await events.json()

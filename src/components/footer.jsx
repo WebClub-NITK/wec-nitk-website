@@ -92,10 +92,10 @@ const Footer = () => {
             <NavLink link="/members" label="Team" />
           </LinkGroup>
           <LinkGroup header="OUR SIGS">
-            <NavLink link="/" label="Algorithms SIG" />
-            <NavLink link="/" label="Intel SIG" />
-            <NavLink link="/" label="Dev SIG" />
-            <NavLink link="/" label="Systems SIG" />
+            <NavLink link="/blogs/8" label="Algorithms SIG" />
+            <NavLink link="/blogs/6" label="Intel SIG" />
+            <NavLink link="/blogs/7" label="Dev SIG" />
+            <NavLink link="/blogs/9" label="Systems SIG" />
           </LinkGroup>
           <LinkGroup header="OUR INITIATIVES">
             <NavLink link="/blogs/4" label="UniDAO" />
