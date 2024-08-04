@@ -38,7 +38,7 @@ export default function MemberCard ({ member }) {
                 >
                     {
                         imagePath ?
-                        <img src={imageURL} alt="" className="rounded-lg w-full" />
+                        <img src={imageURL} alt="" className="rounded-lg w-full aspect-square object-cover object-center" />
                         :
                         <div className="py-4 text-gray-950">
                             <IoMdPerson size={150}/>

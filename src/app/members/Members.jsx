@@ -33,6 +33,16 @@ export default function Members ({ members, getAlumni }) {
         })
     }
 
+    const roleOrder = ['Convener', 'Joint Convener', 'Chairperson', 'Technical Coordinator', 'Algorithms Chair', 'Intelligence Chair', 'GDSC Chair', 'Systems Chair', 'Algorithms Co-Chair', 'Intelligence Co-Chair', 'GDSC Co-Chair', 'Systems Co-Chair', 'CP Community Coordinator', 'Secretary', 'Webmaster', 'Algorithms Secretary', 'Intelligence Secretary', 'GDSC Secretary', 'Systems Secretary'];
+
+    const sortedMembers = [...membersShown].toSorted((a, b) => {
+        const getPeakRole = member => member.attributes.posts.data.reduce((peakRole, post) => 
+            Math.min(peakRole, roleOrder.indexOf(post.attributes.title)), roleOrder.length);
+        return getPeakRole(a) - getPeakRole(b);
+    });    
+
+    membersShown = sortedMembers;
+
     return (
         <>
             <Filters selected={selected} select={setSelected} />
