@@ -84,16 +84,16 @@ const Skeleton = () => (
 export const companies = [
   "micro",
   "google",
-  "oracle",
+  "oracle_4",
   "goldman",
   "morgan_stanley",
   "wells",
   "deshaw",
   "amazon",
-  "salesforce",
-  "servicenow",
+  // "sforce",
+  // "servicenow",
   "intuit",
-  "coinbase",
+  // "coinbase_3",
   "adobe",
 
 ];
