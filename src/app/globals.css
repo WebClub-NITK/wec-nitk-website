@@ -21,3 +21,24 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+:root {
+  --emerald-500: #00c48c;
+  --emerald-600: #00d68f;
+}
+
+/* Custom text selection styles */
+::selection {
+  background-color: rgba(1, 161, 254, 1);
+  color: #000000; /* White text */
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+  background-color: rgba(64, 64, 64, 0.8);
+  color: #ffffff;
+}
+
+.markdown strong {
+  color: black;
+}
