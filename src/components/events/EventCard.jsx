@@ -41,14 +41,14 @@ export default function EventCard({ event, clickHandler = () => null }) {
       onClick={() => clickHandler(cardRef.current.getBoundingClientRect())}
       ref={cardRef} 
     >
-      <div className="h-56 w-full relative overflow-hidden">
+      <div className="sm:h-56 h-[85vw] w-full relative overflow-hidden">
         {/* IMAGE */}
         <Image
           alt="Office"
           src={cover_image}
           width={2070}
           height={800}
-          className="absolute inset-0 h-full w-full object-cover "
+          className="absolute inset-0 h-full w-full object-cover"
         />
       </div>
 
