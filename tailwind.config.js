@@ -223,6 +223,9 @@ module.exports = {
 
       backgroundImage: {
         "alumni-tab": "url(/gradient_bg.jpg)",
+        "members": "url(/members.jpg)",
+        "members-blur": "url(/members-blur.jpg)",
+        "members-blur-dark": "url(/members-blur-dark.jpg)",
       },
     },
   },

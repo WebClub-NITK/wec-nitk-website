@@ -9,10 +9,10 @@ export default async function MembersPage () {
     
     return (
         <main className="min-h-[calc(100vh-72px)] text-white bg-primary-50/70">
-            <section className="w-full h-[45vh] pt-12 flex items-center justify-center bg-accent-900 bg-cover bg-center">
+            <section className="w-full h-[45vh] pt-12 flex items-center justify-center bg-cover bg-center bg-members-blur-dark">
                 <div className="container px-4 md:px-6 text-center space-y-6">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight"><span className=" text-primary-100">WebClub</span> Members</h1>
-                    <p className="max-w-[600px] mx-auto text-md md:text-md text-gray-200">
+                    <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight "><span className=" text-primary-100">WebClub</span> Members</h1>
+                    <p className="max-w-[600px] mx-auto text-md md:text-md text-white ">
                         The people that make us great :)
                     </p>
                 </div>
