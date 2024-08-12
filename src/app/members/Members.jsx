@@ -33,7 +33,7 @@ export default function Members ({ members, getAlumni }) {
         })
     }
 
-    const roleOrder = ['Convener', 'Joint Convener', 'Chairperson', 'Technical Coordinator', 'Algorithms Chair', 'Intelligence Chair', 'GDSC Chair', 'Systems Chair', 'Algorithms Co-Chair', 'Intelligence Co-Chair', 'GDSC Co-Chair', 'Systems Co-Chair', 'CP Community Coordinator', 'Secretary', 'Webmaster', 'Algorithms Secretary', 'Intelligence Secretary', 'GDSC Secretary', 'Systems Secretary'];
+    const roleOrder = ['Convenor', 'Joint Convenor', 'Chairperson', 'Technical Coordinator', 'Algorithms Chair', 'Intelligence Chair', 'GDSC Chair', 'Systems & Security Chair', 'Algorithms Co-Chair', 'Intelligence Co-Chair', 'GDSC Co-Chair', 'Systems & Security Co-Chair', 'CP Community Coordinator', 'Secretary', 'GDSC Lead', 'Webmaster', 'Algorithms Secretary', 'Intelligence Secretary', 'GDSC Secretary', 'Systems & Security Secretary'];
 
     const sortedMembers = [...membersShown].toSorted((a, b) => {
         const getPeakRole = member => member.attributes.posts.data.reduce((peakRole, post) => 
