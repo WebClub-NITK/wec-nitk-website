@@ -226,7 +226,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [addVariablesForColors, require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
