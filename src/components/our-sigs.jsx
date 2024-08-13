@@ -9,34 +9,29 @@ export function OurSIGS() {
   
   return (
     <>
-
-        <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-5xl text-center py-6 mb-10 mt-10">
+        <h2 className=" text-secondary-800 text-2xl font-semibold lg:text-5xl text-center py-9 mb-10 mt-0">
           Our SIG's
         </h2>
 
         <TracingBeam className="px-6">
-          <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+          <div className="md:max-w-[1200px] max-w-2xl mx-auto antialiased pt-4 relative">
             {ourSigsData.map((item, index) => (
               <div key={`content-${index}`} className="mb-10">
-                {/* <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-                  {item.badge}
-                </h2> */}
-    
                 <h1 className={"text-xl mb-4"}>
                   {item.title}
                 </h1>
     
-                <div className="text-sm prose prose-sm dark:prose-invert text-hackclub-secondary-content">
+                <div className="border-2 rounded-md p-3 text-sm prose prose-sm dark:prose-invert bg-primary-50 md:backdrop-blur-md bg-opacity-70 text-hackclub-secondary-content flex md:flex-row flex-col gap-5 md:items-center md:justify-center md:max-w-[1200px] ">
                   {item?.imageName && (
                     <Image
                       src={`/${item.imageName}`}
                       alt="blog thumbnail"
-                      height="1000"
-                      width="1000"
-                      className="rounded-lg mb-10 object-cover"
+                      height="400"
+                      width="400"
+                      className="rounded-lg object-cover"
                     />
                   )}
-                  <Markdown className="markdown">
+                  <Markdown className="markdown md:w-[1000px]">
                     {item.description}
                   </Markdown>
                 </div>
@@ -45,11 +40,5 @@ export function OurSIGS() {
           </div>
         </TracingBeam>
     </>
-
-
-
-
-  
-
   );
 }
