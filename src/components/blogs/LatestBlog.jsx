@@ -24,7 +24,7 @@ export default function LatestBlogCard({latest_blog}) {
                 <div>
                   <img
                     alt="Latest Blog Post"
-                    className="rounded-l-lg object-cover w-full h-full"
+                    className="md:rounded-l-lg rounded-t-lg object-cover w-full h-full"
                     height={400}
                     src={coverImage}
                     style={{
