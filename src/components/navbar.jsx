@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="fixed top-4 inset-x-0 z-50">
       <div className="max-w-2xl mx-auto px-8">
         <div className="w-full mx-auto">
-          <div className="relative flex flex-col w-full lg:p-3 p-1 mx-auto ring-1 uppercase ring-gray-700 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row bg-secondary-900/50">
+          <div className="relative flex flex-col w-full md:p-3 p-1 mx-auto ring-1 uppercase ring-gray-700 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row bg-secondary-900/50">
             <div className="flex flex-row items-center justify-between md:justify-start">
               <a
                 className="text-primary-100  hover:text-primary-50 gap-4 items-center inline-flex font-bold ml-2 text-xl transition-all ease-in-out duration-300"
@@ -68,7 +68,7 @@ const Navbar = () => {
               id="navbar-default"
               className={`${
                 isOpen ? "block" : "hidden"
-              } md:flex md:items-end md:justify-center md:flex-row`}
+              } md:flex md:items-end md:justify-center md:flex-row md:pb-0 pb-5`}
             >
               <ul className="space-y-4 py-1 list-none text-xs text-gray-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
                 <li>
@@ -95,14 +95,15 @@ const Navbar = () => {
                   </Link>
                 </li>
                 
-                {/* <li className="shrink-0">
+                <li className="shrink-0">
                   <a
-                    href="https://github.com/michael-andreuzza/minimalstudio"
-                    className="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-black bg-black/5 hover:bg-transparent text-white duration-200 focus:ring-offset-2 hover:text-black inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
+                    href="https://linktr.ee/wecnitk"
+                    target="_blank"
+                    className="py-2 w-auto px-4 border-2 h-8 rounded-full text-white duration-200 focus:ring-offset-2 ring-2"
                   >
-                    GitHub
+                    Linktree
                   </a>
-                </li> */}
+                </li>
                 
               </ul>
             </nav>
