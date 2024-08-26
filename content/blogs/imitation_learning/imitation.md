@@ -1,4 +1,4 @@
-# Hands On Imitation Learning with BC and BCO
+# Hands On Introduction to Imitation Learning with BC and BCO
 
 Imitation Learning (IL) is a methodology by which an agent can learn a certain behaviour by imitating a set of expert trajectories. For example, think of a very good driver recording the drive with a camera to a particular destination. Say we have an autonomous car, which can learn to mimic that drive by imitating the recording captured by that driver. The expert trajectory in this case is the recording of the drive, and the agent is the car.
 
@@ -59,10 +59,7 @@ import sys
 import torch
 import numpy as np
 import random
-from stable_baselines3 import PPO, DDPG, SAC
 from stable_baselines3.common.vec_env import DummyVecEnv
-from stable_baselines3.common.evaluation import evaluate_policy
-from stable_baselines3.common.monitor import Monitor
 import torch 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -120,7 +117,7 @@ def collect_trajectories(env, policy, n_episodes=100):
         done = False
         step_count = 0
         while not done and step_count < MAX_STEPS:
-            action, _states = dummy_policy.predict(state,          deterministic=True)
+            action, _states = dummy_policy.predict(state, deterministic=True)
             next_obs, reward, done, info = env.step(action)
             x = np.concatenate((state[0], next_obs[0])) # x = (s, s')
             expert_data.append(x)
