@@ -2,7 +2,7 @@
 
 Imitation Learning (IL) is a methodology by which an agent can learn a certain behaviour by imitating a set of expert trajectories. For example, think of a very good driver recording the drive with a camera to a particular destination. Say we have an autonomous car, which can learn to mimic that drive by imitating the recording captured by that driver. The expert trajectory in this case is the recording of the drive, and the agent is the car.
 
-![Alt text](image.png)
+![image](https://github.com/user-attachments/assets/eb51f53a-8432-413f-bc5a-50d335bf03de)
 
 This blog covers 2 fundamental algorithms in IL, with minimal mathematics and technical jargon.
 
@@ -10,7 +10,7 @@ This blog covers 2 fundamental algorithms in IL, with minimal mathematics and te
 
 Reinforcement Learning (RL) is an approach where an agent interacts with it’s environment in different ways, and learns a certain behaviour. The basic terminologies involved in such a setting are — state, action, rewards. At a surface level, in each state, the agent can take a certain action (referred to as the policy of the agent) and receive a reward. The goal of the problem is to maximize the expectation of the cumulative future rewards, and RL helps to find the optimal policy to achieve this. When we consider our own self, such interactions with our own environment are a major source of learning about ourselves and the environment.
 
-![Alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/f9641774-58e2-4fad-b27b-4cda83c2009a)
 
 Think about shooting a football at an empty goal (a goalkeeper introduces an another agent, which translates the problem to a Multi Agent Reinforcement Learning (MARL) problem)- at the position of the ball set, we can kick the ball in a certain way (state and action respectively) and we can learn how effective our kick was based on if we hit the goal or missed. That is our reward signal, and we can learn the optimal way to shoot a ball based on our interaction. Obviously, other factors like the wind, the texture of the grass, our footwear can influence the way we kick the ball, and this information can be encapsulated in the state.
 
@@ -42,7 +42,7 @@ There are various such examples where collecting actions is possible, but it is 
 
 Behaviour Cloning (BC) is one of the most fundamental algorithms in Imitation Learning. It modifies the IL problem to a supervised classification or regression problem, where the states are the inputs, and the actions are the outputs. It is an offline algorithm, since it does not need any interactions with the environment. However, using the arguments above, we cannot rely on the presence of action information. Hence, we use Behaviour Cloning from Observations (BCO) that takes into consideration only the state sequences. The task here is to learn an "inverse dynamics model", which can be used to infer the actions given the state transitions. Once the actions are inferred, it is converted to a BC problem.
 
-![Alt text](image-3.png)
+![image](https://github.com/user-attachments/assets/8720e0df-66a4-4ee9-81db-7e7e59e1b5fe)
 
 To understand these algorithms, you can refer to the next section, where the processes will be detailed in the code.
 
