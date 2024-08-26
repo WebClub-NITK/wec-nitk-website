@@ -1,4 +1,4 @@
-# An Introduction to State Only Imitation Learning
+# Hands On Imitation Learning with BC and BCO
 
 Imitation Learning is a methodology by which an agent can learn a certain behaviour by imitating a set of expert trajectories. For example, think of a very good driver recording the drive with a camera to a particular destination. Say we have an autonomous car, which can learn to mimic that drive by imitating the recording captured by that driver. The expert trajectory in this case is the recording of the drive, and the agent is the car.
 
@@ -31,3 +31,14 @@ This raises a natural question : Why SOIL?
 If you consider most of the real world scenarios, the access to the action information is often absent. If you consider the above example of kicking a football, when we watch footballers play, we do not obtain the action; such as at what momentum the ball is kicked, at what specific angle and the explicit actions of each joints of the foot for example. What we can obtain easily, is the state of the ball with respect to the player through moments in time. Thus the ease of collecting state information is a lot less expensive.
 
 There are various such examples where collecting actions is possible, but it is not so efficient. In those situations, we use SOIL to learn the optimal behaviour.
+
+## Behaviour Cloning and Behaviour Cloning from Observations
+
+Behaviour Cloning (BC) is one of the most fundamental algorithms in Imitation Learning. It modifies the IL problem to a supervised classification or regression problem, where the states are the inputs, and the actions are the outputs. It is an offline algorithm, since it does not need any interactions with the environment. However, using the arguments above, we cannot rely on the presence of action information. Hence, we use Behaviour Cloning from Observations (BCO) that takes into consideration only the state sequences. The task here is to learn an "inverse dynamics model", which can be used to infer the actions given the state transitions. Once the actions are inferred, it is converted to a BC problem.
+
+To understand these algorithms, you can 
+
+These methods are powerful, but can suffer from compounding errors or the infamous covariate shift problem. The latter occurs when the agent finds itself in a state that is out of distribution to those it has seen in the expert trajectories. To solve this issue, we can use the Adversarial Imitation Learning class of algorithms. (Will be discussed in a future blog!)
+
+## Let's Code!
+
