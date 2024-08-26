@@ -1,6 +1,8 @@
 # Hands On Imitation Learning with BC and BCO
 
-Imitation Learning is a methodology by which an agent can learn a certain behaviour by imitating a set of expert trajectories. For example, think of a very good driver recording the drive with a camera to a particular destination. Say we have an autonomous car, which can learn to mimic that drive by imitating the recording captured by that driver. The expert trajectory in this case is the recording of the drive, and the agent is the car.
+Imitation Learning (IL) is a methodology by which an agent can learn a certain behaviour by imitating a set of expert trajectories. For example, think of a very good driver recording the drive with a camera to a particular destination. Say we have an autonomous car, which can learn to mimic that drive by imitating the recording captured by that driver. The expert trajectory in this case is the recording of the drive, and the agent is the car.
+
+This blog covers 2 fundamental algorithms in IL, with minimal mathematics and technical jargon.
 
 ## Why Imitation Learning? 
 
@@ -22,9 +24,9 @@ Imitation Learning methodologies help mitigate these shortcomings.
 
 State Only Imitation Learning (SOIL) is a subset of IL where the expert trajectory contains only the state information.
 
-In a general IL setting, the expert demonstrations are : τ = {s₀, a₀, s₁, a₁, s₂, a₂, …}.
+In a general IL setting, the expert demonstrations are : $\tau = ({s_0, a₀, s₁, a₁, s₂, a₂, …})$
 
-In a general SOIL setting, the expert demonstrations are : τ = {s₀, s₁, s₂, …}.
+In a general SOIL setting, the expert demonstrations are : $\tau = ({s₀, s₁, s₂, …})$
 
 This raises a natural question : Why SOIL?
 
@@ -42,8 +44,32 @@ These methods are powerful, but can suffer from compounding errors or the infamo
 
 ## Let's Code!
 
+In this section, I will be coding out Behaviour Cloning from Observations, which will cover the BC fundamentals as well. 
+
+Let's proceed with the necessary imports. 
 ```
-class MLP(nn.Module):
+import gymnasium as gym
+import sys
+import torch
+import numpy as np
+import random
+from stable_baselines3 import PPO, DDPG, SAC
+from stable_baselines3.common.vec_env import DummyVecEnv
+from stable_baselines3.common.evaluation import evaluate_policy
+from stable_baselines3.common.monitor import Monitor
+import torch 
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+```
+We will use the OpenAI Gym environments. 
+```
+env_name = "CartPole-v1" 
+env = gym.make(env_name)
+```
+We first parameterize the policy with a neural network : 
+```
+class Policy(nn.Module):
     def __init__(self, input_dim, output_dim):
         super(MLP, self).__init__()
         self.fc1 = nn.Linear(input_dim, 256)
@@ -57,5 +83,45 @@ class MLP(nn.Module):
         x = F.relu(self.fc3(x))
         x = torch.tanh(self.fc4(x))
         return x
+```
+Our next step is to initialize the Inverse Dynamics Model (IDM). This is also a neural network, and takes the state transition $(s,s')$ as an input, and outputs an action a such that applying the action $a$ in state s leads to the next state $s'$.
 
+```
+class InverseDynamics(nn.Module):
+    def __init__(self, state_dim, action_space):
+        super(InverseDynamics, self).__init__()
+        self.fc1 = nn.Linear(state_dim*2, 256)
+        self.fc2 = nn.Linear(256, 256)
+        self.fc3 = nn.Linear(256, action_space)
+    
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+```
+
+To learn the IDM, we sample rollouts from the policy with the following function : 
+
+```
+def collect_trajectories(env, policy, n_episodes=100):
+    env = DummyVecEnv([make_env(env.unwrapped.spec.id)])
+    MAX_STEPS = 1000
+    expert_data = []
+    expert_actions = []
+    for _ in range(n_episodes):
+        state = env.reset()
+        done = False
+        step_count = 0
+        while not done and step_count < MAX_STEPS:
+            action, _states = dummy_policy.predict(state, deterministic=True)
+            next_obs, reward, done, info = env.step(action)
+            x = np.concatenate((state[0], next_obs[0])) # x = (s, s')
+            expert_data.append(x)
+            expert_actions.append(action)
+            step_count +=1
+            state = next_obs         
+            if done or step_count >= MAX_STEPS:
+                break
+    return expert_data, expert_actions
 ```
