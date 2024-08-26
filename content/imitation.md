@@ -36,9 +36,26 @@ There are various such examples where collecting actions is possible, but it is 
 
 Behaviour Cloning (BC) is one of the most fundamental algorithms in Imitation Learning. It modifies the IL problem to a supervised classification or regression problem, where the states are the inputs, and the actions are the outputs. It is an offline algorithm, since it does not need any interactions with the environment. However, using the arguments above, we cannot rely on the presence of action information. Hence, we use Behaviour Cloning from Observations (BCO) that takes into consideration only the state sequences. The task here is to learn an "inverse dynamics model", which can be used to infer the actions given the state transitions. Once the actions are inferred, it is converted to a BC problem.
 
-To understand these algorithms, you can 
+To understand these algorithms, you can refer to the next section, where the processes will be detailed in the code.
 
 These methods are powerful, but can suffer from compounding errors or the infamous covariate shift problem. The latter occurs when the agent finds itself in a state that is out of distribution to those it has seen in the expert trajectories. To solve this issue, we can use the Adversarial Imitation Learning class of algorithms. (Will be discussed in a future blog!)
 
 ## Let's Code!
 
+```
+class MLP(nn.Module):
+    def __init__(self, input_dim, output_dim):
+        super(MLP, self).__init__()
+        self.fc1 = nn.Linear(input_dim, 256)
+        self.fc2 = nn.Linear(256, 256)
+        self.fc3 = nn.Linear(256, 256)
+        self.fc4 = nn.Linear(256, output_dim)
+    
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = F.relu(self.fc3(x))
+        x = torch.tanh(self.fc4(x))
+        return x
+
+```
