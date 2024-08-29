@@ -7,6 +7,9 @@ import Markdown from "react-markdown"
 import ShareSection from "@/components/blogs/ShareSection"
 import 'highlight.js/styles/atom-one-dark.css';
 import rehypeHighlight from "rehype-highlight"
+import remarkMath from "remark-math"
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 
 export default async function Page({ params }) {
   
@@ -83,7 +86,7 @@ export default async function Page({ params }) {
                             </div>
                             {/* Blog content */}
                             <article className="prose">
-                                <Markdown rehypePlugins={[rehypeHighlight]}>{body}</Markdown>
+                                <Markdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeHighlight,rehypeKatex]}>{body}</Markdown>
                             </article>
                         </div>
 
