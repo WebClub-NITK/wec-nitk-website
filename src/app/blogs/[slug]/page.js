@@ -10,6 +10,7 @@ import rehypeHighlight from "rehype-highlight"
 import remarkMath from "remark-math"
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
+import remarkGfm from 'remark-gfm'
 
 export default async function Page({ params }) {
   
@@ -86,7 +87,7 @@ export default async function Page({ params }) {
                             </div>
                             {/* Blog content */}
                             <article className="prose">
-                                <Markdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeHighlight,rehypeKatex]}>{body}</Markdown>
+                                <Markdown remarkPlugins={[remarkMath,remarkGfm]} rehypePlugins={[rehypeHighlight,rehypeKatex]}>{body}</Markdown>
                             </article>
                         </div>
 
