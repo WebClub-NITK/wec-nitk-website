@@ -11,6 +11,7 @@ import remarkMath from "remark-math"
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm'
+import {Metadata, ResolvingMetadata} from 'next'
 
 export async function generateMetadata({ params }) {
     let blog = await getBlog(params.slug)
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }) {
     const cover_image = getStrapiMedia(blog.attributes.cover_image.data.attributes.url)
 
     return {
+        metadataBase: new URL('https://webclub.nitk.ac.in'),
         title: title,
         description: body.substring(0, 200),
         openGraph: {
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }) {
           siteName: "WebClub NITK Blog",
           images: [
             {
-              url: cover_image || '/default-og-image.png',
+              url: cover_image || 'https://webclub.nitk.ac.in/default-og-image.png',
               width: 1200,
               height: 630,
               alt: title,

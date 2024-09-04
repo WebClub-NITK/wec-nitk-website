@@ -2,9 +2,11 @@
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer, { MinimalSocialsFooter } from "@/components/footer";
+import {Metadata, ResolvingMetadata} from 'next'
 
 
 export const metadata = {
+  metadataBase: new URL('https://webclub.nitk.ac.in'),
   title: "WebClub NITK",
   description: "A group of passionate computer science students helping the community of NITK",
   openGraph: {
@@ -14,7 +16,7 @@ export const metadata = {
     siteName: "WebClub NITK",
     images: [
       {
-        url: "/default-og-image.png",
+        url: "https://webclub.nitk.ac.in/default-og-image.png",
         width: 1200,
         height: 630,
       },
