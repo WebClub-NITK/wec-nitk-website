@@ -7,6 +7,21 @@ import Footer, { MinimalSocialsFooter } from "@/components/footer";
 export const metadata = {
   title: "WebClub NITK",
   description: "A group of passionate computer science students helping the community of NITK",
+  openGraph: {
+    title: "WebClub NITK",
+    description: "A group of passionate computer science students helping the community of NITK",
+    url: "https://webclub.nitk.ac.in",
+    siteName: "WebClub NITK",
+    images: [
+      {
+        url: "/default-og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

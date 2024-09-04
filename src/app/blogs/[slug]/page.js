@@ -12,6 +12,35 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm'
 
+export async function generateMetadata({ params }) {
+    let blog = await getBlog(params.slug)
+    const { title, body, date_time, written_by, sigs } = blog.attributes
+    const cover_image = getStrapiMedia(blog.attributes.cover_image.data.attributes.url)
+
+    return {
+        title: title,
+        description: body.substring(0, 200),
+        openGraph: {
+          title: title,
+          description: body.substring(0, 200),
+          url: `https://webclub.nitk.ac.in/blogs/${params.slug}`,
+          siteName: "WebClub NITK Blog",
+          images: [
+            {
+              url: cover_image || '/default-og-image.png',
+              width: 1200,
+              height: 630,
+              alt: title,
+            },
+          ],
+          locale: 'en_US',
+          type: 'article',
+          publishedTime: date_time,
+          authors: written_by.data.map(writer => writer.attributes.name),
+        },
+      }
+}
+
 export default async function Page({ params }) {
   
     let blog = await getBlog(params.slug)
@@ -31,6 +60,8 @@ export default async function Page({ params }) {
     const date = new Date(date_time).toLocaleDateString('en-IN', {
         year: 'numeric', month: 'long', day: 'numeric'
     })
+
+
 
     return (
         <>
