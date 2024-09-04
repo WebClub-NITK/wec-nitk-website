@@ -86,7 +86,7 @@ export default async function Page({ params }) {
                                 />
                             </div>
                             {/* Blog content */}
-                            <article className="prose">
+                            <article className="prose prose-table:overflow-x-auto prose-table:w-full prose-table:block">
                                 <Markdown remarkPlugins={[remarkMath,remarkGfm]} rehypePlugins={[rehypeHighlight,rehypeKatex]}>{body}</Markdown>
                             </article>
                         </div>
