@@ -15,7 +15,7 @@ export default async function EventsPage() {
 
                         {/* Event cards here */}
                         {events.map((event) => (
-                            <ExpandableEventCard key={event.id} event={event.attributes} />
+                            <ExpandableEventCard key={event.id} event={{ id: event.id, ...event.attributes }} />
                         ))}
 
                     </div>

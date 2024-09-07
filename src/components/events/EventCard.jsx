@@ -6,15 +6,8 @@ import { useRef } from "react"
 
 export default function EventCard({ event, clickHandler = () => null }) {
   const {
-    id,
-    sig,
     title,
     date_time,
-    location,
-    link,
-    cems_link,
-    body,
-    resources,
     cover_images
   } = event;
 
