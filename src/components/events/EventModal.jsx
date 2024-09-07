@@ -11,10 +11,17 @@ import EventType from "./EventType"
 import Link from "next/link"
 import { getStrapiMedia } from "@/helpers/strapi_api";
 
+import rehypeHighlight from "rehype-highlight"
+import remarkMath from "remark-math"
+import rehypeKatex from 'rehype-katex';
+import remarkGfm from 'remark-gfm'
+import Markdown from "react-markdown"
+import 'katex/dist/katex.min.css';
+import 'highlight.js/styles/atom-one-dark.css';
+
 export default function EventModal ({ event, initial, handleClose }) {
 
   const {
-    id,
     sigs,
     title,
     date_time,
@@ -23,7 +30,6 @@ export default function EventModal ({ event, initial, handleClose }) {
     link,
     cems_link,
     body,
-    resources,
     cover_images
   } = event;
 
@@ -107,15 +113,9 @@ export default function EventModal ({ event, initial, handleClose }) {
                         </div>
                     </div>
                     <br />
-                    <p className="text-base text-justify sm:p-0 px-7 text-white whitespace-pre-line">{body}</p>
-                    {resources ? 
-                        <div className="sm:p-0 px-7">
-                            <h2 className="font-bold text-lg mt-4 md:text-xl text-white">Resources</h2>
-                            <ul className="list-disc ml-6 mt-2">
-                                {resources.map(r => <li className="text-white">{r}</li>)}
-                            </ul>
-                        </div>
-                    : null}
+                    <article className="px-2 prose prose-table:overflow-x-auto prose-table:w-full max-w-none prose-table:block prose-invert text-white marker:text-white text-justify">
+                        <Markdown remarkPlugins={[remarkMath,remarkGfm]} rehypePlugins={[rehypeHighlight,rehypeKatex]}>{body}</Markdown>
+                    </article>
                 </div>
             </motion.div>
         </motion.div>
