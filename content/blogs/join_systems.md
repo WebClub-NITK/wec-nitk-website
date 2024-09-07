@@ -4,12 +4,12 @@
 
 Systems(and most engineering in general) can involve two things : 
 1. Remove the various layers of abstractions in modern computer science, and study one or more layer(s) of abstraction
-2. Create abstractions to manage lower level things and make them simple.
+2. Create abstractions to manage lower-level things and make them simple.
 3. Create something completely new to solve problems.
 
-Providing a roadmap for systems is a very daunting task. It is mostly driven by **enthusiasm** (we are Web Enthusiasts' Club after all!) , curiosity, interest and a spirit of learning. Below are some thought processes which demonstrate what we are trying to say.
+Providing a roadmap for systems is a very daunting task. It is mostly driven by **enthusiasm** (we are Web Enthusiasts' Club after all!), curiosity, interest, and a spirit of learning. Below are some thought processes which demonstrate what we are trying to say.
 
-> I wrote a simple GUI application in python --> How does my computer actually draw all those elements?? --> Window managers and computer graphics --> ∞
+> I wrote a simple GUI application in Python --> How does my computer actually draw all those elements?? --> Window managers and computer graphics --> ∞
 
 > I program in C --> I use a compiler to compile my code and generate some output file which magically runs --> How to compilers work?? --> ∞
 
