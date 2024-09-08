@@ -11,12 +11,12 @@ import remarkMath from "remark-math"
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm'
-import {Metadata, ResolvingMetadata} from 'next'
+import rehypeRaw from "rehype-raw"
 
 export async function generateMetadata({ params }) {
     let blog = await getBlog(params.slug)
     const { title, body, date_time, written_by, sigs } = blog.attributes
-    const cover_image = getStrapiMedia(blog.attributes.cover_image.data.attributes.url)
+    const cover_image = getStrapiMedia(blog.attributes.cover_image.data?.attributes.url)
 
     return {
         metadataBase: new URL('https://webclub.nitk.ac.in'),
@@ -49,7 +49,7 @@ export default async function Page({ params }) {
     let {title , body , date_time , written_by , sigs} = blog.attributes
 
     // fetch cover_image url
-    let cover_image = getStrapiMedia(blog.attributes.cover_image.data.attributes.url)
+    let cover_image = getStrapiMedia(blog.attributes.cover_image.data?.attributes.url)
     if(cover_image === null) cover_image = '/placeholder.svg'
 
     // generate categories
@@ -120,7 +120,7 @@ export default async function Page({ params }) {
                             </div>
                             {/* Blog content */}
                             <article className="prose prose-table:overflow-x-auto prose-table:w-full prose-table:block">
-                                <Markdown remarkPlugins={[remarkMath,remarkGfm]} rehypePlugins={[rehypeHighlight,rehypeKatex]}>{body}</Markdown>
+                                <Markdown remarkPlugins={[remarkMath,remarkGfm]} rehypePlugins={[rehypeHighlight,rehypeKatex,rehypeRaw]}>{body}</Markdown>
                             </article>
                         </div>
 

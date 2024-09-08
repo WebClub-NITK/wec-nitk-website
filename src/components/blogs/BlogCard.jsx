@@ -14,7 +14,7 @@ export default function BlogCard({ slug, attributes}) {
   })
   const subheading = attributes.subheading
   const tags = attributes.tags.data
-  const coverImage = getStrapiMedia(cover_img.attributes.url)
+  const coverImage = getStrapiMedia(cover_img?.attributes.url)
 
   return (
     <Link href={`/blogs/${slug}`}>

@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function LatestBlogCard({latest_blog}) {
 
-  const coverImage = getStrapiMedia(latest_blog[0].attributes.cover_image.data.attributes.url)
+  const coverImage = getStrapiMedia(latest_blog[0].attributes.cover_image.data?.attributes.url)
   const title = latest_blog[0].attributes.title
   const body = latest_blog[0].attributes.body
   const date = new Date(latest_blog[0].attributes.date_time).toLocaleDateString('en-US', {
@@ -24,7 +24,7 @@ export default function LatestBlogCard({latest_blog}) {
                 <div>
                   <img
                     alt="Latest Blog Post"
-                    className="md:rounded-l-lg rounded-t-lg object-cover w-full h-full"
+                    className="md:rounded-l-lg md:rounded-tr-none rounded-t-lg object-cover w-full h-full"
                     height={400}
                     src={coverImage}
                     style={{
