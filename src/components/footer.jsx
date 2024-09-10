@@ -47,7 +47,7 @@ const Footer = () => {
                   </a>
                 </span>
               </p>
-                <span className="text-white">Faculty Advisor: Prof. Saumya Hegde</span>
+                <span className="text-white">Faculty Advisor: Dr. Radhika B.S.</span>
 
               <div className="mt-6 flex items-center">
                 <a

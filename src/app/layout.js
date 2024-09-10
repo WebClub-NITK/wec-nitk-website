@@ -1,8 +1,7 @@
-
 import "./globals.css";
 import Navbar from "@/components/navbar";
-import Footer, { MinimalSocialsFooter } from "@/components/footer";
-import {Metadata, ResolvingMetadata} from 'next'
+import Footer from "@/components/footer";
+import Script from "next/script"
 
 
 export const metadata = {
@@ -30,22 +29,33 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <head>
-        <meta
-          name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1"
-        />
-      </head>
+		<head>
+			<meta
+				name="viewport"
+				content="width=device-width, height=device-height, initial-scale=1"
+			/>
+			
+			<Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_GTAG}`} />
+			<Script>
+				{
+					`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
 
-      <body className={"bg-white dark no-scrollbar "}>
-     
-          <Navbar />
-          <main>
-            {children}
-          </main>
-          <Footer />
-        
-      </body>
+					gtag('config', '${process.env.ANALYTICS_GTAG}');
+					`
+				}
+			</Script>
+		</head>
+
+		<body className={"bg-white dark no-scrollbar "}>
+			<Navbar />
+			<main>
+				{children}
+			</main>
+			<Footer />
+		</body>
     </html>
   );
 }
