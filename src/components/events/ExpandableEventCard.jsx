@@ -6,12 +6,23 @@ import { AnimatePresence, motion } from "framer-motion"
 
 export default function ExpandableEventCard ({ event }) {
     let [ modalInitial, setModalInitial ] = useState(false)
+    
+    useEffect(() => {
+        if (getHashID() == event.id) 
+            setModalInitial({ x: 0, y: 0, width: 0, height: 0})
+    }, [])
 
     useEffect(() => {
         if (modalInitial) {
             document.body.style.overflow = "hidden"
+            window.location.hash = event.id
         } else {
             document.body.style.overflow = "auto"
+            if (getHashID() == event.id) {
+                let y = window.scrollY
+                window.location.hash = ""
+                window.scrollTo(0, y)
+            }
         }
     }, [modalInitial])
 
@@ -37,4 +48,9 @@ export default function ExpandableEventCard ({ event }) {
             </AnimatePresence>
         </>
     )
+}
+
+
+function getHashID () {
+    return parseInt(window.location.hash.slice(1))
 }
