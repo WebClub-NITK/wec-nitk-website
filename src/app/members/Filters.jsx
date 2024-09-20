@@ -5,11 +5,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenu
 import { FilterIcon } from "lucide-react"
 
 export default function Filters ({ selected, select }) {
-    const filters = ["Algorithms", "Intelligence", "GDSC", "Systems & Security"]
+    const filters = ["All", "Algorithms", "Intelligence", "GDG On Campus", "Systems & Security", "Alumni"]
 
-    let selectedText = "All"
-    if (selected == 5) selectedText = "Alumni"
-    else if (selected > 0) selectedText = filters[selected-1]
+    let selectedText = filters[selected]
 
     return (
         <div className="flex justify-end mt-4">
@@ -22,15 +20,13 @@ export default function Filters ({ selected, select }) {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                     <DropdownMenuRadioGroup value={selected}>
-                        <DropdownMenuRadioItem value={0} onClick={() => select(0)} className="cursor-pointer">All</DropdownMenuRadioItem>
                         {
                             filters.map((filter, i) => {
                                 return (
-                                    <DropdownMenuRadioItem key={filter} value={i+1} onClick={() => select(i+1)} className="cursor-pointer">{filter}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem key={filter} value={i} onClick={() => select(i)} className="cursor-pointer">{filter}</DropdownMenuRadioItem>
                                 )
                             })
                         }
-                        <DropdownMenuRadioItem value={5} onClick={() => select(5)} className="cursor-pointer">Alumni</DropdownMenuRadioItem>
                     </DropdownMenuRadioGroup>
                 </DropdownMenuContent>
             </DropdownMenu>

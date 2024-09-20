@@ -30,12 +30,12 @@ export const ourSigsData = [
     id: 3,
     title: (
       <p className="font-semibold text-[#000000] lg:text-2xl flex gap-[5px]">
-        GDSC NITK
+        GDG On Campus NITK
       </p>
     ),
     description:
       "We help students bridge the gap between *theory and practice* in software development. In a **peer-to-peer learning** environment, students expand their knowledge, build solutions to real-world problems, and assist communities through **projects and events**. Our work spans **backend**, **frontend**, **mobile development**, and **game development**. We've actively participated in **hackathons** and contributed to **open-source projects**. Join us to learn, create, and make an impact!",
-    imageName: "gdsc.png",
+    imageName: "gdg.png",
     sigPage: "/blogs/7",
       className: " bg-[#ffb098]"
   },

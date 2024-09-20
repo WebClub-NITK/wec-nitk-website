@@ -4,13 +4,13 @@ import MemberCard from "@/components/members/MemberCard"
 import { useEffect, useState } from "react"
 import Filters from "./Filters"
 
-const sigs = ["", "Algorithms", "Intelligence", "GDSC", "Systems & Security"]
+const sigs = ["", "Algorithms", "Intelligence", "GDG On Campus", "Systems & Security"]
 
 export default function Members ({ members, getAlumni }) {
     // 0 - all
     // 1 - algo
     // 2 - intel
-    // 3 - gdsc
+    // 3 - gdg
     // 4 - systems
     // 5 - alumni
 
@@ -33,7 +33,7 @@ export default function Members ({ members, getAlumni }) {
         })
     }
 
-    const roleOrder = ['Convenor', 'Joint Convenor', 'Chairperson', 'Technical Coordinator', 'Algorithms Chair', 'Intelligence Chair', 'GDSC Chair', 'Systems & Security Chair', 'Algorithms Co-Chair', 'Intelligence Co-Chair', 'GDSC Co-Chair', 'Systems & Security Co-Chair', 'CP Community Coordinator', 'Secretary', 'GDSC Lead', 'Webmaster', 'Algorithms Secretary', 'Intelligence Secretary', 'GDSC Secretary', 'Systems & Security Secretary'];
+    const roleOrder = ['Convenor', 'Joint Convenor', 'Chairperson', 'Technical Coordinator', 'Algorithms Chair', 'Intelligence Chair', 'GDG On Campus Chair', 'Systems & Security Chair', 'Algorithms Co-Chair', 'Intelligence Co-Chair', 'GDG On Campus Co-Chair', 'Systems & Security Co-Chair', 'CP Community Coordinator', 'Secretary', 'Webmaster', 'Algorithms Secretary', 'Intelligence Secretary', 'GDG On Campus Secretary', 'GDG On Campus Organiser', 'Systems & Security Secretary'];
 
     const sortedMembers = [...membersShown].toSorted((a, b) => {
         const getPeakRole = member => member.attributes.posts.data.reduce((peakRole, post) => 
