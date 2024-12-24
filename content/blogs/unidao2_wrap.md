@@ -106,6 +106,8 @@ Through setbacks and successes, Suyash's story embodies the UniDAO spirit – sh
 
 ## Key Takeaways and Future Impact
 
+<img width="594" alt="Screenshot 2024-12-24 at 16 37 39" src="https://github.com/user-attachments/assets/3e7db87d-cc08-46f6-a086-e709a134373b" />
+
 UniDAO 2.0's success lies in its holistic approach to Web3 education:
 - Creating a supportive community that encourages exploration and innovation
 - Providing structured learning with practical applications
@@ -168,6 +170,9 @@ The true measure of UniDAO 2.0's impact was witnessed at ETHIndia (India's large
 <img width="658" alt="Screenshot 2024-12-24 at 16 14 33" src="https://github.com/user-attachments/assets/6f36f277-12ec-4fe5-ba67-a0385292f58e" />
 <img width="658" alt="Screenshot 2024-12-24 at 16 14 48" src="https://github.com/user-attachments/assets/88a2598d-ffa7-49ae-b2ef-ab2b6aeb4360" />
 <img width="657" alt="Screenshot 2024-12-24 at 16 19 06" src="https://github.com/user-attachments/assets/8d2e6899-5a9f-4d43-9dc6-acfb16daa328" />
+<img width="655" alt="Screenshot 2024-12-24 at 16 36 08" src="https://github.com/user-attachments/assets/741f65da-12c1-4d08-80de-787b71f8e763" />
+<img width="593" alt="Screenshot 2024-12-24 at 16 37 03" src="https://github.com/user-attachments/assets/30f76de2-5af4-45f9-895a-243c3133c548" />
+
 
 
 These achievements represent more than just hackathon victories – they showcase how UniDAO 2.0 participants transformed from Web3 learners to builders creating real impact in the ecosystem.
