@@ -67,11 +67,18 @@ For Shivam, UniDAO 2.0 was more than just a program—it was a doorway to an ent
 
 The hands-on learning approach transformed theoretical concepts into tangible skills. Shivam progressed from basic solidity exercises to deploying complex smart contracts, creating interactive dApps, and minting NFTs, building AgriVerify & AI-NFT App. The program's structured path helped him build confidence with each new project, preparing him for bigger challenges ahead.
 
+_"Amazing seniors like **Mardav Bhaiya**, **Apoorva Bhaiya**, **Shubham Bhaiya** and **Ayush Bhaiya**... —who are the tech legends of our college—played a huge role in guiding us towards Web3. Their constructive feedback was invaluable when I was building **AgriVerify**, a decentralized platform to certify and verify crops on the blockchain. From integrating push notifications and IPFS storage to using NFTs for proof of origin, their support made the journey both insightful and rewarding."_, says Shivam.
+
+![Web3project](https://github.com/user-attachments/assets/b29d85bc-b93d-41ed-bf46-0039717126d4)
+
+
 This preparation culminated in his participation at ETHIndia'24, where he and his team developed AIgentX, a groundbreaking decentralized marketplace for AI agents. The project showcased how far he'd come—from learning basic Web3 concepts to building a complex platform that combined AI with blockchain technology. 
 
 His team's achievement at ETHIndia wasn't just about the technical implementation; it represented the journey from curiosity to capability that UniDAO 2.0 had enabled.
 
 Through the bounty system and weekly challenges, Shivam consistently ranked 6th among the top participants, demonstrating how engagement and dedication could accelerate learning. His experience proves that with the right guidance and community support, the leap into Web3 development becomes not just manageable but exciting and rewarding.
+
+![Hacker](https://github.com/user-attachments/assets/25ee8a51-148e-4277-91c2-1fece3997a74)
 
 ### Suyash's Experience
 
