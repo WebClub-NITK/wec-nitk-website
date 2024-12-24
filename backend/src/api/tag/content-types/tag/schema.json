@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "tags",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog.blog",
+      "inversedBy": "tags"
+    },
+    "reading_lists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::reading-list.reading-list",
+      "inversedBy": "tags"
+    },
+    "hackathons": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hackathon.hackathon",
+      "mappedBy": "tags"
+    }
+  }
+}

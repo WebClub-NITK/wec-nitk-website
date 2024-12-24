@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+
+    db:
+        image: postgres:14-bookworm
+        restart: always
+        environment:
+            POSTGRES_USER: ${DATABASE_USERNAME}
+            POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+            POSTGRES_DB: ${DATABASE_NAME}
+        volumes:
+            -   wec_backend_database:/var/lib/postgresql/data
+        command: -p ${DATABASE_PORT}
+
+    strapi:
+        build:
+            dockerfile: Dockerfile
+            context: "./backend"
+            args:
+                - BACKEND_URL=${BACKEND_URL}
+
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}"]
+            interval: 30s
+            timeout: 30s
+            retries: 5
+            start_period: 30s
+            start_interval: 10s
+        depends_on:
+            - db
+        volumes:
+            -   type: bind
+                source: ./backend/public/uploads
+                target: /app/public/uploads
+        env_file:
+            - .env
+        
+    
+    frontend:
+        build: 
+            dockerfile: Dockerfile
+            context: "./frontend"
+        depends_on:
+            strapi:
+                condition: service_healthy
+                restart: true
+        env_file:
+            - .env
+
+    nginx:
+        restart: always
+        build:
+            dockerfile: Dockerfile
+            context: ./nginx
+            args:
+                - FRONTEND_PORT=${PORT}
+                - BACKEND_PORT=${BACKEND_PORT}
+        ports:
+            - "3050:80"
+        env_file:
+            - .env
+        depends_on:
+            - strapi
+            - frontend
+        
+
+
+
+
+volumes:
+    wec_backend_database:

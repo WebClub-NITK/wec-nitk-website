@@ -1,36 +1,21 @@
-<h1 align="center"> Web Club website (Frontend) </h1>
+<h1 align="center"> Web Club Website </h1>
 
 ## Tech Stack 🧰
 
-<li>Frameworks</li>
+<li>Frontend</li>
 
 - [NextJS](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
+<li>Backend</li>
+
+- [Strapi](https://strapi.io/)
+
 <br/>
 
-## Pages ☑️
-
-#### Home
-- Hero Section
-- What do we do
-- Events
-- FAQ 
-- Footer
-
-#### Blogs
-- Blogs
-- Reading list
-
-#### Teams
-#### GDSC
-#### Algorithms
-#### Systems
-#### Intelligence
 
 
-
-## Installation and Contribution 🧑‍💻
+## Installation 🧑‍💻
 
 ### Using Git and Github
 
@@ -49,13 +34,13 @@
     - `footer: Add contact links`
     - `events: Fix scrolling issues`
 
-### Install required packages
+### Running the Project
 
-- `npm install`
-
-### Run server
-
-- `npm run dev`
+- Copy and modify the example into `.env` file in the root of the repository
+- Run `docker compose up`
+- Visit the **Strapi Admin Interface** and create an admin user
+- Create a new **Strapi API Key** and add it to the `.env` file
+- Re-run the docker compose (run `docker compose down` and then `docker compose up --build`)
 
 <br/>
 

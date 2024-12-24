@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "github_id": {
+      "type": "string"
+    },
+    "linkedin_id": {
+      "type": "string"
+    },
+    "mail_id": {
+      "type": "string"
+    },
+    "twitter_id": {
+      "type": "string"
+    },
+    "alumni": {
+      "type": "boolean"
+    },
+    "sigs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sig.sig",
+      "mappedBy": "members"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "written_by"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "members"
+    }
+  }
+}

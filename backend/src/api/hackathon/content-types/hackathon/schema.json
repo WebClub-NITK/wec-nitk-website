@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hackathons",
+  "info": {
+    "singularName": "hackathon",
+    "pluralName": "hackathons",
+    "displayName": "Hackathon",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "Online",
+        "In-Person",
+        "Hybrid"
+      ]
+    },
+    "prizes": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "registration_deadline": {
+      "type": "datetime"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "link": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "hackathons"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Ongoing",
+        "Past",
+        "Upcoming"
+      ]
+    }
+  }
+}
