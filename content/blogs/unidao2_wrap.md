@@ -1,4 +1,11 @@
+
+<img width="1100" alt="Screenshot 2024-12-24 at 15 05 01" src="https://github.com/user-attachments/assets/1b29dd48-5ad6-4084-941e-9a674c9edb23" />
+
 # UniDAO 2.0 Wrap
+
+<img width="1096" alt="Screenshot 2024-12-24 at 14 55 39" src="https://github.com/user-attachments/assets/dad4d7e7-d5dd-4a64-9a2d-e46d9c839fc6" />
+
+## Come with me on a journey of...
 
 6 weeks,
 
@@ -12,13 +19,27 @@
 
 2 major web3 hackathon participation
 
-The world of Web3 and blockchain technology can seem overwhelming at first glance. For many students at NITK, the question wasn't just about where to start—it was about finding the right community to learn and grow with. UniDAO 2.0, an 6-week Ethereum and Web3 boot camp, emerged as that perfect starting point, offering not just technical knowledge but also a gateway to real-world opportunities and lasting connections.
+
+The world of Web3 and blockchain technology can seem overwhelming at first glance. For many students at NITK, the question wasn't just about where to start—it was about finding the right community to learn and grow with. UniDAO 2.0, a 6-week Ethereum and Web3 boot camp, emerged as that perfect starting point, offering not just technical knowledge but also a gateway to real-world opportunities and lasting connections.
+
 
 ## The Program Structure
 
 UniDAO 2.0 began with an engaging orientation session that set the tone for what was to come. The program welcomed curious minds regardless of their previous experience with blockchain technology. The selection process emphasized enthusiasm and willingness to learn over existing expertise.
 
+### Orientation
+<img width="1090" alt="Screenshot 2024-12-24 at 15 26 12" src="https://github.com/user-attachments/assets/982f0c48-19d6-4a73-a2ce-7198dfe4285b" />
+
+<img width="1100" alt="Screenshot 2024-12-24 at 15 26 36" src="https://github.com/user-attachments/assets/3a56605a-dd14-445e-8be2-b1b8484b2d4a" />
+
+
+
 The boot camp's structure was thoughtfully designed to ensure steady progress:
+
+
+
+<img width="1094" alt="Screenshot 2024-12-24 at 15 27 02" src="https://github.com/user-attachments/assets/60007e85-383c-4ae6-8625-ed0f25ef74d1" />
+
 - **Weekly sessions** with carefully curated content and practical tasks
 - An engaging bounty system with leaderboards that made learning rewarding
 - Hands-on assignments and real-world projects
@@ -33,6 +54,11 @@ The program leveraged various tools to create an optimal learning experience:
 - Weekly materials covered everything from CryptoZombies for Solidity to Hardhat for smart contracts
 - Regular 1:1 doubt-clearing sessions ensured no one fell behind
 - Inspirational builder talks, including stories like "Vitalik: An Ethereum Story"
+
+## The Team
+
+<img width="1100" alt="Screenshot 2024-12-24 at 15 06 04" src="https://github.com/user-attachments/assets/2fc51200-4728-4f5c-b6ba-8992860687be" />
+
 
 ## Personal Journey - From Learning to Building
 ### Shivam's Experience
@@ -55,9 +81,16 @@ Their Web3 journey truly began with UniDAO 2.0, a collaboration between Devfolio
 
 _"Special thanks goes to seniors like **Ayush Bhaiya**, **Shubham Bhaiya**, and **Apoorva Bhaiya**, who patiently guided us and cleared our doubts. But if there’s one person who shaped my hackathon journey the most, it was **Mardav Bhaiya**. As a seasoned hackathon winner, he mentored us with insights, tips, and constant encouragement.He was there for us through all the highs and lows his belief in us made all the difference."_, says Suyash.
 
-Their first major challenge came with back-to-back acceptances to Unfold and ETHIndia. At Unfold, they developed **JusticeChain**, an ambitious project targeting India's legal system backlog. The platform featured AI-powered judges, interactive legal simulations, and a decentralized courtroom with smart evidence verification. Despite winning a track prize, the experience taught them valuable lessons about focus, preparation, and the importance of effective presentation.
+Their first major challenge came with back-to-back acceptances to Unfold and ETHIndia. 
 
-ETHIndia marked their next milestone. Armed with lessons from Unfold, they pivoted to create AIgentX, a decentralized marketplace for AI agents. The project showcased their growth – featuring custom AI agent creation, tokenization, multi-language support, and autonomous on-chain wallets. Despite coordination challenges and fierce competition, they secured another track pool prize and earned _0.42 ETH_🔥 through quadratic voting.
+![image](https://github.com/user-attachments/assets/5b9c4b60-034c-45c7-8044-8b48245e78aa)
+![DS1_6271](https://github.com/user-attachments/assets/e6afc365-7f2f-4373-bcb5-4f71ae4a469d)
+![DS1_6411](https://github.com/user-attachments/assets/817f29ab-c001-4d05-bd3f-2788cc9e313d)
+
+
+At Unfold, they developed [JusticeChain](https://github.com/marcdhi/JusticeChain), an ambitious project targeting India's legal system backlog. The platform featured AI-powered judges, interactive legal simulations, and a decentralized courtroom with smart evidence verification. Despite winning a track prize, the experience taught them valuable lessons about focus, preparation, and the importance of effective presentation.
+
+ETHIndia marked their next milestone. Armed with lessons from Unfold, they pivoted to create AIgentX, a decentralized marketplace for AI agents. The project showcased their growth – featuring custom AI agent creation, tokenization, multi-language support, and autonomous on-chain wallets. Despite coordination challenges and fierce competition, they secured another track pool prize and earned _0.42 ETH_ 🔥 through quadratic voting.
 
 The hackathon experiences taught them priceless lessons:
 - Starting small and building up gradually
@@ -78,6 +111,68 @@ UniDAO 2.0's success lies in its holistic approach to Web3 education:
 - Providing structured learning with practical applications
 - Offering opportunities for real-world project development
 - Building networks that extend beyond the program
+
+### Celebrating Our Builders' Success at Unfold'24
+
+<img width="1095" alt="Screenshot 2024-12-24 at 15 36 22" src="https://github.com/user-attachments/assets/23275658-46c0-4c67-99af-4974a2538422" />
+
+### **Team Higgs - Project [Box3](https://devfolio.co/projects/box-4b23)**
+
+![image](https://github.com/user-attachments/assets/1138c82f-1288-44c3-b060-d3e1220ee125)
+
+Fahim, Vedant, Apoorva & Abhishek were the winners of
+- Sui and
+- Base Sponsor Tracks at the Unfold'24 Hackathon 🥳🥳
+
+### **Team LossPerEpoch - Project [JusticeChain](https://devfolio.co/projects/justicechain-78fb)**
+
+![image](https://github.com/user-attachments/assets/1ff46dbc-181d-4f36-bc29-a7a17bb9cb63)
+
+Suyash, Mardav, Vatsal & Vishruth were the winners of 
+- Base Pool Prize at the Unfold'24 Hackathon
+
+### Celebrating Our Builders' Success at ETHIndia'24
+
+The true measure of UniDAO 2.0's impact was witnessed at ETHIndia (India's largest Ethereum Hackathon), where multiple teams showcased their innovations and secured significant victories:
+
+**Team LossPerEpoch - Project [Khoj](https://devfolio.co/projects/khoj-3336)**
+- ETHIndia '24 Finalist/Winner
+- Coinbase Pool Prize Winner
+- Base Top 10
+- Polkadot 1st Runner Up
+- Lit Protocol 2nd Runner Up
+- True Network Winner
+
+**Team SnackOverflow - Project [ZKonnect](https://devfolio.co/projects/zkonnect-119f)**
+- Winner: Polygon Best dApp on zkEVM Track
+- Demonstrating innovative applications of zero-knowledge proofs
+
+**Team Truce - Project [Rule Zer0](https://devfolio.co/projects/rule-zer-25e1)**
+- Winner: Innovative Consumer Apps on Base Track
+- Pushing boundaries in consumer-focused Web3 applications
+
+**Team P.E.K.K.A Protocol - Project [AIgentX](https://devfolio.co/projects/aigentx-02bc)**
+- Coinbase Pool Prize Winner
+- Pioneering the intersection of AI and blockchain technology
+
+### ETHIndia'24 Hacking Gallery
+<img width="658" alt="Screenshot 2024-12-24 at 16 07 16" src="https://github.com/user-attachments/assets/85c7af2f-f898-4f2b-8e60-e9c43d615877" />
+<img width="657" alt="Screenshot 2024-12-24 at 16 10 00" src="https://github.com/user-attachments/assets/5ae1a1f3-f89b-498a-bf4e-192aa9bb5af3" />
+<img width="657" alt="Screenshot 2024-12-24 at 16 10 18" src="https://github.com/user-attachments/assets/43a4f124-1d75-4477-a94a-a38481485db3" />
+<img width="653" alt="Screenshot 2024-12-24 at 16 05 39" src="https://github.com/user-attachments/assets/70f40f27-2981-40a8-91de-32806b2a4070" />
+<img width="658" alt="Screenshot 2024-12-24 at 16 06 04" src="https://github.com/user-attachments/assets/f403a6c2-b019-4d18-8dba-aba0c2406244" />
+<img width="659" alt="Screenshot 2024-12-24 at 16 10 52" src="https://github.com/user-attachments/assets/08d84022-8c91-4877-9307-9eb8d2a7e6c1" />
+<img width="653" alt="Screenshot 2024-12-24 at 16 11 06" src="https://github.com/user-attachments/assets/044c3926-a649-478f-b9ec-969a8e80e86d" />
+<img width="657" alt="Screenshot 2024-12-24 at 16 11 31" src="https://github.com/user-attachments/assets/557a69ad-de91-4d85-a839-7182a1a2a6c0" />
+<img width="658" alt="Screenshot 2024-12-24 at 16 12 33" src="https://github.com/user-attachments/assets/186c4a8b-0f95-4b00-8e8b-5441863de7d6" />
+<img width="658" alt="Screenshot 2024-12-24 at 16 14 33" src="https://github.com/user-attachments/assets/6f36f277-12ec-4fe5-ba67-a0385292f58e" />
+<img width="658" alt="Screenshot 2024-12-24 at 16 14 48" src="https://github.com/user-attachments/assets/88a2598d-ffa7-49ae-b2ef-ab2b6aeb4360" />
+<img width="657" alt="Screenshot 2024-12-24 at 16 19 06" src="https://github.com/user-attachments/assets/8d2e6899-5a9f-4d43-9dc6-acfb16daa328" />
+
+
+These achievements represent more than just hackathon victories – they showcase how UniDAO 2.0 participants transformed from Web3 learners to builders creating real impact in the ecosystem.
+
+For anyone considering taking their first step into Web3, these achievements demonstrate that with the right community, structure, and mindset, the journey from curious beginner to confident builder is not just possible—it's achievable within weeks. UniDAO 2.0 continues to be that launching pad for many at NITK, turning passionate learners into accomplished builders in the Web3 ecosystem.
 
 ## Looking Forward
 
