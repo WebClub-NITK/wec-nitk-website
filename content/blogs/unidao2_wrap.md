@@ -67,7 +67,7 @@ For Shivam, UniDAO 2.0 was more than just a program—it was a doorway to an ent
 
 The hands-on learning approach transformed theoretical concepts into tangible skills. Shivam progressed from basic solidity exercises to deploying complex smart contracts, creating interactive dApps, and minting NFTs, building AgriVerify & AI-NFT App. The program's structured path helped him build confidence with each new project, preparing him for bigger challenges ahead.
 
-_"Amazing seniors like **Mardhav Bhaiya**, **Apoorva Bhaiya**, **Shubham Bhaiya** and **Ayush Bhaiya**... —who are the tech legends of our college—played a huge role in guiding us towards Web3. Their constructive feedback was invaluable when I was building **AgriVerify**, a decentralized platform to certify and verify crops on the blockchain. From integrating push notifications and IPFS storage to using NFTs for proof of origin, their support made the journey both insightful and rewarding."_, says Shivam.
+_"Amazing seniors like **Mardav Bhaiya**, **Apoorva Bhaiya**, **Shubham Bhaiya** and **Ayush Bhaiya**... —who are the tech legends of our college—played a huge role in guiding us towards Web3. Their constructive feedback was invaluable when I was building **AgriVerify**, a decentralized platform to certify and verify crops on the blockchain. From integrating push notifications and IPFS storage to using NFTs for proof of origin, their support made the journey both insightful and rewarding."_, says Shivam.
 
 ![Web3project](https://github.com/user-attachments/assets/b29d85bc-b93d-41ed-bf46-0039717126d4)
 
