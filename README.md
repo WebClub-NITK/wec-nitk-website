@@ -36,11 +36,18 @@
 
 ### Running the Project
 
-- Copy and modify the example into `.env` file in the root of the repository
+- Copy and modify the [example](./.env.example) into `.env` file in the root of the repository
 - Run `docker compose up`
 - Visit the **Strapi Admin Interface** and create an admin user
-- Create a new **Strapi API Key** and add it to the `.env` file
+- Create a new **Strapi API Key** from the **API Tokens** section of **Strapi Settings** and add it to the `.env` file
 - Re-run the docker compose (run `docker compose down` and then `docker compose up --build`)
+
+<br/>
+
+### Setup the Project for Development
+
+- Follow the same steps as [the production setup](#running-the-project) but use the [development compose file](./docker-compose-dev.yml) instead
+- When you run the `docker compose up`command, for example, run `docker compose -f docker-compose-dev.yml up` instead
 
 <br/>
 

@@ -13,7 +13,7 @@ services:
 
     strapi:
         build:
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
             context: "./backend"
             args:
                 - BACKEND_URL=${BACKEND_URL}
@@ -29,15 +29,16 @@ services:
             - db
         volumes:
             -   type: bind
-                source: ./backend/public/uploads
-                target: /app/public/uploads
+                source: ./backend
+                target: /app
+                
         env_file:
             - .env
         
     
     frontend:
         build: 
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
             context: "./frontend"
         depends_on:
             strapi:
@@ -45,6 +46,10 @@ services:
                 restart: true
         env_file:
             - .env
+        volumes:
+            -   type: bind
+                source: ./frontend
+                target: /app
 
     nginx:
         restart: always

@@ -1,0 +1,8 @@
+FROM node:20 AS builder
+WORKDIR /app
+COPY ./package.json .
+RUN corepack enable pnpm
+RUN pnpm i
+ARG BACKEND_URL
+VOLUME [ "/app/node_modules" ]
+CMD [ "pnpm", "run", "develop" ]
