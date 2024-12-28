@@ -352,7 +352,7 @@ evaluate_model(model, test_loader, criterion)
 
 You are setup. Well done!
 
-#### Inferences
+### Inferences
 After training the model on the images of the dataset along with the text modality, we obtain the following metrics after 20 straight epochs.
 
 ![image](https://github.com/user-attachments/assets/45d2b7aa-04e3-4641-92b1-7d4172d45d18)
@@ -369,7 +369,7 @@ By far, multimodal machine learning provides powerful tools for integrating dive
 
 ## References
 
-These are some of the references that we have used to write this blogs.
+These are some of the references that we have used to write this blog.
 
 [1] https://keras.io/examples/nlp/multimodal_entailment/
 
