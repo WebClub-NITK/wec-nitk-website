@@ -58,14 +58,6 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "inversedBy": "hackathons"
-    },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "Ongoing",
-        "Past",
-        "Upcoming"
-      ]
     }
   }
 }
