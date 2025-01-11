@@ -8,6 +8,22 @@ export default async function HackClubDashBoard() {
     })
     let hackathons = (await response.json()).data;
 
+    const now = new Date();
+    hackathons = hackathons.map(hackathon => {
+        const startTime = new Date(hackathon.attributes.start_time);
+        const endTime = new Date(hackathon.attributes.end_time);
+
+        if (now >= startTime && now <= endTime) {
+            hackathon.attributes.status = "Ongoing";
+        } else if (now < startTime) {
+            hackathon.attributes.status = "Upcoming";
+        } else {
+            hackathon.attributes.status = "Past";
+        }
+
+        return hackathon;
+    });
+
     return (
         <>
             <section className="w-full h-[80vh] flex items-center justify-center bg-accent-900 bg-cover bg-center">
