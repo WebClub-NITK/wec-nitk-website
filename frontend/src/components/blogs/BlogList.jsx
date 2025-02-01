@@ -1,26 +1,42 @@
 "use client"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import BlogCard from "./BlogCard"
 import { DropdownMenuTrigger, DropdownMenuRadioItem, DropdownMenuRadioGroup, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import Pagination from "@/components/pagination" 
 
 export default function BlogList ({ blogs, filters }) {
 
     const [filteredBlogs, setFilteredBlogs] = useState(blogs)
     const [selectedFilter, setSelectedFilter] = useState("all")
+    const [currentPage, setCurrentPage] = useState(1)
+    const [blogsPerPage] = useState(4)
 
     const filterBlogs = (filter) => {
         return () => {
             if (filter === "all") {
                 setSelectedFilter("all")
                 setFilteredBlogs(blogs)
+                setCurrentPage(1)
             } else {
                 setSelectedFilter(filter)
                 setFilteredBlogs(blogs.filter((blog) => {
                     return blog.attributes.tags.data.some((tag) => tag.attributes.name === filter)
                 }))
+                setCurrentPage(1)
             }
         }
+    }
+  
+    const lastBlogIndex= currentPage * blogsPerPage
+    const firstBlogIndex = lastBlogIndex - blogsPerPage
+    const currentBlogs = filteredBlogs.slice(firstBlogIndex, lastBlogIndex)
+  
+    // Number of Pages
+    const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage)
+  
+    const handlePageChange = (pageNumber) => {
+      setCurrentPage(pageNumber)
     }
 
     return (
@@ -50,26 +66,25 @@ export default function BlogList ({ blogs, filters }) {
             </DropdownMenu>
         </div>
 
-            {
-                !filteredBlogs.length && (
-                    <div className="flex flex-col items-center justify-center h-40 text-gray-500">
-                        No blogs found
-                    </div>
-                )
-            }
+            
+        {(!currentBlogs || !currentBlogs.length) && (
+        <div className="flex flex-col items-center justify-center h-40 text-gray-500">
+            No blogs found
+        </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 p-2">
-            {filteredBlogs.map((blog) => {
-                return (
-                    <div key={blog.id} className="">
-                        <BlogCard slug={blog.id} attributes={blog.attributes}></BlogCard>
-                    </div>
-                )
-                })
-            }
+        {currentBlogs.map((blog) => (
+            <div key={blog.id} className="">
+            <BlogCard slug={blog.id} attributes={blog.attributes}></BlogCard>
+            </div>
+        ))}
         </div>
 
+        {/* Pagination Component */}
+        <Pagination totalPages={totalPages} onPageChange={handlePageChange} />
         </>
-    )
+        )
 }
 
 
