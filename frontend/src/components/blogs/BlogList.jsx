@@ -61,11 +61,13 @@ export default function BlogList ({ blogs, filters }) {
             {filteredBlogs.map((blog) => {
                 return (
                     <div key={blog.id} className="">
-                        <BlogCard slug={blog.id} attributes={blog.attributes}></BlogCard>
+                        <BlogCard 
+                            slug={blog.id} 
+                            attributes={blog.attributes}
+                        />
                     </div>
                 )
-                })
-            }
+            })}
         </div>
 
         </>
