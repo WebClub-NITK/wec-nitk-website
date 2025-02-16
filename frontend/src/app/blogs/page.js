@@ -3,10 +3,9 @@ import LatestBlogCard from "@/components/blogs/LatestBlog"
 import { getBlogs } from "@/helpers/getBlogs"
 import { getFilters } from "@/helpers/getFilters"
 
-export default async function BlogListPage() {
-
-    let blogs = await getBlogs()
-    let filters = await getFilters()
+export default async function BlogsPage() {
+    const blogs = await getBlogs()
+    const filters = await getFilters()
 
     return (
         <>
