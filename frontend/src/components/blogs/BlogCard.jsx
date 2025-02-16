@@ -11,7 +11,10 @@ export default function BlogCard({ slug, attributes}) {
   const title = attributes.title
   const body = attributes.body
   const date = new Date(attributes.date_time).toLocaleDateString('en-US', {
-    year: 'numeric', month: 'long', day: 'numeric'
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC'
   })
   const subheading = attributes.subheading
   const tags = attributes.tags.data
