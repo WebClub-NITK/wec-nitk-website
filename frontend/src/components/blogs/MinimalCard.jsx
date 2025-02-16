@@ -3,47 +3,32 @@ import Image from "next/image"
 import { getStrapiMedia } from "@/helpers/strapi_api"
 import Link from "next/link"
 
-export default function MinimalCard({attributes , blogID}) {
+export default function MinimalCard({ attributes, blogID }) {
+    const title = attributes.title
+    const date = new Date(attributes.date_time).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+    })
 
-  const cover_img = attributes.cover_image.data
-  const title = attributes.title
-  const coverImage = getStrapiMedia(cover_img.attributes.url)
+    // Create URL-friendly title
+    const urlTitle = title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .trim()
 
-  return (
-    <Link href={`/blogs/${blogID}`}>
-      <Card className=" max-w-full h-full flex flex-col">
-          <div className="relative">
-              <Image
-              alt="Blog image"
-              className="w-full h-48 object-cover rounded-t-lg"
-              height="200"
-              src={coverImage}
-              style={{
-                  aspectRatio: "300/200",
-                  objectFit: "cover",
-              }}
-              width="300"
-              />
-          </div>
+    const cover_img = attributes.cover_image.data
+    const coverImage = getStrapiMedia(cover_img.attributes.url)
 
-          <div className="flex-grow flex flex-col justify-between">
-                  <CardContent className="space-y-4 p-6">
-                      {/* <div className="space-y-1">
-                          <p className="text-gray-500 text-sm mb-2">
-                            {date}
-                          </p>
-                          <hr className="border-t" />
-                      </div> */}
-
-                      <div>
-                        <h2 className="text-xl font-bold">{title}</h2>
-                        {/* <p className="text-gray-500 line-clamp-3 mt-2">{body}</p> */}
-                      </div>
-                  </CardContent>
-          </div>
-      </Card>
-    </Link>
-  )
+    return (
+        <Link href={`/blogs/${urlTitle}-${blogID}`}>
+            <Card className="p-4 hover:bg-accent transition-colors">
+                <div className="space-y-1">
+                    <h3 className="font-medium line-clamp-2">{title}</h3>
+                    <p className="text-sm text-gray-500">{date}</p>
+                </div>
+            </Card>
+        </Link>
+    )
 }
 
 function PodcastIcon(props) {
