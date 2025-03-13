@@ -3,6 +3,7 @@ import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import { ArrowRightIcon } from '@/components/icons/arrow';
 import { TrophyIcon } from '@/components/icons/trophy'
 import { CalendarClock } from "lucide-react";
+import Image from "next/image"
 
 export default function HackathonCard({ hackathon }) {
     const { title, description, prizes, mode, start_time, end_time, link, image } = hackathon;
@@ -41,28 +42,28 @@ export default function HackathonCard({ hackathon }) {
             <CardHeader>
                 {
                     imagePath ?
-                    <img
+                    <Image
                         src={imageURL}
                         alt=""
                         className="rounded-t-lg object-cover w-full"
                         height="200"
+                        width="300"
                         style={{
                             aspectRatio: "300/200",
                             objectFit: "contain",
                         }}
-                        width="300"
                     />
                     :
-                    <img
+                    <Image
                         src='/placeholder.svg'
                         alt=""
                         className="rounded-t-lg object-cover w-full"
                         height="200"
+                        width="300"
                         style={{
                             aspectRatio: "300/200",
                             objectFit: "contain",
                         }}
-                        width="300"
                     />
                 }
             </CardHeader>

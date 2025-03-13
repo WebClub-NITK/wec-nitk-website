@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { FaLink } from "react-icons/fa6";
 import { IoMdPerson } from "react-icons/io";
 import { IoMail } from "react-icons/io5"
+import Image from "next/image"
 
 export default function MemberCard ({ member }) {
     let { name, posts, github_id, linkedin_id, mail_id, image, alumni } = member
@@ -38,7 +39,7 @@ export default function MemberCard ({ member }) {
                 >
                     {
                         imagePath ?
-                        <img src={imageURL} alt="" className="rounded-lg w-full aspect-square object-cover object-center" />
+                        <Image src={imageURL} width="180" height="180" alt="" className="rounded-lg w-full aspect-square object-cover object-center" />
                         :
                         <div className="py-4 text-gray-950">
                             <IoMdPerson size={150}/>
