@@ -15,11 +15,13 @@ export default function EventCard({ event, clickHandler = () => null }) {
     day: "numeric",
     month: "short",
     year: "numeric",
+    timeZone: "asia/kolkata",
   });
 
   const time = new Date(date_time).toLocaleTimeString("en-IN", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "asia/kolkata",
   });
 
   // format options : large (1000x1000), medium (750x750), small(500x500) , thumbnail(150x150)

@@ -29,8 +29,8 @@ services:
             - db
         volumes:
             -   type: bind
-                source: ./backend/public/uploads
-                target: /app/public/uploads
+                source: ./backend/public
+                target: /app/public
         env_file:
             - .env
         

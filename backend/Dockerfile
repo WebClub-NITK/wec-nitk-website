@@ -1,7 +1,8 @@
 FROM node:20 AS builder
 WORKDIR /app
-COPY ./package.json .
+RUN npm install -g corepack@latest
 RUN corepack enable pnpm
+COPY ./package.json .
 RUN pnpm i
 COPY . .
 ARG BACKEND_URL

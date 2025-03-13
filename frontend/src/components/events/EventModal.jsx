@@ -38,11 +38,13 @@ export default function EventModal ({ event, initial, handleClose }) {
         day: "numeric",
         month: "short",
         year: "numeric",
+        timeZone: "asia/kolkata",
     });
 
     const time = new Date(date_time).toLocaleTimeString("en-IN", {
         hour: "2-digit",
         minute: "2-digit",
+        timeZone: "asia/kolkata",
     });
 
     const cover_image = getStrapiMedia(cover_images.data[0].attributes.url)

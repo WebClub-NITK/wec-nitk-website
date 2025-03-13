@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"
 import { getStrapiMedia } from "@/helpers/strapi_api"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function LatestBlogCard({latest_blog}) {
@@ -10,7 +11,7 @@ export default function LatestBlogCard({latest_blog}) {
   const title = latest_blog[0].attributes.title
   const body = latest_blog[0].attributes.body
   const date = new Date(latest_blog[0].attributes.date_time).toLocaleDateString('en-US', {
-    year: 'numeric', month: 'long', day: 'numeric'
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: "asia/kolkata"
   })
   const subheading = latest_blog[0].attributes.subheading
   const tags = latest_blog[0].attributes.tags.data
@@ -22,16 +23,16 @@ export default function LatestBlogCard({latest_blog}) {
           <section className="py-12 px-4">
               <div className=" max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg border border-opacity-25">
                 <div>
-                  <img
+                  <Image
                     alt="Latest Blog Post"
                     className="md:rounded-l-lg md:rounded-tr-none rounded-t-lg object-cover w-full h-full"
                     height={400}
+                    width={600}
                     src={coverImage}
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
                     }}
-                    width={600}
                   />
                 </div>
 
