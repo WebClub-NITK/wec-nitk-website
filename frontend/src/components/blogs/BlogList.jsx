@@ -1,42 +1,25 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import BlogCard from "./BlogCard";
 import { DropdownMenuTrigger, DropdownMenuRadioItem, DropdownMenuRadioGroup, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import Pagination from "@/components/pagination";
 
-export default function BlogList({ blogs, filters }) {
+export default function BlogList({ blogs, filters, totalPages }) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
 
-    const pageFromUrl = Number(searchParams.get("page")) || 1;
-    const [filteredBlogs, setFilteredBlogs] = useState(blogs);
-    const [selectedFilter, setSelectedFilter] = useState("all");
-    const [blogsPerPage] = useState(4);
+    const selectedFilter = searchParams.get("filter") || "all";
 
     const handleFilterChange = (filter) => {
-        setSelectedFilter(filter);
-        setFilteredBlogs(filter === "all" ? blogs : blogs.filter(blog => blog.attributes.tags.data.some(tag => tag.attributes.name === filter)));
-        updateUrl(1);
-    };
-
-    const updateUrl = (page) => {
-        const params = new URLSearchParams(searchParams);
-        params.set("page", page.toString());
+        
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("page", "1");
+        params.set("filter", filter);
         router.push(`${pathname}?${params.toString()}`, { scroll: false });
     };
-
-    useEffect(() => {
-        setFilteredBlogs(selectedFilter === "all" ? blogs : blogs.filter(blog => blog.attributes.tags.data.some(tag => tag.attributes.name === selectedFilter)));
-    }, [selectedFilter, blogs]);
-
-    const lastBlogIndex = pageFromUrl * blogsPerPage;
-    const firstBlogIndex = lastBlogIndex - blogsPerPage;
-    const currentBlogs = useMemo(() => filteredBlogs.slice(firstBlogIndex, lastBlogIndex), [filteredBlogs, pageFromUrl]);
-
-    const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
 
     return (
         <>
@@ -62,22 +45,25 @@ export default function BlogList({ blogs, filters }) {
                 </DropdownMenu>
             </div>
 
-            {currentBlogs.length === 0 && (
+            {blogs.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-40 text-gray-500">
                     No blogs found
                 </div>
-            )}
+            ):(
+            <>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 p-2">
-                {currentBlogs.map(blog => (
+                {blogs.map(blog => (
                     <div key={blog.id}>
                         <BlogCard slug={blog.id} attributes={blog.attributes} />
                     </div>
                 ))}
             </div>
+            
+            {totalPages > 1 && <Pagination totalPages={totalPages} />}
+            </>
 
-            {/* Pagination Component */}
-            <Pagination totalPages={totalPages} onPageChange={updateUrl} />
+            )}
         </>
     );
 }

@@ -15,7 +15,7 @@ export default function Pagination({ totalPages }) {
     };
 
     return (
-        <div className="pagination flex flex-row justify-center items-center gap-4">
+        <div className="pagination flex flex-row justify-center items-center gap-4 mt-11">
  
             {currentPage > 1 && (
                 <button className="flex items-center gap-2 rounded-full px-3 py-1" onClick={() => handlePageChange(currentPage - 1)}>
@@ -28,7 +28,7 @@ export default function Pagination({ totalPages }) {
                     <button
                         key={index}
                         onClick={() => handlePageChange(index + 1)}
-                        className={`px-3 py-1 rounded-full transition ${index + 1 === currentPage ? "" : "bg-gray-200 text-black hover:bg-gray-300"}`}
+                        className={`px-3 py-1 rounded-full transition ${index + 1 === currentPage ? "bg-gray-800 text-white" : "bg-gray-300 text-black hover:bg-gray-500"}`}
                     >
                         {index + 1}
                     </button>
