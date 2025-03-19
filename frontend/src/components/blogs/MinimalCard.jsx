@@ -2,6 +2,7 @@ import { CardContent, Card } from "@/components/ui/card"
 import Image from "next/image"
 import { getStrapiMedia } from "@/helpers/strapi_api"
 import Link from "next/link"
+import { createBlogSlug } from "@/app/blogs/blog_utils"
 
 export default function MinimalCard({ attributes, blogID }) {
     const title = attributes.title
@@ -10,17 +11,13 @@ export default function MinimalCard({ attributes, blogID }) {
     })
 
     // Create URL-friendly title
-    const urlTitle = title
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .trim()
+    const urlTitle = createBlogSlug(title, blogID)
 
     const cover_img = attributes.cover_image.data
     const coverImage = getStrapiMedia(cover_img.attributes.url)
 
     return (
-        <Link href={`/blogs/${urlTitle}-${blogID}`}>
+        <Link href={`/blogs/${urlTitle}`}>
             <Card className="p-4 hover:bg-accent transition-colors">
                 <div className="space-y-1">
                     <h3 className="font-medium line-clamp-2">{title}</h3>

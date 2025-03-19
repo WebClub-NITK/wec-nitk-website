@@ -5,7 +5,7 @@ import { getStrapiMedia } from "@/helpers/strapi_api"
 import Link from "next/link"
 import { createBlogSlug } from '@/app/blogs/blog_utils'
 
-export default function BlogCard({ slug, attributes}) {
+export default function BlogCard({ id, attributes}) {
 
   const cover_img = attributes.cover_image.data
   const title = attributes.title
@@ -17,17 +17,10 @@ export default function BlogCard({ slug, attributes}) {
   const tags = attributes.tags.data
   const coverImage = getStrapiMedia(cover_img?.attributes.url)
 
-  const blogSlug = createBlogSlug(title, slug)
-
-  // Create URL-friendly title
-  const urlTitle = title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .trim()
+  const blogSlug = createBlogSlug(title, id)
 
   return (
-    <Link href={`/blogs/${urlTitle}-${slug}`}>
+    <Link href={`/blogs/${blogSlug}`}>
       <Card className="w-fit h-full flex flex-col">
           <div className="relative">
               <Image
