@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { getBlog } from "@/helpers/getBlog"
+import { getBlog } from "@/helpers/getBlogs"
 import MoreBlogsSection from "@/components/blogs/MoreBlogsSection"
 import { getStrapiMedia } from "@/helpers/strapi_api"
 import Markdown from "react-markdown"
@@ -12,40 +12,48 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw"
+import { redirect } from "next/navigation"
 
 export async function generateMetadata({ params }) {
-    let blog = await getBlog(params.slug)
+    const blogId = params.slug.split('-').pop()
+    const blog = await getBlog(blogId)
+    
+    if (!blog) {
+        return {
+            title: 'Blog Not Found',
+            description: 'The requested blog could not be found'
+        }
+    }
+
     const { title, body, date_time, written_by, sigs } = blog.attributes
     const cover_image = getStrapiMedia(blog.attributes.cover_image.data?.attributes.url)
 
     return {
         metadataBase: new URL('https://webclub.nitk.ac.in'),
         title: title,
-        description: body.substring(0, 200),
+        description: body.slice(0, 160),
         openGraph: {
-          title: title,
-          description: body.substring(0, 200),
-          url: `https://webclub.nitk.ac.in/blogs/${params.slug}`,
-          siteName: "WebClub NITK Blog",
-          images: [
-            {
-              url: cover_image || 'https://webclub.nitk.ac.in/default-og-image.png',
-              width: 1200,
-              height: 630,
-              alt: title,
-            },
-          ],
-          locale: 'en_US',
-          type: 'article',
-          publishedTime: date_time,
-          authors: written_by.data.map(writer => writer.attributes.name),
+            title: title,
+            description: body.slice(0, 160),
+            url: `https://webclub.nitk.ac.in/blogs/${params.slug}`,
+            siteName: "WebClub NITK Blog",
+            images: [cover_image],
+            locale: 'en_US',
+            type: 'article',
+            publishedTime: date_time,
+            authors: written_by.data.map(writer => writer.attributes.name),
         },
-      }
+    }
 }
 
-export default async function Page({ params }) {
-  
-    let blog = await getBlog(params.slug)
+export default async function BlogPage({ params }) {
+    const blogId = params.slug.split('-').pop()
+    const blog = await getBlog(blogId)
+    
+    if (!blog) {
+        redirect('/blogs')
+    }
+
     let {title , body , date_time , written_by , sigs} = blog.attributes
 
     // fetch cover_image url
@@ -62,8 +70,6 @@ export default async function Page({ params }) {
     const date = new Date(date_time).toLocaleDateString('en-IN', {
         year: 'numeric', month: 'long', day: 'numeric', timeZone: "asia/kolkata"
     })
-
-
 
     return (
         <>
