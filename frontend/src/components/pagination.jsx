@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 export default function Pagination({ totalPages }) {
     const router = useRouter();
@@ -19,7 +19,7 @@ export default function Pagination({ totalPages }) {
  
             {currentPage > 1 && (
                 <button className="flex items-center gap-2 rounded-full px-3 py-1" onClick={() => handlePageChange(currentPage - 1)}>
-                    <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" /> Previous
+                    <FaArrowLeft strokeWidth={2} className="h-4 w-4" /> Previous
                 </button>
             )}
 
@@ -37,7 +37,7 @@ export default function Pagination({ totalPages }) {
 
             {currentPage < totalPages && (
                 <button className="flex items-center gap-2 rounded-full px-3 py-1" onClick={() => handlePageChange(currentPage + 1)}>
-                    Next <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
+                    Next <FaArrowRight strokeWidth={2} className="h-4 w-4" />
                 </button>
             )}
         </div>

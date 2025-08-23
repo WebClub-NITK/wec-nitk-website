@@ -6,7 +6,7 @@ export async function getBlogs(page=1, filter="all") {
         populate: "*",
         sort: "date_time:desc",
         "pagination[page]": page.toString(),
-        "pagination[pageSize]": "9",
+        "pagination[pageSize]": process.env.PAGE_SIZE,
 
     })
 
@@ -25,9 +25,9 @@ export async function getBlogs(page=1, filter="all") {
         }
       });
 
-      const data = await response.json();
-      const blogs = data.data || [];
-      const totalPages = data.meta?.pagination?.pageCount || 1;
-  
-      return { blogs, totalPages };
+    const data = await response.json();
+    const blogs = data.data || [];
+    const totalPages = data.meta?.pagination?.pageCount || 1;
+
+    return { blogs, totalPages };
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { TwitterIcon } from "./icons/twitter";
+import { X_icon } from "./icons/X_twitter";
 import { LinkedinIcon } from "./icons/linkedin";
 import { InstagramIcon } from "./icons/instagram";
 import { FacebookIcon } from "./icons/facebook";
@@ -81,6 +81,14 @@ const Footer = () => {
                   target="_blank"
                 >
                   <FacebookIcon />
+                </a>
+
+                 <a
+                  href="https://x.com/wecnitk"
+                  className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white text-dark hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-white dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  target="_blank"
+                >
+                  <X_icon />
                 </a>
               </div>
             </div>

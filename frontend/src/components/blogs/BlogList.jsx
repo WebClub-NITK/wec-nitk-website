@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 import BlogCard from "./BlogCard";
 import { DropdownMenuTrigger, DropdownMenuRadioItem, DropdownMenuRadioGroup, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,8 @@ export default function BlogList({ blogs, filters, totalPages }) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
-
+    const currentPage = Number(searchParams.get("page")) || 1;
+    const blogsRef = useRef(null);
     const selectedFilter = searchParams.get("filter") || "all";
 
     const handleFilterChange = (filter) => {
@@ -21,9 +23,18 @@ export default function BlogList({ blogs, filters, totalPages }) {
         router.push(`${pathname}?${params.toString()}`, { scroll: false });
     };
 
+    // switching pages navigates back to the top of the blogs list section
+    useEffect(() => {
+        if (blogsRef.current) {
+            blogsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [currentPage]);
+
     return (
         <>
-            <div className="flex justify-between items-center mb-6">
+            <div ref={blogsRef} className="flex justify-between items-center mb-6">
                 <h1 className="font-semibold text-2xl px-4">All Blogs</h1>
                 <DropdownMenu className="p-2">
                     <DropdownMenuTrigger asChild>
