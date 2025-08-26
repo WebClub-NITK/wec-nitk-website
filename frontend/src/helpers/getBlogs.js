@@ -6,7 +6,7 @@ export async function getBlogs(page=1, filter="all") {
         populate: "*",
         sort: "date_time:desc",
         "pagination[page]": page.toString(),
-        "pagination[pageSize]": process.env.PAGE_SIZE,
+        "pagination[pageSize]": process.env.PAGE_SIZE || 7,
 
     })
 
