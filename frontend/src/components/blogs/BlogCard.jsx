@@ -65,5 +65,7 @@ export default function BlogCard({ slug, attributes}) {
           </div>
       </Card>
     </Link>
+
+    
   )
 }
