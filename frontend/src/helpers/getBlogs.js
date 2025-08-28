@@ -5,6 +5,8 @@ export async function getBlogs() {
     const params = new URLSearchParams({
         populate: "*",
         sort: "date_time:desc",
+        "pagination[page]": page.toString(),
+        "pagination[pageSize]": process.env.PAGE_SIZE || "7",
     })
 
     let blogs = await fetch(`${backendUrl}/api/blogs?${params}` , {
@@ -20,7 +22,6 @@ export async function getBlogs() {
 
       blogs = await blogs.json()
       blogs = blogs.data || []
-
 
       return blogs
 }

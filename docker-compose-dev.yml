@@ -67,10 +67,6 @@ services:
         depends_on:
             - strapi
             - frontend
-        
-
-
-
 
 volumes:
     wec_backend_database:

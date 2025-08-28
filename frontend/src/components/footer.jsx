@@ -11,9 +11,14 @@ import { Email } from "./icons/email";
 import Image from "next/image";
 import {IconBrandGithub} from "@tabler/icons-react";
 
+
 const Footer = () => {
 
   const currentYear = new Date().getFullYear();
+  const gdg_sig_path = `/blogs/${process.env.GDG_SIG_ID}`;
+  const algo_sig_path =  `/blogs/${process.env.ALGO_SIG_ID}`;
+  const intel_sig_path =  `/blogs/${process.env.INTEL_SIG_ID}`;
+  const systems_sig_path =  `/blogs/${process.env.SYSTEMS_SIG_ID}`;
 
   return (
   <>
@@ -92,10 +97,10 @@ const Footer = () => {
             <NavLink link="/members" label="Team" />
           </LinkGroup>
           <LinkGroup header="OUR SIGS">
-            <NavLink link="/blogs/8" label="Algorithms SIG" />
-            <NavLink link="/blogs/6" label="Intel SIG" />
-            <NavLink link="/blogs/7" label="Dev SIG" />
-            <NavLink link="/blogs/9" label="Systems SIG" />
+            <NavLink link ={algo_sig_path} label="Algorithms SIG" />
+            <NavLink link ={intel_sig_path} label="Intel SIG" />
+            <NavLink link={gdg_sig_path} label="Dev SIG" />
+            <NavLink link={systems_sig_path} label="Systems SIG" />
           </LinkGroup>
           <LinkGroup header="OUR INITIATIVES">
             <NavLink link="/blogs/3" label="UniDAO" />
