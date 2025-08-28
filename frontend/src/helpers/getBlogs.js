@@ -1,7 +1,7 @@
-export async function getBlogs() {
+export async function getBlogs(page=1, filter="all") {
 
     const backendUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'
-
+    
     const params = new URLSearchParams({
         populate: "*",
         sort: "date_time:desc",
@@ -9,7 +9,11 @@ export async function getBlogs() {
         "pagination[pageSize]": process.env.PAGE_SIZE || "7",
     })
 
-    let blogs = await fetch(`${backendUrl}/api/blogs?${params}` , {
+    if (filter !== "all") {
+      params.append("filters[tags][name][$eq]", filter);
+    }
+
+    let response = await fetch(`${backendUrl}/api/blogs?${params}` , {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -18,10 +22,11 @@ export async function getBlogs() {
         next: {
           revalidate: parseInt(process.env.REVALIDATE) || 0,
         }
-      })
+      });
 
-      blogs = await blogs.json()
-      blogs = blogs.data || []
+    const data = await response.json();
+    const blogs = data.data || [];
+    const totalPages = data.meta?.pagination?.pageCount || 1;
 
-      return blogs
+    return { blogs, totalPages };
 }
