@@ -52,6 +52,9 @@
       "relation": "manyToMany",
       "target": "api::achievement.achievement",
       "inversedBy": "sigs"
+    },
+    "google_calendar_id": {
+      "type": "string"
     }
   }
 }
