@@ -1147,6 +1147,7 @@ export interface ApiSigSig extends Schema.CollectionType {
       'manyToMany',
       'api::achievement.achievement'
     >;
+    google_calendar_id: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
