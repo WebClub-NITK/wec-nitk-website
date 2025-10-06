@@ -2,7 +2,7 @@ import { getBlogs } from "@/helpers/getBlogs"
 import MinimalCard from "./MinimalCard"
 
 export default async function MoreBlogsSection({ currBlogID }) {
-    let blogs = await getBlogs()
+    let { blogs, totalPages } = await getBlogs()
     
     // Filter out the current blog and limit to 3 blogs
     blogs = blogs

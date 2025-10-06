@@ -68,5 +68,7 @@ export default function BlogCard({ id, attributes}) {
           </div>
       </Card>
     </Link>
+
+    
   )
 }

@@ -3,9 +3,13 @@ import LatestBlogCard from "@/components/blogs/LatestBlog"
 import { getBlogs } from "@/helpers/getBlogs"
 import { getFilters } from "@/helpers/getFilters"
 
-export default async function BlogsPage() {
-    const blogs = await getBlogs()
-    const filters = await getFilters()
+export default async function BlogListPage({searchParams}) {
+
+    const page = Number(searchParams?.page) || 1;        
+    const filter = searchParams?.filter || "all";       
+
+    const { blogs, totalPages } = await getBlogs(page, filter);   
+    const filters = await getFilters();
 
     return (
         <>
@@ -21,8 +25,8 @@ export default async function BlogsPage() {
 
             <section className="min-h-full">
                 <div className="mx-auto py-10 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
-                    {blogs.length > 0 ? <LatestBlogCard latest_blog={blogs.slice(0,)}/> : null}
-                    <BlogList blogs={blogs.slice(1, )} filters={filters}/>
+                    {blogs.length > 0 ? <LatestBlogCard latest_blog={blogs.slice(0,)[0]}/> : null}
+                    <BlogList blogs={blogs.slice(1)} filters={filters} totalPages={totalPages}/>
                 </div>
             </section>
         </>

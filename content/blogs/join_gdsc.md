@@ -235,7 +235,7 @@ A good user interface and experience are essential for any project. Figma is a p
 
 ## About Us
 
-At GDSC, we believe in more than just coding and project building; we focus on fostering a vibrant community that nurtures both your technical and personal growth. Whether you're aiming to sharpen your skills, expand your network, or make a positive impact, GDSC provides the platform and support to help you achieve your goals. Learn more about GDSC [here](https://webclub.nitk.ac.in/blogs/7).
+At GDSC, we believe in more than just coding and project building; we focus on fostering a vibrant community that nurtures both your technical and personal growth. Whether you're aiming to sharpen your skills, expand your network, or make a positive impact, GDSC provides the platform and support to help you achieve your goals. Learn more about GDSC [here](https://webclub.nitk.ac.in/blogs/10).
 
 
 Good luck with your Development journey!

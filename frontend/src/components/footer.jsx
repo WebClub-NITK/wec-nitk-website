@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { TwitterIcon } from "./icons/twitter";
+import { X_icon } from "./icons/X_twitter";
 import { LinkedinIcon } from "./icons/linkedin";
 import { InstagramIcon } from "./icons/instagram";
 import { FacebookIcon } from "./icons/facebook";
@@ -11,9 +11,14 @@ import { Email } from "./icons/email";
 import Image from "next/image";
 import {IconBrandGithub} from "@tabler/icons-react";
 
+
 const Footer = () => {
 
   const currentYear = new Date().getFullYear();
+  const gdg_sig_path = `/blogs/${process.env.GDG_SIG_ID}`;
+  const algo_sig_path =  `/blogs/${process.env.ALGO_SIG_ID}`;
+  const intel_sig_path =  `/blogs/${process.env.INTEL_SIG_ID}`;
+  const systems_sig_path =  `/blogs/${process.env.SYSTEMS_SIG_ID}`;
 
   return (
   <>
@@ -82,6 +87,14 @@ const Footer = () => {
                 >
                   <FacebookIcon />
                 </a>
+
+                 <a
+                  href="https://x.com/wecnitk"
+                  className="mr-3 flex h-8 w-8 p-1 items-center justify-center rounded-full border border-stroke bg-white text-dark hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-white dark:hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4"
+                  target="_blank"
+                >
+                  <X_icon />
+                </a>
               </div>
             </div>
           </div>
@@ -92,10 +105,10 @@ const Footer = () => {
             <NavLink link="/members" label="Team" />
           </LinkGroup>
           <LinkGroup header="OUR SIGS">
-            <NavLink link="/blogs/8" label="Algorithms SIG" />
-            <NavLink link="/blogs/6" label="Intel SIG" />
-            <NavLink link="/blogs/7" label="Dev SIG" />
-            <NavLink link="/blogs/9" label="Systems SIG" />
+            <NavLink link ={algo_sig_path} label="Algorithms SIG" />
+            <NavLink link ={intel_sig_path} label="Intel SIG" />
+            <NavLink link={gdg_sig_path} label="Dev SIG" />
+            <NavLink link={systems_sig_path} label="Systems SIG" />
           </LinkGroup>
           <LinkGroup header="OUR INITIATIVES">
             <NavLink link="/blogs/3" label="UniDAO" />
