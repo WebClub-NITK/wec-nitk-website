@@ -1,11 +1,11 @@
 import { redirect } from "next/navigation";
 import { getEvent } from "@/helpers/getEvent";
 import { getStrapiMedia } from "@/helpers/strapi_api";
+import { getEventIdFromSlug } from "../event_utils"
 
 export async function generateMetadata({ params }) {
 
-    let slug = params.slug.split('-');
-    let event_id = slug[slug.length-1];
+    let event_id = getEventIdFromSlug(params.slug)
     let event = await getEvent(event_id);
     const { title, body, date_time, sigs } = event.attributes
     const cover_image = getStrapiMedia(event.attributes.cover_images.data[0]?.attributes.url)
