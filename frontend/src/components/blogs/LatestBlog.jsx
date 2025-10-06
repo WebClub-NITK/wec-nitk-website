@@ -1,4 +1,5 @@
 "use client"
+import { createBlogSlug } from "@/app/blogs/blog_utils"
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"
 import { getStrapiMedia } from "@/helpers/strapi_api"
@@ -7,15 +8,15 @@ import Link from "next/link"
 
 export default function LatestBlogCard({latest_blog}) {
 
-  const coverImage = getStrapiMedia(latest_blog[0].attributes.cover_image.data?.attributes.url)
-  const title = latest_blog[0].attributes.title
-  const body = latest_blog[0].attributes.body
-  const date = new Date(latest_blog[0].attributes.date_time).toLocaleDateString('en-US', {
+  const coverImage = getStrapiMedia(latest_blog.attributes.cover_image.data?.attributes.url)
+  const title = latest_blog.attributes.title
+  const body = latest_blog.attributes.body
+  const date = new Date(latest_blog.attributes.date_time).toLocaleDateString('en-US', {
     year: 'numeric', month: 'long', day: 'numeric', timeZone: "asia/kolkata"
   })
-  const subheading = latest_blog[0].attributes.subheading
-  const tags = latest_blog[0].attributes.tags.data
-  const slug = latest_blog[0].id
+  const subheading = latest_blog.attributes.subheading
+  const tags = latest_blog.attributes.tags.data
+  const slug = createBlogSlug(title, latest_blog.id)
   
   return (
     <>

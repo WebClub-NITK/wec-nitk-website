@@ -25,7 +25,7 @@ export default async function BlogListPage({searchParams}) {
 
             <section className="min-h-full">
                 <div className="mx-auto py-10 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
-                    {blogs.length > 0 ? <LatestBlogCard latest_blog={blogs.slice(0,)}/> : null}
+                    {blogs.length > 0 ? <LatestBlogCard latest_blog={blogs.slice(0,)[0]}/> : null}
                     <BlogList blogs={blogs.slice(1)} filters={filters} totalPages={totalPages}/>
                 </div>
             </section>

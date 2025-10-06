@@ -66,7 +66,7 @@ export default function BlogList({ blogs, filters, totalPages }) {
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 p-2">
                 {blogs.map(blog => (
                     <div key={blog.id}>
-                        <BlogCard slug={blog.id} attributes={blog.attributes} />
+                        <BlogCard id={blog.id} attributes={blog.attributes} />
                     </div>
                 ))}
             </div>
