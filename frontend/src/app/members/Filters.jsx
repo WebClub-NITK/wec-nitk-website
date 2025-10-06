@@ -23,7 +23,11 @@ export default function Filters ({ selected, select }) {
                         {
                             filters.map((filter, i) => {
                                 return (
-                                    <DropdownMenuRadioItem key={filter} value={i} onClick={() => select(i)} className="cursor-pointer">{filter}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem 
+                                    key={filter} 
+                                    value={i} 
+                                    onClick={() => select(i)} className="cursor-pointer">{filter}
+                                    </DropdownMenuRadioItem>
                                 )
                             })
                         }
