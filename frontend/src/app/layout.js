@@ -1,6 +1,4 @@
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Script from "next/script"
 
 
@@ -50,11 +48,7 @@ export default function RootLayout({ children }) {
 		</head>
 
 		<body className={"bg-white dark no-scrollbar "}>
-			<Navbar />
-			<main>
-				{children}
-			</main>
-			<Footer />
+			{children}
 		</body>
     </html>
   );

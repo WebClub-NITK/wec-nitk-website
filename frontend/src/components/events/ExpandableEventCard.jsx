@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import EventCard from "./EventCard"
 import EventModal from "./EventModal"
 import { AnimatePresence, motion } from "framer-motion"
-import { createEventSlug, getEventIdFromSlug } from "@/app/events/event_utils"
+import { createEventSlug, getEventIdFromSlug } from "@/app/(normal)/events/event_utils"
 
 export default function ExpandableEventCard ({ event }) {
     let [ modalInitial, setModalInitial ] = useState(null)
