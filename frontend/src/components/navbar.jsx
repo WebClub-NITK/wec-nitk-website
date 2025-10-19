@@ -96,13 +96,11 @@ const Navbar = () => {
                 </li>
                 
                 <li className="shrink-0">
-                  <a
-                    href="https://linktr.ee/wecnitk"
-                    target="_blank"
-                    className="py-2 w-auto px-4 border-2 h-8 rounded-full text-white duration-200 focus:ring-offset-2 ring-2"
-                  >
+                  <Link
+                    href="/linktree"
+                    className="py-2 w-auto px-4 border-2 h-8 rounded-full text-white duration-200 focus:ring-offset-2 ring-2">
                     Linktree
-                  </a>
+                  </Link>
                 </li>
                 
               </ul>
