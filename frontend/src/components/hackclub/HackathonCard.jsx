@@ -4,12 +4,28 @@ import { ArrowRightIcon } from '@/components/icons/arrow';
 import { TrophyIcon } from '@/components/icons/trophy'
 import { CalendarClock } from "lucide-react";
 import Image from "next/image"
+import { useState, useEffect } from "react"
+import { fetchLinkPreview } from "@/lib/hackathonUtils"
 
 export default function HackathonCard({ hackathon }) {
-    const { title, description, prizes, mode, start_time, end_time, link, image } = hackathon;
+    const { title, description, prizes, mode, start_time, end_time, link, image, previewUrl } = hackathon;
+    const [previewImage, setPreviewImage] = useState(null);
 
-    let imagePath = image.data?.attributes.formats.thumbnail.url
-    let imageURL = (process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL || "/strapi") + imagePath
+    // Check if we have Strapi image or need to fetch preview
+    let imagePath = image?.data?.attributes?.formats?.thumbnail?.url
+    let imageURL = imagePath ? (process.env.NEXT_PUBLIC_STRAPI_IMAGE_URL || "/strapi") + imagePath : null
+
+    // Fetch link preview if no Strapi image is available
+    useEffect(() => {
+        if (!imageURL && previewUrl) {
+            fetchLinkPreview(previewUrl).then(preview => {
+                setPreviewImage(preview.image);
+            });
+        }
+    }, [imageURL, previewUrl]);
+
+    // Determine which image to use
+    const displayImage = imageURL || previewImage || '/placeholder.svg';
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -40,32 +56,18 @@ export default function HackathonCard({ hackathon }) {
             </div>
 
             <CardHeader>
-                {
-                    imagePath ?
-                    <Image
-                        src={imageURL}
-                        alt=""
-                        className="rounded-t-lg object-cover w-full"
-                        height="200"
-                        width="300"
-                        style={{
-                            aspectRatio: "300/200",
-                            objectFit: "contain",
-                        }}
-                    />
-                    :
-                    <Image
-                        src='/placeholder.svg'
-                        alt=""
-                        className="rounded-t-lg object-cover w-full"
-                        height="200"
-                        width="300"
-                        style={{
-                            aspectRatio: "300/200",
-                            objectFit: "contain",
-                        }}
-                    />
-                }
+                <Image
+                    src={displayImage}
+                    alt={title || "Hackathon"}
+                    className="rounded-t-lg object-cover w-full"
+                    height="200"
+                    width="300"
+                    style={{
+                        aspectRatio: "300/200",
+                        objectFit: "cover",
+                    }}
+                    unoptimized={!imageURL}
+                />
             </CardHeader>
             <CardContent className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
