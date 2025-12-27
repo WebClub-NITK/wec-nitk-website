@@ -1,28 +1,8 @@
 import Hackathons from "./Hackathons"
+import { getGoogleSheetHackathons } from "@/helpers/getGoogleSheetHackathons"
 
 export default async function HackClubDashBoard() {
-
-    const response = await fetch(process.env.NEXT_PUBLIC_STRAPI_URL + "/api/hackathons?populate=image", {
-        headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
-        next: { revalidate: parseInt(process.env.REVALIDATE) || 0 }
-    })
-    let hackathons = (await response.json()).data;
-
-    const now = new Date();
-    hackathons = hackathons.map(hackathon => {
-        const startTime = new Date(hackathon.attributes.start_time);
-        const endTime = new Date(hackathon.attributes.end_time);
-
-        if (now >= startTime && now <= endTime) {
-            hackathon.attributes.status = "Ongoing";
-        } else if (now < startTime) {
-            hackathon.attributes.status = "Upcoming";
-        } else {
-            hackathon.attributes.status = "Past";
-        }
-
-        return hackathon;
-    });
+    const hackathons = await getGoogleSheetHackathons();
 
     return (
         <>
