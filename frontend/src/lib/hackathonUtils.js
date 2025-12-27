@@ -14,7 +14,7 @@ function parseCSV(csvText) {
   const lines = csvText.split('\n').filter(line => line.trim());
   if (lines.length < 2) return [];
 
-  const headers = lines[0].split(',').map(h => h.trim());
+  const headers = parseCSVLine(lines[0]);
   const hackathons = [];
 
   for (let i = 1; i < lines.length; i++) {
@@ -135,12 +135,15 @@ export async function fetchHackathonsFromSheet() {
     const rawHackathons = parseCSV(csvText);
 
     // Transform to match the expected format
-    const hackathons = rawHackathons.map((row) => {
+    const hackathons = rawHackathons.map((row, index) => {
       const { startDate, endDate } = parseDateRange(row.Dates || '');
       const status = determineStatus(startDate, endDate);
 
+      // Use link as ID, or fall back to index-based ID for deterministic behavior
+      const id = row.Link || `hackathon-${index}`;
+
       return {
-        id: row.Link || Math.random().toString(36).substr(2, 9),
+        id: id,
         attributes: {
           title: row.Name || '',
           description: row.Theme || '',

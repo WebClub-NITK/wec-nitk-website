@@ -18,9 +18,14 @@ export default function HackathonCard({ hackathon }) {
     // Fetch link preview if no Strapi image is available
     useEffect(() => {
         if (!imageURL && previewUrl) {
-            fetchLinkPreview(previewUrl).then(preview => {
-                setPreviewImage(preview.image);
-            });
+            fetchLinkPreview(previewUrl)
+                .then(preview => {
+                    setPreviewImage(preview.image);
+                })
+                .catch(error => {
+                    console.error('Error fetching preview:', error);
+                    setPreviewImage('/placeholder.svg');
+                });
         }
     }, [imageURL, previewUrl]);
 
