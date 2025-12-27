@@ -7,20 +7,24 @@ export async function getEvents() {
         sort: "date_time:desc",
     })
 
-    let events = await fetch(`${backendUrl}/api/events?${params}` , {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
-        },
-        next: {
-          revalidate: parseInt(process.env.REVALIDATE) || 0,
-        }
-      })
+    try {
+        let events = await fetch(`${backendUrl}/api/events?${params}` , {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": "Bearer " + process.env.STRAPI_API_KEY,
+            },
+            next: {
+              revalidate: parseInt(process.env.REVALIDATE) || 0,
+            }
+          })
 
-      events = await events.json()
-      events = events.data
+          events = await events.json()
+          events = events.data
 
-
-      return events || []
+          return events || []
+    } catch (error) {
+        console.error('Error fetching events:', error)
+        return []
+    }
 }

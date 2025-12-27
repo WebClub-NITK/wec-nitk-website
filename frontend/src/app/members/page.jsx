@@ -1,11 +1,19 @@
 import Members from "./Members"
 
 export default async function MembersPage () {
-    let members = await fetch(process.env.NEXT_PUBLIC_STRAPI_URL+"/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=false", {
-        headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
-        next: { revalidate: parseInt(process.env.REVALIDATE) || 0 }
-    })
-    let membersData = (await members.json()).data || []
+    const backendUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'
+    let membersData = []
+    
+    try {
+        let members = await fetch(`${backendUrl}/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=false`, {
+            headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
+            next: { revalidate: parseInt(process.env.REVALIDATE) || 0 }
+        })
+        membersData = (await members.json()).data || []
+    } catch (error) {
+        console.error('Error fetching members:', error)
+        membersData = []
+    }
     
     return (
         <main className="min-h-[calc(100vh-72px)] text-white bg-primary-50/70">
@@ -28,11 +36,18 @@ export default async function MembersPage () {
 async function getAlumni () {
     "use server"
 
-    let alumni = await fetch(process.env.NEXT_PUBLIC_STRAPI_URL+"/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=true", {
-        headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
-        next: { revalidate: parseInt(process.env.REVALIDATE) || 0 }
-    })
+    const backendUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'
+    
+    try {
+        let alumni = await fetch(`${backendUrl}/api/members?populate[posts][fields][0]=title&populate[sigs][fields][0]=name&populate=image&filters[alumni][$eq]=true`, {
+            headers: { Authorization: "Bearer " + process.env.STRAPI_API_KEY },
+            next: { revalidate: parseInt(process.env.REVALIDATE) || 0 }
+        })
 
-    let alumniData = (await alumni.json()).data
-    return alumniData
+        let alumniData = (await alumni.json()).data
+        return alumniData || []
+    } catch (error) {
+        console.error('Error fetching alumni:', error)
+        return []
+    }
 }
