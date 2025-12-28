@@ -121,7 +121,7 @@ const Footer = () => {
                 </h4>
                 <div className="flex items-center">
                   <div className="flex w-full max-w-sm items-center space-x-2">
-                      <Input className="bg-white" type="email" placeholder="hello@gmail.com" disabled />
+                      <Input className="bg-white" type="email" placeholder="Coming soon!" disabled />
                       <Button className=" border text-white font-bold hover:bg-white hover:text-secondary-950 transition-all duration-300 ease-in-out disabled" type="submit" disabled >Subscribe</Button>
                   </div>
                 </div>
