@@ -90,7 +90,7 @@ General advice : Always good to have a solid understanding of operating systems 
 | **The Rust Book** | A good introduction to Rust for beginners | https://doc.rust-lang.org/book/               |
 | **Rustfully** | A good YouTube channel for learning Rust | https://www.youtube.com/@Rustfully              |
 | **Zig - Learn** | Contains a good number of resources for starting with Zig | https://ziglang.org/learn/              |
-| **Modern C23 by Jens Gustedt** | A good introduction to Modern C23 for beginners | https://gustedt.gitlabpages.inria.fr/modern-c/              |
+| **Modern C23 by Jens Gustedt** | A good introduction to Modern C23 for beginners | https://inria.hal.science/hal-02383654v2/file/modernC.pdf              |
 | **Jacob Sorber** | A pretty good YouTube channel for learning C | https://www.youtube.com/@JacobSorber              |
 | **Core Dumped** | An extremely good YouTube channel for OS theory & Low-Level Systems basics | https://www.youtube.com/@CoreDumpped              |
 | **BitLemon** | An extremely good YouTube channel for learning Computer Architecture | https://www.youtube.com/@BitLemonSoftware              |
