@@ -85,13 +85,34 @@ General advice : Always good to have a solid understanding of operating systems 
 
 ## Parallel Computing
 
-***Some prerequisites*** : Computer architechture and some hands on experience in writing parallel code.
+**Suggestions:**
+- Make sure to be **very comfortable** with at least 1 Low-Level language, i.e. C/C++/Rust/Zig.
+- You **don't** need to go way too deep into Computer Architecture. You can learn it along with Parallel Computing concepts as you encounter them.
+- **Start with CPU based parallelism** before hopping on to GPUs!
 
 | **Resource**                                | **Description**                                                                                                                                                  | **Links**                                      |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| **Programming Massively Parallel Processors: A Hands-On Approach, 4th ed** | An in-depth guide to programming parallel processors like GPUs using CUDA, with practical hands-on examples and exercises. Ideal for learning parallel computing. | Easily available online as a PDF               |
+| **Computer Architecture: A Quantitative Approach, 6th ed by Patterson & Hennessy** | An in depth guide on Computer Architecture | Easily available online as a PDF              |
+| **Parallel & High Performance Computing by Robert Robey & Yuliana Zamora** | An in depth guide to Parallel Computing with practical examples. Good for starting with parallel computing. | Available online as a PDF              |
+| **Programming Massively Parallel Processors: A Hands-On Approach, 4th ed** | An in-depth guide to programming with Nvidia GPUs using CUDA, with practical hands-on examples and exercises. | Easily available online as a PDF               |
+| **OpenCL Programming Guide by Aaftab Munshi et. al.** | A hands-on GPU programming guide using OpenCL 1.1, which works on almost all GPUs. Also includes complex case studies like cloth simulation, optical flow etc. Ideal for learning GPU computing. | Available online as a PDF               |
 
+#### Programming Language resources  
 
+| **Resource**                                | **Description**                                                                                                                                                  | **Links**                                      |
+|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **The Rust Book** | A good introduction to Rust for beginners | https://doc.rust-lang.org/book/               |
+| **Rustfully** | A good YouTube channel for learning Rust | https://www.youtube.com/@Rustfully              |
+| **Zig - Learn** | Contains a good number of resources for starting with Zig | https://ziglang.org/learn/              |
+| **Modern C23 by Jens Gustedt** | A good introduction to Modern C23 for beginners | https://inria.hal.science/hal-02383654v2/file/modernC.pdf              |
+| **Jacob Sorber** | A pretty good YouTube channel for learning C | https://www.youtube.com/@JacobSorber              |
+
+#### Other general resources  
+
+| **Resource**                                | **Description**                                                                                                                                                  | **Links**                                      |
+|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **Core Dumped** | An extremely good YouTube channel for OS theory & Low-Level Systems basics | https://www.youtube.com/@CoreDumpped              |
+| **BitLemon** | An extremely good YouTube channel for learning Computer Architecture | https://www.youtube.com/@BitLemonSoftware              |
 
 
 ## Networking
