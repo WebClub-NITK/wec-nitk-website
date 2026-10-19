@@ -18,6 +18,12 @@ services:
             args:
                 - BACKEND_URL=${BACKEND_URL}
 
+        ports:
+        - "1337:1337"       
+        environment:
+        - HOST=0.0.0.0       
+        - PORT=1337
+
         healthcheck:
             test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT}"]
             interval: 30s
